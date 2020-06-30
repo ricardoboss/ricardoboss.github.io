@@ -1,0 +1,13 @@
+$utilities: (
+  "mbr": (
+    responsive: true,
+    property: margin-right margin-bottom,
+    class: mbr,
+    values: map-merge($spacers, (auto: auto))
+  ),
+  "lang-background-color": (
+    property: background-color,
+    class: bg-lang,
+    values: $bg-lang-colors
+  )
+);

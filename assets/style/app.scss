@@ -1,0 +1,15 @@
+@import "variables";
+
+@import "utilities";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "layout";
+@import "scrollbar";
+@import "timeline";
+@import "transitions";
+
+// Default background for languages without color
+[class*=bg-lang-] {
+  background: $gray-400;
+}

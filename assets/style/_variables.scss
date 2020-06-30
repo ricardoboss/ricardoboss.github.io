@@ -1,0 +1,69 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+
+$enable-shadows: true;
+
+$black: #fff;
+$gray-900: #f8f9fa;
+$gray-800: #e9ecef;
+$gray-700: #dee2e6;
+$gray-600: #ced4da;
+$gray-500: #adb5bd;
+$gray-400: #6c757d;
+$gray-300: #495057;
+$gray-200: #343a40;
+$gray-100: #212529;
+$white: #101318;
+
+$red: #dc3545;
+$green: #28a745;
+
+$primary: #33aa66;
+$success: $green;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$theme-colors: (
+  "primary": $primary,
+  "success": $success,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+$lang-php: #4F5D95;
+$lang-cs: #178600;
+$lang-net: #6D409D;
+$lang-js: #F0DB4F;
+$lang-vue: #3FB984;
+$lang-java: #b07219;
+$lang-pwsh: #0253c4;
+
+$bg-lang-colors: (
+  "php": $lang-php,
+  "cs": $lang-cs,
+  "net": $lang-net,
+  "js": $lang-js,
+  "vue": $lang-vue,
+  "java": $lang-java,
+  "powershell": $lang-pwsh,
+);
+
+$body-bg: $gray-200;
+
+$card-bg: $gray-100;
+
+$list-group-bg: $gray-100;
+$list-group-hover-bg: lighten($list-group-bg, 5%);
+
+$text-muted: $gray-400;
+
+$box-shadow: 0 .25rem .75rem rgba($white, .35);
+$box-shadow-sm: 0 .15rem .2rem rgba($white, .35);
+$box-shadow-lg: 0 1rem 2rem rgba($white, .45);
+$box-shadow-inset: inset 0 1px 2px rgba($white, .5);
+
+$headings-margin-bottom: .75rem;
+
+@import "~bootstrap/scss/variables";

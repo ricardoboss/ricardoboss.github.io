@@ -1,0 +1,36 @@
+.layout-container {
+  @extend .container;
+}
+
+.layout-row {
+  @extend .row;
+}
+
+.layout-sidepanel {
+  @extend .col-md-3;
+  @extend .d-none;
+  @extend .d-md-flex;
+  @extend .pt-3;
+
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  max-width: 400px;
+}
+
+.layout-main-panel {
+  @extend .container;
+  @extend .col-md-9;
+  @extend .col-12;
+}
+
+.layout-navbar {
+  @extend .pt-3;
+  @extend .pr-0;
+}
+
+.layout-content {
+  @extend .my-3;
+  @extend .h-100;
+}
