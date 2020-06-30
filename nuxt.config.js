@@ -90,20 +90,22 @@ module.exports = {
       let files = fs.readdirSync(postsPath);
 
       let latestDate = new Date(0);
-      let posts = files.map(path => {
-        let uri = path.split('.').shift(); // remove extension
-        let date = new Date(path.split('-').splice(0, 3).join('-')); // get date
+      let posts = files
+        .filter(path => /\d{4}-\d{2}-\d{2}-.+\.md$/i.test(path))
+        .map(path => {
+          let uri = path.split('.').shift(); // remove extension
+          let date = new Date(path.split('-').splice(0, 3).join('-')); // get date
 
-        if (date > latestDate)
-          latestDate = date;
+          if (date > latestDate)
+            latestDate = date;
 
-        return {
-          url: `/blog/${uri}`,
-          changefreq: 'yearly',
-          priority: 0.4,
-          lastmod: date
-        };
-      });
+          return {
+            url: `/blog/${uri}`,
+            changefreq: 'yearly',
+            priority: 0.4,
+            lastmod: date
+          };
+        });
 
       return posts.concat([
         {
