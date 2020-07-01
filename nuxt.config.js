@@ -120,7 +120,7 @@ module.exports = {
         },
         {
           url: '/projects',
-          changefreq: 'weekly',
+          changefreq: 'monthly',
           priority: 0.3
         }
       ]);
