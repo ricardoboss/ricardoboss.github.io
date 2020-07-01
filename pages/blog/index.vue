@@ -17,7 +17,7 @@
         </div>
       </nuxt-link>
       <div v-if="posts.length === 0" class="list-group-item">
-        No posts where found.
+        No posts were found.
       </div>
     </div>
   </section>
