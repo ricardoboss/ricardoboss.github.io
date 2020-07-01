@@ -67,7 +67,7 @@
 	      if (this.post !== null)
 	        return this.post.attributes.title;
 
-	      if (this.error !== null)
+	      if (this.error)
 	        return "Error";
 
 	      return "Loading...";
