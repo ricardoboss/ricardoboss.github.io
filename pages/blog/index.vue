@@ -2,7 +2,7 @@
   <section>
     <h1 class="display-3">Blog</h1>
 
-    <div class="list-group list-group-flush rounded">
+    <div class="list-group list-group-flush rounded ml-3">
       <nuxt-link v-for="post in sortedPosts" :key="post.attributes.title"
                  class="list-group-item list-group-item-action row align-items-center"
                  :to="getPermalink(post)">
