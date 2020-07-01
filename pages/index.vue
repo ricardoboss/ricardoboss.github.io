@@ -1,10 +1,10 @@
 <script>
-  import Alias from '~/pages/blog';
+  import Alias from '~/pages/projects';
 
   Alias.head = function() {
     return {
       link: [
-        { hid: 'canonical', rel: 'canonical', href: '/blog' }
+        { hid: 'canonical', rel: 'canonical', href: '/projects' }
       ]
     }
   };
