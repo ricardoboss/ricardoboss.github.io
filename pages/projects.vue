@@ -46,7 +46,7 @@
             description: 'This website.',
             links: [
               {title: 'Project Homepage', href: 'https://ricardoboss.de'},
-              { title: 'Source', href: 'https://github.com/ricardoboss/ricardoboss.github.io' }
+              { title: 'Source', href: 'https://github.com/ricardoboss/ricardoboss.github.io/tree/source' }
             ],
             languages: ['JS', 'Vue']
           },
