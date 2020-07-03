@@ -10,6 +10,8 @@
           <span class="mbr-1">by {{ authorText }}</span>
         </div>
 
+        <p class="lead" v-html="post.attributes.summary"></p>
+
         <component :is="post.vue.component" />
       </main>
 

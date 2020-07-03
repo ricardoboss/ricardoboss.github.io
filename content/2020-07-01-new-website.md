@@ -6,11 +6,6 @@ summary: >-
     In this post, I documented the road to my new website using Nuxt.js and GitHub Pages.
 ---
 
-## Preface
-
-I finally developed a new personal website.
-This article documents the development process.
-
 ## Planning
 
 It was at the beginning of the year 2020 when I decided to give my website a fresh new look and a few more features.
