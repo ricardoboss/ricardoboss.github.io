@@ -5,10 +5,6 @@
     <span class="h3 font-weight-light">Ricardo Boss</span>
 
     <SloganRoller class="text-muted text-nowrap" :slogans="slogans" interval="30000" />
-
-    <footer>
-      <nuxt-link to="imprint"></nuxt-link>
-    </footer>
   </aside>
 </template>
 
