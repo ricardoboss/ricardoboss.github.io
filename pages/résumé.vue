@@ -51,7 +51,7 @@
           },
           {
             description: "Temporary help (software developer)",
-            from: "April 2018",
+            from: "May 2018",
             to: "August 2018"
           },
           {
