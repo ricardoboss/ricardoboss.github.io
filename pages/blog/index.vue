@@ -52,8 +52,6 @@
       } catch (e) {
         console.error(e);
 
-        this.$ga.exception(e);
-
         throw e;
       }
     },
