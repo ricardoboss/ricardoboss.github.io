@@ -53,6 +53,8 @@
         this.post = await import(`~/content/${this.slug}.md`);
       } catch (e) {
         this.error = true;
+
+        this.$ga.exception(e);
       }
     },
 
