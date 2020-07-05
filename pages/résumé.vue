@@ -41,9 +41,13 @@
         workTimeline: [
           {
             title: "TRENZ GmbH",
+            description: "Junior Software Developer",
+            from: "July 2020"
+          }
+          {
             description: "Apprenticeship",
             from: "August 2018",
-            //to: "July 2020",
+            to: "July 2020",
           },
           {
             description: "Temporary help (software developer)",
