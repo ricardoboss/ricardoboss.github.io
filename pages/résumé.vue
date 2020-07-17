@@ -42,28 +42,28 @@
           {
             title: "TRENZ GmbH",
             description: "Junior Software Developer",
-            from: "July 2020"
+            from: "2020-07"
           },
           {
             description: "Apprenticeship",
-            from: "August 2018",
-            to: "July 2020",
+            from: "2018-08",
+            to: "2020-07",
           },
           {
             description: "Temporary help (software developer)",
-            from: "May 2018",
-            to: "August 2018"
+            from: "2018-05",
+            to: "2018-08"
           },
           {
             description: "Trainee",
-            from: "April 2018",
-            to: "April 2018",
+            from: "2018-04",
+            to: "2018-04",
           },
           {
             title: "Busse Computertechnik",
             description: "Trainee",
-            from: "February 2018",
-            to: "February 2018"
+            from: "2018-03",
+            to: "2018-03"
           }
         ],
 
@@ -71,20 +71,20 @@
           {
             title: "Schulzentrum SII Utbremen (professional school)",
             description: "Apprenticeship",
-            from: "August 2018",
-            to: "July 2020"
+            from: "2018-08",
+            to: "2020-07"
           },
           {
             title: "University of Bremen",
             description: "BoS in Computer Science (dropout)",
-            from: "August 2017",
-            to: "February 2018"
+            from: "2017-07",
+            to: "2018-02"
           },
           {
             title: "Max-Planck Gymnasium (High School)",
             description: "Abitur",
-            from: "August 2009",
-            to: "July 2017"
+            from: "2009-08",
+            to: "2017-07"
           },
         ]
       }

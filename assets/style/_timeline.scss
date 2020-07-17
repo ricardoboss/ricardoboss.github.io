@@ -1,4 +1,4 @@
-$timeline-item-height: 5rem;
+$timeline-item-height: 3rem;
 
 $timeline-line-width: .2rem;
 $timeline-line-spacer: map-get($spacers, 4);
@@ -28,9 +28,8 @@ $timeline-bullet-current-color: $primary;
 
 .timeline-timespan {
   @extend .text-muted;
-  @extend .text-right;
   @extend .d-none;
-  @extend .d-sm-block;
+  @extend .d-md-block;
 
   font-family: $font-family-monospace;
   width: 35%;
@@ -68,5 +67,5 @@ $timeline-bullet-current-color: $primary;
 }
 
 .timeline-description {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
