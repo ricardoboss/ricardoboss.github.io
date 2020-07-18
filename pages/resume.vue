@@ -12,7 +12,7 @@
     <div class="d-flex">
       <div class="flex-grow-1 mr-3">
         <div class="row">
-          <strong class="col-md-4">Microsoft Certified Developer</strong>
+          <h6 class="col-md-4">Microsoft Certified Developer</h6>
           <p class="col-md-8">
             On January 8, 2019 I completed the requirements to be recognized as a Microsoft Certified Professional by
             passing the exam #483: "Programming in C#".
@@ -21,8 +21,7 @@
       </div>
       <div class="d-flex flex-column">
         <figure class="figure" style="max-width: 12rem;">
-          <img alt="Programming in C# - Exam Passed Badge" src="/img/programming-in-cs-badge.min.png"
-               class="img-fluid">
+          <img alt="Programming in C# - Exam Passed Badge" src="/img/programming-in-cs-badge.min.png" class="img-fluid">
           <figcaption class="figure-caption text-center">"Programming in C#" - Exam Passed Badge</figcaption>
         </figure>
       </div>
