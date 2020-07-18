@@ -5,12 +5,12 @@
       <div class="timeline-line">
         <div class="timeline-dot"></div>
       </div>
-      <div class="timeline-timespan" v-html="timespan(milestone)"></div>
       <div class="timeline-content">
         <h5 v-if="milestone.hasOwnProperty('title')" class="timeline-title">{{ milestone.title }}</h5>
         <p v-if="milestone.hasOwnProperty('description')" class="timeline-description">
           {{ milestone.description }}
         </p>
+        <span class="timeline-timespan" v-html="timespan(milestone)"></span>
       </div>
     </li>
   </ol>
@@ -32,7 +32,7 @@
 		    if (milestone.from === milestone.to)
 		      return this.fromText(milestone.from);
 
-        return `<span class="d-none d-md-inline"><span class="text-nowrap">${this.fromText(milestone.from)}</span> - </span><span class="text-nowrap">${this.toText(milestone.to)}</span>`;
+        return `${this.fromText(milestone.from)} - ${this.toText(milestone.to)}`;
       },
 
       fromText(from) {
