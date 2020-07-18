@@ -16,7 +16,7 @@
       projects() {
         return [
           {
-            image: '/img/philly-logo.min.png',
+            image: '/img/philly-banner.120.min.png',
             title: 'Philly',
             description: 'Yet another PHP framework.',
             links: [
@@ -59,7 +59,7 @@
             languages: ['PHP']
           },
           {
-            image: '/img/gmc-logo.min.png',
+            image: '/img/gmc-logo-banner.120.min.png',
             title: 'GameModeControl',
             description: 'A plugin for Minecraft Servers which adds commands and permissions for changing the gamemode of players.',
             links: [
