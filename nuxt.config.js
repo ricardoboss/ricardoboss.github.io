@@ -28,7 +28,10 @@ module.exports = {
   loading: { color: '#33aa66' },
 
   router: {
-    linkExactActiveClass: 'active shadow'
+    linkExactActiveClass: 'active shadow',
+    middleware: [
+      'redirects'
+    ]
   },
 
   /*
@@ -122,6 +125,9 @@ module.exports = {
           url: '/projects',
           changefreq: 'monthly',
           priority: 0.3
+        },
+        {
+          url: '/github',
         }
       ]);
     }
