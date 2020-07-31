@@ -125,9 +125,6 @@ module.exports = {
           url: '/projects',
           changefreq: 'monthly',
           priority: 0.3
-        },
-        {
-          url: '/github',
         }
       ]);
     }
