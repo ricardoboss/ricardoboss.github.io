@@ -8,7 +8,7 @@ summary: >-
 [Age of Aincrad](https://age-of-aincrad.com/) is an MMOARPG currently in development.
 It is a community project, consisting of people who were inspired to create a game like Sword Art Online (which comes from the anime with that same name).
 
-> In the fictional game, you play as a character and do quests, and the normal RPG stuff; there are a ton of resources about it online. [Just search for it.](https://lmgtfy.com/?q=Sword+Art+Online)
+> In the fictional game, you play as a character and do quests, and the normal RPG stuff; there are a ton of resources about it online. Just search for it.
 > The game is played via a device called "Nerve Gear" in the anime and the whole plot builds upon an intentional flaw in the design of this fictional device. But I won't spoil anything :)
 
 But this article is not about the game, it is about what I have to do with Age of Aincrad: their new website.

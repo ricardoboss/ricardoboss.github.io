@@ -29,7 +29,7 @@
 
     async asyncData() {
       try {
-        const resolve = require.context("~/content/", true, /\.md$/);
+        const resolve = require.context("~/content/", true, /\d{4}-\d{2}-\d{2}-.+\.md$/i);
         const now = new Date();
         const imports = resolve.keys()
           .map(k => {
