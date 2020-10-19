@@ -104,7 +104,7 @@ module.exports = {
 
           return {
             url: `/blog/${uri}`,
-            changefreq: 'yearly',
+            changefreq: 'monthly',
             priority: 0.4,
             lastmod: date
           };
