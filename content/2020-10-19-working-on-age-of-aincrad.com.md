@@ -8,8 +8,8 @@ summary: >-
 [Age of Aincrad](https://age-of-aincrad.com/) is an MMOARPG currently in development.
 It is a community project, consisting of people who were inspired to create a game like Sword Art Online (which comes from the anime with that same name).
 
-> In the fictional game, you play as a character and do quests and the normal RPG stuff; there are a ton of resources about it online. [Just search for it.](https://lmgtfy.com/?q=Sword+Art+Online)
-> The game is played via a device called "Nerve Gear" in the anime and the whole plot builds upon an intenional flaw in the design of this fictional device. But I won't spoil anything :)
+> In the fictional game, you play as a character and do quests, and the normal RPG stuff; there are a ton of resources about it online. [Just search for it.](https://lmgtfy.com/?q=Sword+Art+Online)
+> The game is played via a device called "Nerve Gear" in the anime and the whole plot builds upon an intentional flaw in the design of this fictional device. But I won't spoil anything :)
 
 But this article is not about the game, it is about what I have to do with Age of Aincrad: their new website.
 
@@ -18,18 +18,18 @@ But this article is not about the game, it is about what I have to do with Age o
 It all started after I finished watching all available seasons of SAO (three at the time, "Alicization" was not out yet) and then looked for games like SAO.
 I found this project called "Age of Aincrad" and thought to myself: "Hey, that is the name of that flying castle thingy! Maybe it's related to SAO!".
 
-As it turns out: yes, yes it is related to SAO. The whole game idea is inspired by SAO.
+As it turns out: yes, yes it is related to SAO. The whole game idea was inspired by SAO.
 At the time, this was huge for me. My favourite anime coming to real life. I was excited.
 
 I quickly realized it was still in early development and nothing playable was available. BUT, their website offered a form to send in your application.
-Since I wanted this game to be as good as can be and I am sufficient enough in programming to help out, I decided to send in my details and wait for a response.
+Since I wanted this game to be as good as can be, and I am sufficient in programming to help out, I decided to send in my details and wait for a response.
 This was in 2018.
 
 # First Contact
 
 In January of 2020, the community manager of the AoA asked me on Discord if I was still interested in joining the team.
 
-![Leo asking if I was still interested](/content/2020-10-19-aoa-discord-message.png)
+![Leo asking if I was still interested](/content-assets/2020-10-19-aoa-discord-message.png)
 
 Of course I was still interested and started chatting about what I could do.
 On their discord server ([join now!](https://discord.age-of-aincrad.com/)) I was given the "Staff" rank and was greeted by the other team members and the community as a new web developer.
@@ -76,6 +76,6 @@ Today, October 19th, 2020, the website is almost ready from my point of view.
 It still lacks a few features, but we _could_ publish it in the near future and add features via updates later on.
 All members I showed the new website to were just as satisfied as I am with it.
 
-I will definetly post another update here on my blog when it launches.
+I will definitely post another update here on my blog when it launches.
 
 Until then, stay safe out there and thanks for reading!
