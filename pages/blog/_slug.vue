@@ -52,9 +52,12 @@
 	    try {
         this.post = await import(`~/content/${this.slug}.md`);
       } catch (e) {
+        console.error(e);
+
         this.error = true;
 
-        this.$ga.exception(e);
+        if (this.$ga)
+          this.$ga.exception(e);
       }
     },
 
