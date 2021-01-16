@@ -52,6 +52,8 @@ The deployment script was a challenge because I am not very familiar with bash s
 In the end I managed to create a pretty stable script which checks the environments `npm` and `node` versions and uses symlinking for a zero-downtime deployment.
 I ran into a problem where the script wouldn't be executable, because it was missing the `x` permission.
 
+_EDIT_: I wanted to make the script publicly available, so [here is a gist of it](https://gist.github.com/ricardoboss/de05920c5296e851490743d03d1158c8).
+
 This could be fixed by changing my git config to respect file modes:
 ```bash
 $ git config --global core.filemode true
