@@ -93,7 +93,7 @@ module.exports = {
       let files = fs.readdirSync(postsPath);
 
       let latestDate = new Date(0);
-      let posts = files
+      let entries = files
         .filter(path => /\d{4}-\d{2}-\d{2}-.+\.md$/i.test(path))
         .map(path => {
           let uri = path.split('.').shift(); // remove extension
@@ -110,21 +110,26 @@ module.exports = {
           };
         });
 
-      return posts.concat([
+      return entries.concat([
         {
           url: '/blog',
           changefreq: 'weekly',
-          priority: 0.6,
+          priority: 0.8,
           lastmod: latestDate
         },
         {
           url: '/about',
-          changefreq: 'yearly',
+          changefreq: 'yearly'
         },
         {
           url: '/projects',
           changefreq: 'monthly',
-          priority: 0.3
+          priority: 0.6
+        },
+        {
+          url: '/resume',
+          changefreq: 'yearly',
+          priority: 0.4
         }
       ]);
     }
