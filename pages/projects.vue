@@ -26,12 +26,13 @@
             languages: ['PHP']
           },
           {
-            title: 'Analyzer Studio',
-            description: 'Tool to help you compare objects via properties defined by you.',
+            title: 'It\'s rocket science',
+            description: 'A little browser game in which you control a rocket, orbiting a single planet.',
             links: [
-              { title: 'Source', href: 'https://github.com/ricardoboss/AnalyzerStudio' }
+              { title: 'Project Homepage', href: 'https://rocket-science.ricardoboss.de' },
+              { title: 'Source', href: 'https://github.com/ricardoboss/rocket-science' }
             ],
-            languages: ['C#', '.NET']
+            languages: ['JS', 'Vue']
           },
           {
             title: 'php-console-logger',
@@ -49,6 +50,14 @@
               { title: 'Source', href: 'https://github.com/ricardoboss/ricardoboss.github.io/tree/source' }
             ],
             languages: ['JS', 'Vue']
+          },
+          {
+            title: 'Analyzer Studio',
+            description: 'Tool to help you compare objects via properties defined by you.',
+            links: [
+              { title: 'Source', href: 'https://github.com/ricardoboss/AnalyzerStudio' }
+            ],
+            languages: ['C#', '.NET']
           },
           {
             title: 'laravel-roles-migrations',
