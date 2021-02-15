@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/2020-09-27-long-time-no-content", {data:[{slug:"2020-09-27-long-time-no-content"}],fetch:[],mutations:void 0});

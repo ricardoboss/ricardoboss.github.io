@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/2020-07-05-developer-focused-pc-builds", {data:[{slug:"2020-07-05-developer-focused-pc-builds"}],fetch:[],mutations:void 0});
