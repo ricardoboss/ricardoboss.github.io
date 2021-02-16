@@ -14,6 +14,30 @@
 		  return {
 		    contactInformation: [
           {
+            image: '/vector/mail.svg',
+            title: 'Mail',
+            description: 'contact@ricardoboss.de',
+            links: [
+              { title: 'Send me an e-mail', href: 'mailto:contact@ricardoboss.de' }
+            ]
+          },
+          {
+            image: '/vector/linkedin.svg',
+            title: 'LinkedIn',
+            description: 'Ricardo Boss',
+            links: [
+              { title: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/ricardo-boss/' }
+            ]
+          },
+          {
+            image: '/vector/xing.svg',
+            title: 'Xing',
+            description: 'Ricardo Boss',
+            links: [
+              { title: 'Xing Profile', href: 'https://www.xing.com/profile/Ricardo_Boss2' }
+            ]
+          },
+          {
             image: '/vector/discord.svg',
             title: 'Discord',
             description: 'mizzle#0001'
@@ -27,27 +51,11 @@
             ]
           },
           {
-            image: '/vector/linkedin.svg',
-            title: 'LinkedIn',
-            description: 'Ricardo Boss',
-            links: [
-              { title: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/ricardo-boss/' }
-            ]
-          },
-          {
             image: '/vector/twitter.svg',
             title: 'Twitter',
             description: '@_ricardoboss',
             links: [
               { title: 'Twitter Profile', href: 'https://twitter.com/_ricardoboss' }
-            ]
-          },
-          {
-            image: '/vector/mail.svg',
-            title: 'Mail',
-            description: 'contact@ricardoboss.de',
-            links: [
-              { title: 'Send me an e-mail', href: 'mailto:contact@ricardoboss.de' }
             ]
           }
         ]
