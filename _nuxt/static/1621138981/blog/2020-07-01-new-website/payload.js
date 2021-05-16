@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/2020-07-01-new-website", {data:[{slug:"2020-07-01-new-website"}],fetch:[],mutations:void 0});
