@@ -3,11 +3,11 @@
     <img src="/img/ricardo-boss-2020.round.256.min.png" alt="Ricardo Boss 2020" style="border-width: 2px !important;" class="border rounded-circle border-primary shadow-lg w-75 mb-4">
 
     <span class="h3 font-weight-light">Ricardo Boss</span>
-    
+
     <span class="h6 font-weight-light">aka mizzle</span>
     <span class="h6 font-weight-light">aka MCMainiac</span>
 
-    <SloganRoller class="text-muted text-nowrap" :slogans="slogans" interval="30000" />
+    <SloganRoller class="text-muted text-nowrap" :slogans="slogans" interval="15000" />
   </aside>
 </template>
 
