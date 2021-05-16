@@ -16,12 +16,28 @@
       projects() {
         return [
           {
+            title: 'extended-nmea',
+            description: 'A TypeScript decoder for the NMEA0183 protocol.',
+            links: [
+              { title: 'Source', href: 'https://github.com/ricardoboss/extended-nmea' }
+            ],
+            languages: ['TS', 'Vue']
+          },
+          {
+            title: 'vessel-state',
+            description: 'A Vuex store plugin for maintaining an application-wide vessel state.',
+            links: [
+              { title: 'Source', href: 'https://github.com/ricardoboss/vessel-state' }
+            ],
+            languages: ['TS', 'Vue']
+          },
+          {
             image: '/img/philly-banner.120.min.png',
             title: 'Philly',
             description: 'Yet another PHP framework.',
             links: [
-              { title: 'Project Homepage', href: 'https://philly.ricardoboss.de' },
-              { title: 'Source', href: 'https://github.com/ricardoboss/Philly' }
+              {title: 'Project Homepage', href: 'https://philly.ricardoboss.de'},
+              {title: 'Source', href: 'https://github.com/ricardoboss/Philly'}
             ],
             languages: ['PHP']
           },
