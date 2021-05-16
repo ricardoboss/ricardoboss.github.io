@@ -39,6 +39,7 @@ $lang-js: #F0DB4F;
 $lang-vue: #3FB984;
 $lang-java: #b07219;
 $lang-pwsh: #0253c4;
+$lang-ts: #2B7489;
 
 $bg-lang-colors: (
   "php": $lang-php,
@@ -48,6 +49,7 @@ $bg-lang-colors: (
   "vue": $lang-vue,
   "java": $lang-java,
   "powershell": $lang-pwsh,
+  "ts": $lang-ts,
 );
 
 $body-bg: $gray-200;
