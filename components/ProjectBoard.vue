@@ -19,7 +19,7 @@
         </div>
         <div v-if="project.hasOwnProperty('languages')" class="card-body flex-grow-0 text-right py-2">
           <span v-for="language in project.languages" :key="language"
-                class="badge rounded-pill ml-1" :class="getBackgroundClass(language)">
+                class="badge rounded-pill ms-1" :class="getBackgroundClass(language)">
             {{ language }}
           </span>
         </div>

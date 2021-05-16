@@ -10,7 +10,7 @@
 
     <h2>Certifications</h2>
     <div class="d-flex">
-      <div class="flex-grow-1 mr-3">
+      <div class="flex-grow-1 me-3">
         <div class="row">
           <h6 class="col-md-4">Microsoft Certified Developer</h6>
           <p class="col-md-8">

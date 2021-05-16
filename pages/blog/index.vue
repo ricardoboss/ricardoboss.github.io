@@ -7,7 +7,7 @@
                  class="d-flex flex-column py-3 p-2 border-bottom blog-entry"
                  :to="getPermalink(post)">
         <h5 class="mb-0 entry-title">
-          <span class="text-muted mr-2 num-sign">&num;</span>{{ post.attributes.title }}
+          <span class="text-muted me-2 num-sign">&num;</span>{{ post.attributes.title }}
         </h5>
 
         <small class="text-nowrap text-muted">
