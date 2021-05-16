@@ -39,9 +39,15 @@
       return {
         workTimeline: [
           {
+            title: "sendmeback GmbH",
+            description: "Software Developer",
+            from: "2021-06",
+          },
+          {
             title: "TRENZ GmbH",
             description: "Junior Software Developer",
-            from: "2020-07"
+            from: "2020-07",
+            to: "2021-05",
           },
           {
             description: "Apprenticeship",
@@ -51,7 +57,7 @@
           {
             description: "Temporary help (software developer)",
             from: "2018-05",
-            to: "2018-08"
+            to: "2018-08",
           },
           {
             description: "Trainee",
@@ -62,7 +68,7 @@
             title: "Busse Computertechnik",
             description: "Trainee",
             from: "2018-03",
-            to: "2018-03"
+            to: "2018-03",
           }
         ],
 
@@ -71,19 +77,19 @@
             title: "Schulzentrum SII Utbremen (professional school)",
             description: "Apprenticeship",
             from: "2018-08",
-            to: "2020-07"
+            to: "2020-07",
           },
           {
             title: "University of Bremen",
             description: "BoS in Computer Science (dropout)",
             from: "2017-07",
-            to: "2018-02"
+            to: "2018-02",
           },
           {
             title: "Max-Planck Gymnasium (High School)",
             description: "Abitur",
             from: "2009-08",
-            to: "2017-07"
+            to: "2017-07",
           },
         ]
       }
