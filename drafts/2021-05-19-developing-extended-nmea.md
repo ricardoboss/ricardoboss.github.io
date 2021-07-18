@@ -125,8 +125,8 @@ proprietary). Then, I created the `Decoder` class, which would later possess the
 registered sentence type and return a decoded version of it. I also wanted to keep the ability to add other sentences
 later on. The original library ([`node-nmea`][3]) used a map with string keys, where the sentence ID is the key, and the
 value is an object with a decoder function. I thought this was a good idea, so I re-used this idea. The `Decoder` class
-keeps a map for every sentence type to quickly filter it. [This method][7] of the decoder class checks which sentence type a
-string given to it has and passes it to a more-detailed decoder method:
+keeps a map for every sentence type to quickly filter it. [This method][7] of the decoder class checks which sentence type
+a string given to it has and passes it to a more-detailed decoder method:
 
 ```typescript
 class Decoder {
@@ -148,7 +148,29 @@ class Decoder {
 }
 ```
 
-`// TODO: complete`
+Each method has it's own way of parsing the given sentence. A query sentence for example will just invoke the 
+`QuerySentence` constructor and all interpretation of the data is done in the getters. Proprietary and talker sentences
+on the other hand need to be dynamic and receive a little more evaluation.
+
+To instatiate a proprietary sentence, we first need to check if it has been registered in the decoder. The
+`ProprietaryCodecs` array contains the constructors registered by the user and are keyed by their identifier
+(manufacturer id + sentence id). If the user expects a certain type, they can pass it as a generic parameter and enjoy
+full type safety:
+
+```typescript
+class Decoder {
+  public static decodeProprietary<T extends IProprietarySentence>(data: string): T {
+		const manufacturerId = data.substr(2, data.indexOf(',') - 2);
+		if (!Decoder.ProprietaryCodecs.has(manufacturerId))
+			throw new Error(`Unable to decode sentence: unknown manufacturer id for proprietary sentence: ${manufacturerId}`);
+
+		const sentenceConstructor = Decoder.ProprietaryCodecs.get(manufacturerId);
+		return new sentenceConstructor(data, manufacturerId) as T;
+	}
+}
+```
+
+
 
 [1]: https://npmjs.com/package/extended-nmea
 [2]: https://www.nmea.org/
