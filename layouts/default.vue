@@ -5,7 +5,7 @@
 
       <div class="layout-main-panel">
         <nav class="layout-row">
-          <Navbar class="layout-navbar" />
+          <Navbar class="layout-navbar mr-1" />
         </nav>
 
         <main class="layout-row">
