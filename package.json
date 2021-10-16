@@ -28,8 +28,10 @@
     "eslint-plugin-vue": "^7.9.0",
     "frontmatter-markdown-loader": "^3.6.2",
     "numeral": "^2.0.6",
-    "sass": "^1.32.13",
+    "sass": "1.32.12",
     "sass-loader": "^9.0.3",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-moment": "^4.1.0",
+    "vue-filter-number-format": "^3.0.1"
   }
 }

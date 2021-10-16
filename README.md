@@ -2,22 +2,25 @@
 
 > Ricardo Boss' Homepage
 
+## Interested in how it works?
+
+I documented how I built this project in this blog post: [ricardoboss.de/blog/2020-07-01-new-website](https://ricardoboss.de/blog/2020-07-01-new-website)
+
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ yarn
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build
-$ npm start
+$ yarn build
+$ yarn start
 
-# generate static project
-$ npm run generate
+# generate static project (for deployment)
+$ yarn generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
