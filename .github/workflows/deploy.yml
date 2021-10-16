@@ -10,25 +10,14 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
+          cache: 'yarn'
 
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-
-      - name: Generate static site
-        run: npm run generate
-      - run: cp ./CNAME ./dist
+      - run: yarn install --frozen-lockfile
+      - run: yarn generate
 
       - name: Deploy to branch
         uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +25,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: master
           publish_dir: ./dist
+          cname: ricardoboss.de

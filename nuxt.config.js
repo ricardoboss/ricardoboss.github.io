@@ -40,6 +40,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    parallel: true,
+    cache: true,
+    hardSource: true,
+
     /*
     ** Run ESLint on save
     */
