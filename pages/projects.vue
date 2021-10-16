@@ -23,7 +23,7 @@ export default {
             {title: 'Source', href: 'https://github.com/ricardoboss/HostedWPF'},
             {title: 'nuget', href: 'https://www.nuget.org/packages/HostedWPF/'}
           ],
-          languages: ['C#', '.NET']
+          languages: ['C#', '.NET', 'WPF']
         },
         {
           title: 'yapsi',
@@ -92,7 +92,7 @@ export default {
           links: [
             {title: 'Source', href: 'https://github.com/ricardoboss/AnalyzerStudio'}
           ],
-          languages: ['C#', '.NET']
+          languages: ['C#', '.NET', 'WPF']
         },
         {
           title: 'laravel-roles-migrations',
