@@ -40,9 +40,15 @@ export default {
     return {
       workTimeline: [
         {
+          title: "SVB-Spezialversand für Yacht- und Bootszubehör GmbH",
+          description: "Software Developer",
+          from: "2021-10",
+        },
+        {
           title: "sendmeback GmbH",
           description: "Software Developer",
           from: "2021-06",
+          to: "2021-10",
         },
         {
           title: "TRENZ GmbH",
