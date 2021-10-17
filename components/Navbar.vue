@@ -10,6 +10,9 @@
       <nuxt-link class="nav-link" to="/projects">Projects</nuxt-link>
     </li>
     <li class="nav-item">
+      <nuxt-link class="nav-link" to="/portfolio">Portfolio</nuxt-link>
+    </li>
+    <li class="nav-item">
       <nuxt-link class="nav-link" to="/contact">Contact</nuxt-link>
     </li>
   </ul>

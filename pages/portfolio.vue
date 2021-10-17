@@ -1,0 +1,73 @@
+<template>
+  <section>
+    <h1 class="display-3">Portfolio</h1>
+
+    <span class="lead">
+      These are projects which I have worked on (or at least partially) in my job or in my free time. For most of the projects, I cannot share
+      the source code. Instead, I can show which tech stack was used and link to the result.
+      Also take a look at <router-link to="/projects">my open source projects</router-link>.
+    </span>
+
+    <hr class="my-4" />
+
+    <ProjectBoard :projects="projects" col_settings="row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"/>
+  </section>
+</template>
+
+<script>
+import ProjectBoard from "~/components/ProjectBoard";
+
+export default {
+  components: {ProjectBoard},
+  layout: 'default',
+
+  computed: {
+    projects() {
+      return [
+        {
+          title: 'sendmeback Account',
+          description: 'Customer backend for managing purchased sendmeback products. Features an ASP.NET backend with JWT authentication.',
+          links: [
+            {title: 'Visit', href: 'https://account.sendmeback.de/'}
+          ],
+          languages: ['TS', 'Vue']
+        },
+        {
+          title: 'sendmeback App',
+          description: 'App for viewing registered products and pairing a smartphone with a product. Enable localization and sending notifications to the smartphone.',
+          links: [
+            {title: 'Play Store', href: 'https://play.google.com/store/apps/details?id=de.sendmeback.smb'},
+            {title: 'App Store', href: 'https://apps.apple.com/de/app/sendmeback/id1381318877'}
+          ],
+          languages: ['Dart', 'Flutter', 'Android', 'iOS']
+        },
+        {
+          title: 'Age of Aincrad (website)',
+          description: 'A website for a game (currently in development). Features include login via Discord, Strapi as a backend and a Vuetify frontend.',
+          links: [
+            {title: 'Visit', href: 'https://age-of-aincrad.com/'}
+          ],
+          languages: ['TS', 'Vue']
+        },
+        {
+          title: 'TRENZ Pilot Plug Manager App',
+          description: 'Mobile application to interact with a TRENZ Pilot Plug. Features cross-platform TCP socket communication. Analytics using Microsoft App Center.',
+          links: [
+            {title: 'Play Store', href: 'https://play.google.com/store/apps/details?id=de.trenz.PilotPlugRemote'},
+            {title: 'App Store', href: 'https://apps.apple.com/us/app/pilot-plug-manager/id1437240460'}
+          ],
+          languages: ['C#', '.NET', 'Xamarin', 'Android', 'iOS']
+        },
+        {
+          title: 'TRENZ Pilot Plug Manager',
+          description: 'Desktop application to interact with a TRENZ Pilot Plug. Features serial port and socket communication. Analytics using Microsoft App Center.',
+          links: [
+            {title: 'Visit', href: 'https://manager.trenz-pilotplug.com/'}
+          ],
+          languages: ['C#', '.NET', 'WPF']
+        },
+      ];
+    }
+  },
+}
+</script>

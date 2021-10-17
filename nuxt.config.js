@@ -133,6 +133,11 @@ module.exports = {
           priority: 0.6
         },
         {
+          url: '/portfolio',
+          changefreq: 'monthly',
+          priority: 0.5
+        },
+        {
           url: '/resume',
           changefreq: 'yearly',
           priority: 0.4

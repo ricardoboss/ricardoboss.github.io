@@ -2,6 +2,13 @@
   <section>
     <h1 class="display-3">Projects</h1>
 
+    <span class="lead">
+      Open source projects I maintain/started. These projects where created and updated exclusively or mostly in my free time.
+      Also take a look at <router-link to="/portfolio">my Portfolio</router-link> to see which projects I used in my everyday jobs.
+    </span>
+
+    <hr class="my-4" />
+
     <ProjectBoard :projects="projects" col_settings="row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"/>
   </section>
 </template>
@@ -136,7 +143,7 @@ export default {
           links: [
             {title: 'Source', href: 'https://github.com/ricardoboss/php-installer'}
           ],
-          languages: ['C#', '.NET']
+          languages: ['C#', '.NET', 'WPF']
         },
         {
           title: 'BSCLI',
