@@ -58,12 +58,12 @@ export default {
           languages: ['TS', 'Vue']
         },
         {
-          image: '/img/philly-banner.120.min.png',
-          title: 'Philly',
+          image: 'https://raw.githubusercontent.com/elephox-dev/.github/main/profile/logo.svg',
+          title: 'Elephox',
           description: 'Yet another PHP framework.',
           links: [
-            {title: 'Project Homepage', href: 'https://philly.ricardoboss.de'},
-            {title: 'Source', href: 'https://github.com/ricardoboss/Philly'}
+            {title: 'Project Homepage', href: 'https://elephox.dev'},
+            {title: 'Source', href: 'https://github.com/elephox-dev/framework'}
           ],
           languages: ['PHP']
         },
