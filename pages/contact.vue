@@ -41,7 +41,7 @@ export default {
         {
           image: '/vector/discord.svg',
           title: 'Discord',
-          description: 'mizzle#0001'
+          description: 'mizzle#3242'
         },
         {
           image: '/vector/github.svg',
@@ -64,7 +64,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
