@@ -25,6 +25,14 @@ export default {
     projects() {
       return [
         {
+          title: 'SVB',
+          description: 'Your specialist online shop for technical boat equipment, sailing accessories and water sports equipment.',
+          links: [
+            {title: 'Visit', href: 'https://svb24.com/'}
+          ],
+          languages: ['PHP', 'Symfony']
+        },
+        {
           title: 'sendmeback Account',
           description: 'Customer backend for managing purchased sendmeback products. Features an ASP.NET backend with JWT authentication.',
           links: [
