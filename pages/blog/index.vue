@@ -29,7 +29,14 @@ export default {
 
   async asyncData({ $content, error }) {
     try {
-      const posts = await $content({ deep: true })
+      let queryBuilder;
+      if (process.env.NODE_ENV === "development") {
+        queryBuilder = $content({ deep: true })
+      } else {
+        queryBuilder = $content('blog', { deep: true })
+      }
+
+      const posts = await queryBuilder
         .only(['title', 'description', 'path', 'createdAt'])
         .sortBy("createdAt", "desc")
         .fetch();
