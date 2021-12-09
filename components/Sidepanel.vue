@@ -5,7 +5,6 @@
     <span class="h3 font-weight-light">Ricardo Boss</span>
 
     <span class="h6 font-weight-light">aka mizzle</span>
-    <span class="h6 font-weight-light">aka MCMainiac</span>
 
     <SloganRoller class="text-muted text-nowrap" :slogans="slogans" interval="15000" />
   </aside>
