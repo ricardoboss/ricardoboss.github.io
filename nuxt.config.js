@@ -1,5 +1,20 @@
-import path from 'path';
-import fs from 'fs';
+import { $content } from "@nuxt/content";
+
+const createBlogSitemapEntries = async () => {
+  let routes = [];
+  let posts = await $content('blog').fetch();
+
+  for (const post of posts) {
+    routes.push({
+      url: post.path,
+      changefreq: 'yearly',
+      priority: 0.7,
+      lastmod: post.updatedAt
+    });
+  }
+
+  return routes;
+}
 
 module.exports = {
   /*
@@ -73,34 +88,14 @@ module.exports = {
   sitemap: {
     hostname: 'https://ricardoboss.de',
     gzip: true,
-    routes: function() {
-      let postsPath = path.resolve(__dirname, "content");
-      let files = fs.readdirSync(postsPath);
-
-      let latestDate = new Date(0);
-      let entries = files
-        .filter(path => /\d{4}-\d{2}-\d{2}-.+\.md$/i.test(path))
-        .map(path => {
-          let uri = path.split('.').shift(); // remove extension
-          let date = new Date(path.split('-').splice(0, 3).join('-')); // get date
-
-          if (date > latestDate)
-            latestDate = date;
-
-          return {
-            url: `/blog/${uri}`,
-            changefreq: 'monthly',
-            priority: 0.4,
-            lastmod: date
-          };
-        });
+    routes: async function() {
+      let entries = await createBlogSitemapEntries();
 
       return entries.concat([
         {
           url: '/blog',
           changefreq: 'weekly',
-          priority: 0.8,
-          lastmod: latestDate
+          priority: 0.8
         },
         {
           url: '/about',
