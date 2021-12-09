@@ -1,7 +1,7 @@
 ---
 title: Progress update for age-of-aincrad.com
-timestamp: 2020-12-06T18:00:00+02
-summary: >-
+createdAt: 2020-12-06T18:00:00+02
+description: >-
     This is a progress update on my work for the new homepage for age-of-aincrad.com.
 ---
 

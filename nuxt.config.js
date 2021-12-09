@@ -1,6 +1,5 @@
 import path from 'path';
 import fs from 'fs';
-import Mode from 'frontmatter-markdown-loader/mode'
 
 module.exports = {
   /*
@@ -31,7 +30,15 @@ module.exports = {
     linkExactActiveClass: 'active shadow',
     middleware: [
       'redirects'
-    ]
+    ],
+    extendRoutes(routes, resolve) {
+      if (process.env.NODE_ENV === 'development') {
+        routes.push({
+          path: '/drafts/:slug',
+          component: resolve(__dirname, 'pages/blog/_slug.vue')
+        });
+      }
+    }
   },
 
   target: 'static',
@@ -42,31 +49,6 @@ module.exports = {
   build: {
     parallel: true,
     cache: true,
-    hardSource: true,
-
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
-      }
-
-      // add frontmatter-markdown-loader
-      config.module.rules.push({
-        test: /\.md$/,
-        include: path.resolve(__dirname, "content"),
-        loader: "frontmatter-markdown-loader",
-        options: {
-          mode: [Mode.VUE_COMPONENT, Mode.META]
-        }
-      });
-    }
   },
 
   module: {
@@ -80,16 +62,13 @@ module.exports = {
   },
 
   buildModules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-78343102-8',
-      cookie_expires: 0,
-      anonymize_ip: true,
-      allow_ad_personalization_signals: false
-    }],
     ['@nuxtjs/moment', {}]
   ],
 
-  modules: ['@nuxtjs/sitemap'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/sitemap',
+  ],
 
   sitemap: {
     hostname: 'https://ricardoboss.de',
@@ -143,6 +122,14 @@ module.exports = {
           priority: 0.4
         }
       ]);
+    }
+  },
+
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-darcula.css'
+      }
     }
   }
 }

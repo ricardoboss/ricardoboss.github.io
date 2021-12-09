@@ -1,7 +1,7 @@
 ---
 title: No new content for a long time
-timestamp: 2020-09-27T18:00:00+02
-summary: >-
+createdAt: 2020-09-27T18:00:00+02
+description: >-
     I haven't taken advantage of my new blog system yet. These are some topics I find interesting and will maybe write something about in the future.
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Developing extended-nmea
-timestamp: 2021-05-19T15:00:00+02:00
-summary: >-
+createdAt: 2021-05-19T15:00:00+02:00
+description: >-
     These are some insights into the development of a node package called extended-nmea, which decodes a stream of text
     from a protocol called NMEA0183 into objects. Written in TypeScript.
 ---
@@ -26,8 +26,8 @@ development).
 The protocol itself is pretty simple. I will skip the physical part of the protocol, which involves connecting wires in
 a specific way and go directly to the textual representation.
 
-The basic concept to grasp is what a "sentence" is. A sentence always begins with the "$" character and always ends with
-"<CR><LF>" (a windows-style line ending). They are always made up of printable ASCII characters and should not be more
+The basic concept to grasp is what a "sentence" is. A sentence always begins with the `$` character and always ends with
+`<CR><LF>` (a windows-style line ending). They are always made up of printable ASCII characters and should not be more
 than 80 characters in length.
 
 Next, we define three different sentence types:

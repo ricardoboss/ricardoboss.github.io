@@ -1,7 +1,7 @@
 ---
 title: It's rocket science
-timestamp: 2020-12-23T10:00:00+02
-summary: >- 
+createdAt: 2020-12-23T10:00:00+02
+description: >- 
     It's simply rocket science, can't be that hard, _right_?
 ---
 

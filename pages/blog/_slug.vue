@@ -1,18 +1,18 @@
 <template>
   <article>
-    <h1>{{ title }}</h1>
-
     <transition name="fade" mode="out-in">
       <main v-if="post !== null" key="article">
+        <h1>{{ post.title }}</h1>
+
         <div class="d-flex flex-row flex-wrap small text-muted mb-3">
-          <span class="mbr-1">{{ agoText }}</span>
-          <span class="mbr-1">on {{ dateText }}</span>
-          <span class="mbr-1">by {{ authorText }}</span>
+          <span class="mbr-1">{{ $moment(post.createdAt).fromNow() }}</span>
+          <span class="mbr-1">on {{ $moment(post.createdAt).format("L") }}</span>
+          <span class="mbr-1">by Ricardo Boss</span>
         </div>
 
-        <p class="lead" v-html="post.attributes.summary"></p>
+        <p class="lead" v-html="post.description"></p>
 
-        <component :is="post.vue.component" />
+        <nuxt-content :document="post" />
       </main>
 
       <div v-else-if="error" key="error">
@@ -31,7 +31,9 @@
     <hr>
 
     <p>
-      Questions? Comments? You can contact me using e-mail, Twitter or Discord. Visit my <nuxt-link to="/contact">contact</nuxt-link> page for details.
+      Questions? Comments? You can contact me using e-mail, Twitter or Discord. Visit my
+      <nuxt-link to="/contact">contact</nuxt-link>
+      page for details.
     </p>
 
     <nuxt-link class="mb-2" to="/blog">&laquo; back to overview</nuxt-link>
@@ -39,58 +41,61 @@
 </template>
 
 <script>
-  export default {
-    layout: 'default',
+export default {
+  layout: "default",
 
-    async asyncData({params}) {
-      return {
-        slug:params.slug
-      };
-    },
+  async asyncData({ $content, error, params }) {
+    try {
+      const post = await $content("/blog/" + params.slug).fetch();
 
-    async created() {
-	    try {
-        this.post = await import(`~/content/${this.slug}.md`);
-      } catch (e) {
-        console.error(e);
+      return { post };
+    } catch (err) {
+      if (process.env.NODE_ENV === "development") {
+        try {
+          const post = await $content("/drafts/" + params.slug).fetch();
 
-        this.error = true;
-
-        if (this.$ga)
-          this.$ga.exception(e);
+          return { post };
+        } catch (err) {
+        }
       }
-    },
 
-    data() {
-	    return {
-	      slug: null,
-        post: null,
-        error: false
-      }
-    },
-
-    computed: {
-	    title() {
-	      if (this.post !== null)
-	        return this.post.attributes.title;
-
-	      if (this.error)
-	        return "Error";
-
-	      return "Loading...";
-      },
-
-      agoText() {
-	      return this.$moment(this.post.attributes.timestamp).fromNow();
-      },
-
-      dateText() {
-	      return this.$moment(this.post.attributes.timestamp).format('L');
-      },
-
-      authorText() {
-	      return "Ricardo Boss";
-      }
+      error({
+        statusCode: 404,
+        message: "Page could not be found"
+      });
     }
-	}
+  },
+
+  data() {
+    return {
+      slug: null,
+      post: null,
+      error: false
+    };
+  }
+
+  // computed: {
+  //   title() {
+  //     if (this.post !== null)
+  //       return this.post.attributes.title;
+  //
+  //     if (this.error)
+  //       return "Error";
+  //
+  //     return "Loading...";
+  //   },
+  //
+  //   agoText() {
+  //     return this.$moment(this.post.attributes.timestamp).fromNow();
+  //   },
+  //
+  //   dateText() {
+  //     return this.$moment(this.post.attributes.timestamp).format('L');
+  //   },
+  //
+  //   authorText() {
+  //     return "Ricardo Boss";
+  //   }
+  // }
+};
 </script>

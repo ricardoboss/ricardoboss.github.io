@@ -33,4 +33,6 @@
 .layout-content {
   @extend .my-3;
   @extend .h-100;
+
+  position: relative;
 }

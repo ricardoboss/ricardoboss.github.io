@@ -1,7 +1,7 @@
 ---
 title: Currently working on age-of-aincrad.com
-timestamp: 2020-10-19T12:00:00+02
-summary: >-
+createdAt: 2020-10-19T12:00:00+02
+description: >-
     I am currently working on the new homepage for age-of-aincrad.com (an MMOARPG inspired by Sword Art Online). This is the current state.
 ---
 

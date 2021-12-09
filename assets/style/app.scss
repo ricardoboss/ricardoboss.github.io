@@ -13,3 +13,11 @@
 [class*=bg-lang-] {
   background: $gray-400;
 }
+
+.__nuxt-error-page {
+  background: unset;
+
+  .title {
+    color: $gray-500;
+  }
+}

@@ -1,7 +1,7 @@
 ---
 title: New Website!
-timestamp: 2020-07-01T02:15:00+02
-summary: >-
+createdAt: 2020-07-01T02:15:00.000Z
+description: >-
     I finally developed a new personal website.
     In this post, I documented the road to my new website using Nuxt.js and GitHub Pages.
 ---

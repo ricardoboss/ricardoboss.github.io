@@ -1,7 +1,7 @@
 ---
 title: About Developer-Focused PC Builds
-timestamp: 2020-07-05T10:00:00+02
-summary: >-
+createdAt: 2020-07-05T10:00:00+02
+description: >-
     I recently saw a video on LinusTechTips where he rebuilt Linus Torvalds PC. He said they didn't do developer-focused PC building guides, because they don't know the requirements.
     I wanted to write something about what hardware is needed by software developers.
 ---
