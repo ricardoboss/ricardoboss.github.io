@@ -26,7 +26,7 @@
           'Database Engineer',
           'Fullstack Developer',
           '.NET Developer',
-          'Microsoft Certified'
+          'PHP Developer',
         ],
       }
     }
