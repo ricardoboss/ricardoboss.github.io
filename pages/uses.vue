@@ -248,7 +248,6 @@ a {
 .item-link {
   display: block;
   font-size: 70%;
-  opacity: 70%;
   filter: grayscale(1);
 }
 </style>
