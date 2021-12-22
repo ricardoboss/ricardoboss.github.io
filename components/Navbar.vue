@@ -15,6 +15,9 @@
     <li class="nav-item">
       <nuxt-link class="nav-link" to="/contact">Contact</nuxt-link>
     </li>
+    <li class="nav-item">
+      <nuxt-link class="nav-link" to="/uses">Uses</nuxt-link>
+    </li>
   </ul>
 </template>
 

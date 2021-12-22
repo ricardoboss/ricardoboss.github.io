@@ -107,8 +107,13 @@ module.exports = {
           priority: 0.6
         },
         {
+          url: '/uses',
+          changefreq: 'yearly',
+          priority: 0.5
+        },
+        {
           url: '/portfolio',
-          changefreq: 'monthly',
+          changefreq: 'yearly',
           priority: 0.5
         },
         {
