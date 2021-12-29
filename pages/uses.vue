@@ -174,6 +174,15 @@ export default {
               title: "Smart Home",
               items: [
                 {
+                  title: "Home Assistant",
+                  link: "https://www.home-assistant.io/"
+                },
+                {
+                  title: "Octoprint",
+                  link: "https://octoprint.org/",
+                  comment: "Really neat for monitoring your print from anywhere",
+                },
+                {
                   title: "Fritz!DECT 500",
                   link: "https://avm.de/produkte/fritzdect/fritzdect-500/",
                   comment: "Light bulbs controlled via DECT and Home Assistant"
