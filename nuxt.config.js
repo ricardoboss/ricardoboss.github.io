@@ -98,10 +98,6 @@ module.exports = {
           priority: 0.8
         },
         {
-          url: '/about',
-          changefreq: 'yearly'
-        },
-        {
           url: '/projects',
           changefreq: 'monthly',
           priority: 0.6
