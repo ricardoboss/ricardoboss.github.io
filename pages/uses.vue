@@ -190,12 +190,12 @@ export default {
                 {
                   title: "Fritz!DECT 301",
                   link: "https://avm.de/produkte/fritzdect/fritzdect-301/",
-                  comment: "Radiator controller controlled via DECT and Home Assistant"
+                  comment: "Radiator controlled via DECT and Home Assistant"
                 },
                 {
                   title: "LIFX E27",
                   link: "https://www.amazon.de/dp/B01M66RQXV",
-                  comment: "Wireless LAN controller light bulb controlled via Home Assistant"
+                  comment: "Light bulbs controlled via Home Assistant"
                 },
                 {
                   title: "Google Home Mini/Nest Mini",
@@ -217,11 +217,13 @@ export default {
                 },
                 {
                   title: "Cloudflare",
-                  link: "https://www.cloudflare.com/"
+                  link: "https://www.cloudflare.com/",
+                  comment: "Best DNS provider for free with DDoS protection included"
                 },
                 {
                   title: "Netcup",
-                  link: "https://www.netcup.eu/"
+                  link: "https://www.netcup.eu/",
+                  comment: "Cheap and reliable servers"
                 }
               ]
             },
