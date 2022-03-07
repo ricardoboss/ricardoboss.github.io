@@ -4,7 +4,7 @@
       <nuxt-link class="nav-link" to="/blog" active-class="active">Blog</nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link class="nav-link" to="/resume">Résumé</nuxt-link>
+      <nuxt-link class="nav-link" to="/curriculum-vitae">Curriculum Vitae</nuxt-link>
     </li>
     <li class="nav-item">
       <nuxt-link class="nav-link" to="/projects">Projects</nuxt-link>

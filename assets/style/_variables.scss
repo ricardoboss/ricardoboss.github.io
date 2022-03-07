@@ -47,6 +47,12 @@ $lang-android: #30D780;
 $lang-ios: #87D747;
 $lang-xamarin: #3498DB;
 $lang-symfony: #E5E8E4;
+$lang-bash: #47b353;
+$lang-docker: #2496ed;
+$lang-mysql: #e68a10;
+$lang-postgres: #2f5b8b;
+$lang-mssql: #e02923;
+$lang-cpp: #0179c3;
 
 $bg-lang-colors: (
   "php": $lang-php,
@@ -64,7 +70,14 @@ $bg-lang-colors: (
   "i-os": $lang-ios,
   "xamarin": $lang-xamarin,
   "symfony": $lang-symfony,
+  "bash": $lang-bash,
+  "docker": $lang-docker,
+  "my-sql": $lang-mysql,
+  "postgre-sql": $lang-postgres,
+  "mssql": $lang-mssql,
+  "cpp": $lang-cpp,
 );
+
 
 $font-size-base: 0.85rem;
 $body-bg: $gray-200;
@@ -86,3 +99,10 @@ $headings-margin-bottom: .75rem;
 $code-color: lighten($primary, 20%);
 
 @import "~bootstrap/scss/variables";
+
+$fg-lang-colors: ();
+@each $key, $value in $bg-lang-colors {
+  $newValue: darken(desaturate($value, 10%), 10%);
+  $bg-lang-colors: map-merge($bg-lang-colors, ($key: $newValue));
+  $fg-lang-colors: map-merge($fg-lang-colors, ($key: color-contrast($newValue)));
+}

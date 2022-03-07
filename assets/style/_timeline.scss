@@ -60,11 +60,15 @@ $timeline-bullet-current-color: $primary;
 }
 
 .timeline-description {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .timeline-timespan {
   @extend .text-muted;
 
   font-family: $font-family-monospace;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-badges {
 }

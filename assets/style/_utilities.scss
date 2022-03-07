@@ -9,5 +9,14 @@ $utilities: (
     property: background-color,
     class: bg-lang,
     values: $bg-lang-colors
+  ),
+  "lang-foreground-color": (
+    property: color,
+    class: bg-lang,
+    values: $fg-lang-colors
   )
 );
+
+[class*="bg-lang-"] {
+  font-weight: 600 !important;
+}

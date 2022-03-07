@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="display-3">Résumé</h1>
+    <h1 class="display-3">Curriculum Vitae</h1>
 
     <h2>Work</h2>
     <Timeline :milestones="workTimeline"/>
@@ -22,25 +22,29 @@ export default {
       workTimeline: [
         {
           title: "SVB-Spezialversand für Yacht- und Bootszubehör GmbH",
-          description: "Software Developer",
+          description: "Backend Developer",
           from: "2021-10",
+          languages: ["PHP", "Symfony", "MySQL", "Bash", "Docker"],
         },
         {
           title: "sendmeback GmbH",
-          description: "Software Developer",
+          description: "Full-Stack Developer",
           from: "2021-06",
           to: "2021-10",
+          languages: ["Vue", "JS", "Flutter", "Dart", "Android", "iOS", "C#", ".NET", "PostgreSQL"],
         },
         {
           title: "TRENZ GmbH",
           description: "Junior Software Developer",
           from: "2020-07",
           to: "2021-05",
+          languages: ["C#", ".NET", "WPF", "Xamarin", "Android", "iOS", "C++", "MSSQL", "Powershell", "Bash"],
         },
         {
           description: "Apprenticeship",
           from: "2018-08",
           to: "2020-07",
+          languages: ["PHP", "MySQL", "Java"],
         },
         {
           description: "Temporary help (software developer)",
@@ -62,14 +66,14 @@ export default {
 
       educationTimeline: [
         {
-          title: "Schulzentrum SII Utbremen (professional school)",
+          title: "Schulzentrum SII Utbremen (Professional School)",
           description: "Apprenticeship",
           from: "2018-08",
           to: "2020-07",
         },
         {
           title: "University of Bremen",
-          description: "BoS in Computer Science (dropout)",
+          description: "BoS in Computer Science (not finished)",
           from: "2017-07",
           to: "2018-02",
         },

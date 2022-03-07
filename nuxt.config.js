@@ -8,7 +8,7 @@ const createBlogSitemapEntries = async () => {
     routes.push({
       url: post.path,
       changefreq: 'yearly',
-      priority: 0.7,
+      priority: 0.6,
       lastmod: post.updatedAt
     });
   }
@@ -94,8 +94,8 @@ module.exports = {
       return entries.concat([
         {
           url: '/blog',
-          changefreq: 'weekly',
-          priority: 0.8
+          changefreq: 'monthly',
+          priority: 0.7
         },
         {
           url: '/projects',
@@ -105,7 +105,7 @@ module.exports = {
         {
           url: '/uses',
           changefreq: 'yearly',
-          priority: 0.5
+          priority: 0.3
         },
         {
           url: '/portfolio',
@@ -113,9 +113,9 @@ module.exports = {
           priority: 0.5
         },
         {
-          url: '/resume',
+          url: '/curriculum-vitae',
           changefreq: 'yearly',
-          priority: 0.4
+          priority: 0.5
         }
       ]);
     }

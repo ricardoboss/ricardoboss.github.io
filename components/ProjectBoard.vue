@@ -18,10 +18,10 @@
           </a>
         </div>
         <div v-if="project.hasOwnProperty('languages')" class="card-body flex-grow-0 text-right py-2">
-          <span v-for="language in project.languages" :key="language"
-                class="badge rounded-pill ms-1" :class="getBackgroundClass(language)">
-            {{ language }}
-          </span>
+          <lang-badge v-for="language in project.languages"
+                      :key="language"
+                      :language="language"
+          />
         </div>
       </div>
     </div>
@@ -29,30 +29,16 @@
 </template>
 
 <script>
-	export default {
+	import LangBadge from "./LangBadge";
+  export default {
 		name: "ProjectBoard",
+    components: {LangBadge},
 
     props: [
       'projects',
       'col_settings',
       'image_height',
       'image_padding'
-    ],
-
-    methods: {
-		  getBackgroundClass(language) {
-		    let kebab = language
-          .replace('#', 's')
-          .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-          .map(x => x.toLowerCase())
-          .join('-');
-
-		    return 'bg-lang-' + kebab;
-      }
-    }
+    ]
 	}
 </script>
-
-<style scoped>
-
-</style>
