@@ -17,9 +17,9 @@ export default {
         {
           image: '/vector/mail.svg',
           title: 'Mail',
-          description: 'contact@ricardoboss.de',
+          description: 'mail@ricardoboss.de',
           links: [
-            {title: 'Send me an e-mail', href: 'mailto:contact@ricardoboss.de'}
+            {title: 'Send me an e-mail', href: 'mailto:mail@ricardoboss.de'}
           ]
         },
         {
