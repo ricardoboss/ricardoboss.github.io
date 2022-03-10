@@ -3,10 +3,10 @@
     <h1 class="display-3">Curriculum Vitae</h1>
 
     <h2>Work</h2>
-    <Timeline :milestones="workTimeline"/>
+    <timeline :milestones="workTimeline"/>
 
     <h2>Education</h2>
-    <Timeline :milestones="educationTimeline"/>
+    <timeline no-current :milestones="educationTimeline"/>
   </section>
 </template>
 
@@ -45,16 +45,19 @@ export default {
           from: "2018-08",
           to: "2020-07",
           languages: ["PHP", "MySQL", "Java"],
+          minor: true,
         },
         {
           description: "Temporary help (software developer)",
           from: "2018-05",
           to: "2018-08",
+          minor: true,
         },
         {
           description: "Trainee",
           from: "2018-04",
           to: "2018-04",
+          minor: true,
         },
         {
           title: "Busse Computertechnik",

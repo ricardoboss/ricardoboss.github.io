@@ -1,12 +1,14 @@
 <template>
   <ol class="timeline">
     <li v-for="(milestone, i) in milestones" :key="i"
-        class="timeline-item" :class="i === 0 ? 'current' : ''">
+        class="timeline-item"
+        :class="{current: i === 0 && !noCurrent, minor: milestone.hasOwnProperty('minor') && milestone.minor}">
       <div class="timeline-line">
+        <div class="timeline-dot-highlight"></div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-content">
-        <h5 v-if="milestone.hasOwnProperty('title')" class="timeline-title">{{ milestone.title }}</h5>
+        <span v-if="milestone.hasOwnProperty('title')" class="timeline-title">{{ milestone.title }}</span>
         <span class="timeline-timespan" v-html="timespan(milestone)"></span>
         <p v-if="milestone.hasOwnProperty('description')" class="timeline-description" v-html="milestone.description"></p>
         <div v-if="milestone.hasOwnProperty('languages')" class="timeline-badges">
@@ -26,9 +28,16 @@ export default {
   name: "Timeline",
   components: {LangBadge},
 
-  props: [
-    'milestones'
-  ],
+  props: {
+    milestones: {
+      type: Array,
+      required: true
+    },
+    noCurrent: {
+      type: Boolean,
+      default: false
+    }
+  },
 
   methods: {
     timespan(milestone) {
