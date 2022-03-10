@@ -77,21 +77,24 @@ export default {
           description: "Apprenticeship",
           from: "2018-08",
           to: "2020-07",
-          link: "https://www.szut.de/"
+          link: "https://www.szut.de/",
+          languages: ["Java", "SQLite"],
         },
         {
           title: "University of Bremen",
           description: "BoS in Computer Science (not finished)",
           from: "2017-07",
           to: "2018-02",
-          link: "https://www.uni-bremen.de/"
+          link: "https://www.uni-bremen.de/",
+          languages: ["Java"],
         },
         {
           title: "Max-Planck Gymnasium (High School)",
           description: "Abitur",
           from: "2009-08",
           to: "2017-07",
-          link: "https://maxe-online.de/"
+          link: "https://maxe-online.de/",
+          languages: ["Delphi", "Java"],
         },
       ]
     }
