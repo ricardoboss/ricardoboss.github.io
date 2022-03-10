@@ -25,6 +25,7 @@ export default {
           description: "Backend Developer",
           from: "2021-10",
           languages: ["PHP", "Symfony", "MySQL", "Bash", "Docker"],
+          link: "https://svb.de/",
         },
         {
           title: "sendmeback GmbH",
@@ -32,6 +33,7 @@ export default {
           from: "2021-06",
           to: "2021-10",
           languages: ["Vue", "JS", "Flutter", "Dart", "Android", "iOS", "C#", ".NET", "PostgreSQL"],
+          link: "https://sendmeback.de/",
         },
         {
           title: "TRENZ GmbH",
@@ -39,6 +41,7 @@ export default {
           from: "2020-07",
           to: "2021-05",
           languages: ["C#", ".NET", "WPF", "Xamarin", "Android", "iOS", "C++", "MSSQL", "Powershell", "Bash"],
+          link: "https://www.trenz.de/",
         },
         {
           description: "Apprenticeship",
@@ -64,6 +67,7 @@ export default {
           description: "Trainee",
           from: "2018-03",
           to: "2018-03",
+          link: "https://www.busse-computer.de/",
         }
       ],
 
@@ -73,18 +77,21 @@ export default {
           description: "Apprenticeship",
           from: "2018-08",
           to: "2020-07",
+          link: "https://www.szut.de/"
         },
         {
           title: "University of Bremen",
           description: "BoS in Computer Science (not finished)",
           from: "2017-07",
           to: "2018-02",
+          link: "https://www.uni-bremen.de/"
         },
         {
           title: "Max-Planck Gymnasium (High School)",
           description: "Abitur",
           from: "2009-08",
           to: "2017-07",
+          link: "https://maxe-online.de/"
         },
       ]
     }

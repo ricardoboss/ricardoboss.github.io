@@ -20,12 +20,11 @@
 		  return {
 		    slogans: [
 		      'Software Developer',
-          'Webdeveloper',
-          'Backend Developer',
-          'Database Engineer',
           'Fullstack Developer',
           '.NET Developer',
           'PHP Developer',
+          'Backend Developer',
+          'Webdeveloper',
         ],
       }
     }

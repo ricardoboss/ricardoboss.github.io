@@ -8,7 +8,11 @@
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-content">
-        <span v-if="milestone.hasOwnProperty('title')" class="timeline-title">{{ milestone.title }}</span>
+        <component v-if="milestone.hasOwnProperty('title')"
+                   :is="milestone.hasOwnProperty('link') ? 'a' : 'span'"
+                   :href="milestone.link"
+                   :target="milestone.hasOwnProperty('link') ? '_blank' : ''"
+                   class="timeline-title">{{ milestone.title }}</component>
         <span class="timeline-timespan" v-html="timespan(milestone)"></span>
         <p v-if="milestone.hasOwnProperty('description')" class="timeline-description" v-html="milestone.description"></p>
         <div v-if="milestone.hasOwnProperty('languages')" class="timeline-badges">
