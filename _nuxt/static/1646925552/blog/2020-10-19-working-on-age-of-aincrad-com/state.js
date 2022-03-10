@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1646925552",layout:"default",error:a,serverRendered:true,routePath:"\u002Fblog\u002F2020-10-19-working-on-age-of-aincrad-com",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"678ca9b2"}}}}(null));
