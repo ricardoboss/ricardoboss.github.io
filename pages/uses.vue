@@ -156,7 +156,7 @@ export default {
                 {
                   title: "Ender 3 V2",
                   link: "https://www.creality.com/de/goods-detail/ender-3-v2-3d-printer",
-                  comment: "3D Printer with custom hotend"
+                  comment: "3D Printer with custom hotend fan shroud"
                 }
               ]
             },
@@ -193,7 +193,7 @@ export default {
                   comment: "Radiator controlled via DECT and Home Assistant"
                 },
                 {
-                  title: "LIFX E27",
+                  title: "LIFX A60",
                   link: "https://www.amazon.de/dp/B01M66RQXV",
                   comment: "Light bulbs controlled via Home Assistant"
                 },
@@ -222,8 +222,8 @@ export default {
                 },
                 {
                   title: "Netcup",
-                  link: "https://www.netcup.eu/",
-                  comment: "Cheap and reliable servers"
+                  link: "https://www.netcup.eu/?ref=85189",
+                  comment: "Cheap and reliable servers (referral link)."
                 }
               ]
             },
