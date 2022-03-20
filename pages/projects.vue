@@ -24,6 +24,15 @@ export default {
     projects() {
       return [
         {
+          title: 'states-game',
+          description: 'A game where you can guess the 50 states of the USA.',
+          links: [
+            {title: 'Play now!', href: 'https://states-game.ricardoboss.de'}
+            {title: 'Source', href: 'https://github.com/ricardoboss/states-game'}
+          ],
+          languages: ['TS', 'Vue']
+        }
+        {
           title: 'HostedWPF',
           description: 'Base classes for windows, pages and controls using MVVM and dependency injection.',
           links: [
