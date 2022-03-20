@@ -31,7 +31,7 @@ export default {
             {title: 'Source', href: 'https://github.com/ricardoboss/states-game'}
           ],
           languages: ['TS', 'Vue']
-        }
+        },
         {
           title: 'HostedWPF',
           description: 'Base classes for windows, pages and controls using MVVM and dependency injection.',
