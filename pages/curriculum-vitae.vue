@@ -21,9 +21,17 @@ export default {
     return {
       workTimeline: [
         {
+          title: "TRENZ GmbH",
+          description: "Software Developer and Project Manager",
+          from: "2022-05",
+          languages: ["C#", ".NET", "WPF", "Android", "iOS", "MSSQL"],
+          link: "https://trenz.de/",
+        },
+        {
           title: "SVB-Spezialversand für Yacht- und Bootszubehör GmbH",
           description: "Backend Developer",
           from: "2021-10",
+          to: "2022-04",
           languages: ["PHP", "Symfony", "MySQL", "Bash", "Docker"],
           link: "https://svb.de/",
         },
