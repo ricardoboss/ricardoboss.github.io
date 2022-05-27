@@ -64,7 +64,7 @@ export default {
           title: 'Mastodon',
           description: 'ricardoboss',
           links: [
-            {title: 'PHP Community (phpc.social)', href: 'https://phpc.social/web/@ricardoboss'}
+            {title: 'phpc.social', href: 'https://phpc.social/web/@ricardoboss'}
           ]
         }
       ]
