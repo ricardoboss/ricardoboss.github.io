@@ -58,6 +58,14 @@ export default {
           links: [
             {title: 'Twitter Profile', href: 'https://twitter.com/_ricardoboss'}
           ]
+        },
+        {
+          image: '/vector/mastodon.svg',
+          title: 'Mastodon',
+          description: 'ricardoboss',
+          links: [
+            {title: 'PHP Community (phpc.social)', href: 'https://phpc.social/web/@ricardoboss'}
+          ]
         }
       ]
     }
