@@ -49,6 +49,11 @@ export default {
                   comment: "Using the Darcula theme 🧛"
                 },
                 {
+                  title: "Android Studio",
+                  link: "https://developer.android.com/studio",
+                  comment: "JetBrains IDEs are just the best"
+                },
+                {
                   title: "VS Code",
                   link: "https://code.visualstudio.com/"
                 },
@@ -155,7 +160,7 @@ export default {
                 },
                 {
                   title: "Ender 3 V2",
-                  link: "https://www.creality.com/de/goods-detail/ender-3-v2-3d-printer",
+                  link: "https://www.creality.com/products/ender-3-v2-3d-printer-csco",
                   comment: "3D Printer with custom hotend fan shroud"
                 }
               ]
@@ -165,7 +170,7 @@ export default {
               items: [
                 {
                   title: "Oculus Rift S",
-                  link: "https://www.oculus.com/en-us/rift-s/",
+                  link: "https://www.oculus.com/rift-s/features/",
                   comment: "Love me some Beat Saber! 📦🤺"
                 }
               ]
