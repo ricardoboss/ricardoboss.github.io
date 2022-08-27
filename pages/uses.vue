@@ -44,18 +44,19 @@ export default {
               title: "Editor/IDE/Terminal",
               items: [
                 {
+                  title: "JetBrains Rider",
+                  link: "https://jetbrains.com/rider/",
+                  comment: "The better dotnet IDE"
+                },
+                {
                   title: "JetBrains PhpStorm",
                   link: "https://jetbrains.com/phpstorm/",
-                  comment: "Using the Darcula theme 🧛"
+                  comment: "Using PhpStorm is like supercharging your PHP development process"
                 },
                 {
                   title: "Android Studio",
                   link: "https://developer.android.com/studio",
                   comment: "JetBrains IDEs are just the best"
-                },
-                {
-                  title: "VS Code",
-                  link: "https://code.visualstudio.com/"
                 },
                 {
                   title: "Windows Terminal",
@@ -91,9 +92,9 @@ export default {
                   link: "https://1password.com/"
                 },
                 {
-                  title: "Microsoft Edge",
-                  link: "https://www.microsoft.com/edge",
-                  comment: "Basically Google Chrome, but with better integration into Windows."
+                  title: "Opera GX",
+                  link: "https://www.opera.com/gx",
+                  comment: "A good browser engine like Google Chrome, but with a much appreciated sidebar."
                 },
                 {
                   title: "Google Drive for Desktop",
@@ -121,6 +122,10 @@ export default {
                   title: "Discord",
                   link: "https://discord.com/"
                 },
+                {
+                  title: "Windows-Auto-Night-Mode",
+                  link: "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode"
+                }
               ]
             },
             {
@@ -169,6 +174,11 @@ export default {
               title: "Accessories",
               items: [
                 {
+                  title: "HyperX Alloy Elite 2 keyboard",
+                  link: "https://smile.amazon.de/gp/product/B088KRFVBK",
+                  comment: "⌨️ *click* *click* *click* *click* *click*"
+                },
+                {
                   title: "Oculus Rift S",
                   link: "https://www.oculus.com/rift-s/features/",
                   comment: "Love me some Beat Saber! 📦🤺"
@@ -186,6 +196,11 @@ export default {
                   title: "Octoprint",
                   link: "https://octoprint.org/",
                   comment: "Really neat for monitoring your print from anywhere",
+                },
+                {
+                  title: "Pi-Hole",
+                  link: "https://pi-hole.net/",
+                  comment: "A nice monitoring tool for the DNS requests in your network and also blocks unwanted domains"
                 },
                 {
                   title: "Fritz!DECT 500",
