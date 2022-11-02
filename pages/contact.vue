@@ -27,7 +27,7 @@ export default {
           title: 'LinkedIn',
           description: 'Ricardo Boss',
           links: [
-            {title: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/ricardo-boss/'}
+            {title: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/ricardo-boss/', rel: 'me'}
           ]
         },
         {
@@ -35,7 +35,7 @@ export default {
           title: 'Xing',
           description: 'Ricardo Boss',
           links: [
-            {title: 'Xing Profile', href: 'https://www.xing.com/profile/Ricardo_Boss2'}
+            {title: 'Xing Profile', href: 'https://www.xing.com/profile/Ricardo_Boss2', rel: 'me'}
           ]
         },
         {
@@ -48,7 +48,7 @@ export default {
           title: 'GitHub',
           description: 'ricardoboss',
           links: [
-            {title: 'GitHub Profile', href: 'https://github.com/ricardoboss'}
+            {title: 'GitHub Profile', href: 'https://github.com/ricardoboss', rel: 'me'}
           ]
         },
         {
@@ -56,7 +56,7 @@ export default {
           title: 'Twitter',
           description: '@_ricardoboss',
           links: [
-            {title: 'Twitter Profile', href: 'https://twitter.com/_ricardoboss'}
+            {title: 'Twitter Profile', href: 'https://twitter.com/_ricardoboss', rel: 'me'}
           ]
         },
         {
@@ -64,7 +64,7 @@ export default {
           title: 'Mastodon',
           description: 'ricardoboss',
           links: [
-            {title: 'phpc.social', href: 'https://phpc.social/web/@ricardoboss'}
+            {title: 'phpc.social', href: 'https://phpc.social/@ricardoboss', rel: 'me'}
           ]
         }
       ]
