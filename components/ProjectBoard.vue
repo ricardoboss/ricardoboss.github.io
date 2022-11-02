@@ -13,7 +13,7 @@
         <div v-if="project.hasOwnProperty('links') && project.links.length > 0" class="list-group list-group-flush">
           <a v-for="link in project.links" :key="link.title"
              class="list-group-item list-group-item-action"
-             :href="link.href" target="_blank">
+             :href="link.href" :rel="link.rel" target="_blank">
             {{ link.title }}
           </a>
         </div>

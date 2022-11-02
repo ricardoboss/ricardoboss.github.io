@@ -92,9 +92,9 @@ export default {
                   link: "https://1password.com/"
                 },
                 {
-                  title: "Opera GX",
-                  link: "https://www.opera.com/gx",
-                  comment: "A good browser engine like Google Chrome, but with a much appreciated sidebar."
+                  title: "Microsoft Edge",
+                  link: "https://www.microsoft.com/edge",
+                  comment: "Basically Google Chrome, but with better integration into Windows."
                 },
                 {
                   title: "Google Drive for Desktop",
