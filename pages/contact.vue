@@ -41,7 +41,7 @@ export default {
         {
           image: '/vector/discord.svg',
           title: 'Discord',
-          description: 'mizzle#3242'
+          description: 'mizzle#3242 (when adding me, mention my website)'
         },
         {
           image: '/vector/github.svg',
