@@ -25,10 +25,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Hi! My name is Ricardo Boss and I am a software developer from germany.' }
+      { hid: 'description', name: 'description', content: 'Hi! My name is Ricardo Boss and I am a software developer from Germany.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'me', href: 'https://phpc.social/@ricardoboss' }
     ],
   },
 
