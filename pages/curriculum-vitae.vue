@@ -41,7 +41,6 @@ export default {
           from: "2021-06",
           to: "2021-10",
           languages: ["Vue", "JS", "Flutter", "Dart", "Android", "iOS", "C#", ".NET", "PostgreSQL"],
-          link: "https://sendmeback.de/",
         },
         {
           title: "TRENZ GmbH",
