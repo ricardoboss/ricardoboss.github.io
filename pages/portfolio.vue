@@ -35,18 +35,13 @@ export default {
         {
           title: 'sendmeback Account',
           description: 'Customer backend for managing purchased sendmeback products. Features an ASP.NET backend with JWT authentication.',
-          links: [
-            {title: 'Visit', href: 'https://account.sendmeback.de/'}
-          ],
+          links: [],
           languages: ['TS', 'Vue']
         },
         {
           title: 'sendmeback App',
           description: 'App for viewing registered products and pairing a smartphone with a product. Enable localization and sending notifications to the smartphone.',
-          links: [
-            {title: 'Play Store', href: 'https://play.google.com/store/apps/details?id=de.sendmeback.smb'},
-            {title: 'App Store', href: 'https://apps.apple.com/de/app/sendmeback/id1381318877'}
-          ],
+          links: [],
           languages: ['Dart', 'Flutter', 'Android', 'iOS']
         },
         {
