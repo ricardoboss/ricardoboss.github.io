@@ -24,6 +24,14 @@ export default {
     projects() {
       return [
         {
+          title: 'dart_nmea',
+          description: 'A Dart decoder for the NMEA0183 protocol.',
+          links: [
+            {title: 'Source', href: 'https://github.com/ricardoboss/dart_nmea'}
+          ],
+          languages: ['Dart']
+        },
+        {
           title: 'states-game',
           description: 'A game where you can guess the 50 states of the USA.',
           links: [
