@@ -24,7 +24,7 @@ export default {
           title: "TRENZ GmbH",
           description: "Software Developer and Project Manager",
           from: "2022-05",
-          languages: ["Flutter", "Dart", "C#", ".NET", "WPF", "Android", "iOS", "MSSQL"],
+          languages: ["Vue", "TS", "Flutter", "Dart", "C#", ".NET", "WPF", "Android", "iOS", "MSSQL"],
           link: "https://trenz.de/",
         },
         {
