@@ -25,6 +25,16 @@ export default {
     projects() {
       return [
         {
+          title: 'TRENZ Docs',
+          description: 'A way to host Azure DevOps wikis (or any Markdown-based wiki, really) publicly. Includes authentication support.',
+          links: [
+            {title: 'API Source', href: 'https://github.com/trenz-gmbh/trenz-docs-api'},
+            {title: 'Frontend Source', href: 'https://github.com/trenz-gmbh/trenz-docs'},
+            {title: 'Example', href: 'https://docs.ela.easylogic.de'}
+          ],
+          languages: ['Vue', 'TS', '.NET', 'C#']
+        },
+        {
           title: 'SVB',
           description: 'Your specialist online shop for technical boat equipment, sailing accessories and water sports equipment.',
           links: [
