@@ -22,9 +22,9 @@ export default {
       workTimeline: [
         {
           title: "TRENZ GmbH",
-          description: "Software Developer and Project Manager",
+          description: "Full-Stack Developer",
           from: "2022-05",
-          languages: ["Vue", "TS", "Flutter", "Dart", "C#", ".NET", "WPF", "Android", "iOS", "MSSQL"],
+          languages: ["Vue", "TS", "Flutter", "Dart", "C#", ".NET", "Android", "iOS", "C++", "MSSQL"],
           link: "https://trenz.de/",
         },
         {
@@ -48,7 +48,7 @@ export default {
           from: "2020-07",
           to: "2021-05",
           languages: ["C#", ".NET", "WPF", "Xamarin", "Android", "iOS", "C++", "MSSQL", "Powershell", "Bash"],
-          link: "https://www.trenz.de/",
+          link: "https://trenz.de/",
         },
         {
           description: "Apprenticeship",
