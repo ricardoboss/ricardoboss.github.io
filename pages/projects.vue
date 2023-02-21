@@ -24,6 +24,14 @@ export default {
     projects() {
       return [
         {
+          title: 'PubNet',
+          description: 'Self-hosted alternative to pub.dev (Dart & Flutter package host)',
+          links: [
+            {title: 'Source', href: 'https://github.com/ricardoboss/PubNet'}
+          ],
+          languages: ['C#', '.NET', 'ASP.NET', 'Blazor']
+        },
+        {
           title: 'dart_nmea',
           description: 'A Dart decoder for the NMEA0183 protocol.',
           links: [
