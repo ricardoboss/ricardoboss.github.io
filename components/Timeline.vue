@@ -13,8 +13,8 @@
                    :href="milestone.link"
                    :target="milestone.hasOwnProperty('link') ? '_blank' : undefined"
                    class="timeline-title">{{ milestone.title }}</component>
-        <span class="timeline-timespan" v-html="timespan(milestone)"></span>
-        <p v-if="milestone.hasOwnProperty('description')" class="timeline-description" v-html="milestone.description"></p>
+        <span class="timeline-timespan">{{ timespan(milestone) }}</span>
+        <p v-if="milestone.hasOwnProperty('description')" class="timeline-description">{{ milestone.description }}</p>
         <div v-if="milestone.hasOwnProperty('languages')" class="timeline-badges">
           <lang-badge v-for="language in milestone.languages"
                       :key="language"
