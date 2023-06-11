@@ -1,9 +1,6 @@
 # Group for all bots
 User-Agent: *
 
-# Don't index badge provided by Microsoft
-Disallow: /img/programming-in-cs-badge.min.png$
-
 # Don't index framework folder
 Disallow: /_nuxt/
 
@@ -12,7 +9,6 @@ Disallow: /vector/
 
 # Don't index meta-files
 Disallow: /.nojekyll$
-Disallow: /CNAME$
 
 # Allow everything else
 
