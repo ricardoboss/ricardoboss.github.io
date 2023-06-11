@@ -41,7 +41,10 @@ export default {
         {
           image: '/vector/discord.svg',
           title: 'Discord',
-          description: 'mizzle#3242 (when adding me, mention my website)'
+          description: 'mizzle#3242',
+          links: [
+            {title: 'Add as Friend', href: 'https://discord.gg/8YRaBMNP'}
+          ]
         },
         {
           image: '/vector/github.svg',
@@ -64,7 +67,8 @@ export default {
           title: 'Mastodon',
           description: 'ricardoboss',
           links: [
-            {title: 'phpc.social', href: 'https://phpc.social/@ricardoboss', rel: 'me'}
+            {title: 'phpc.social', href: 'https://phpc.social/@ricardoboss', rel: 'me'},
+            {title: 'dotnet.social', href: 'https://dotnet.social/@ricardoboss', rel: 'me'}
           ]
         }
       ]
