@@ -11,7 +11,7 @@
         <component v-if="milestone.hasOwnProperty('title')"
                    :is="milestone.hasOwnProperty('link') ? 'a' : 'span'"
                    :href="milestone.link"
-                   :target="milestone.hasOwnProperty('link') ? '_blank' : ''"
+                   :target="milestone.hasOwnProperty('link') ? '_blank' : undefined"
                    class="timeline-title">{{ milestone.title }}</component>
         <span class="timeline-timespan" v-html="timespan(milestone)"></span>
         <p v-if="milestone.hasOwnProperty('description')" class="timeline-description" v-html="milestone.description"></p>
