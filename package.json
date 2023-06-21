@@ -19,7 +19,7 @@
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.0.1",
     "numeral": "^2.0.6",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.4.3",
     "prism-themes": "^1.9.0",
     "sass": "1.32.12",
     "sass-loader": "^10.1.1",
