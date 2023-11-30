@@ -41,9 +41,9 @@ export default {
         {
           image: '/vector/discord.svg',
           title: 'Discord',
-          description: 'mizzle#3242',
+          description: 'mizzle_de',
           links: [
-            {title: 'Add as Friend', href: 'https://discord.gg/8YRaBMNP'}
+            {title: 'Join my server', href: 'https://discord.gg/JE9cZb39'}
           ]
         },
         {
