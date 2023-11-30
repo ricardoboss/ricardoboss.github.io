@@ -174,8 +174,8 @@ export default {
               title: "Accessories",
               items: [
                 {
-                  title: "HyperX Alloy Elite 2 keyboard",
-                  link: "https://smile.amazon.de/gp/product/B088KRFVBK",
+                  title: "Logitech G815 keyboard (US QWERTY layout)",
+                  link: "https://www.amazon.de/dp/B07VWFKTK7",
                   comment: "⌨️ *click* *click* *click* *click* *click*"
                 },
                 {
