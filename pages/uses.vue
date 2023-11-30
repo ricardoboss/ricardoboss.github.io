@@ -216,10 +216,6 @@ export default {
                   title: "LIFX A60",
                   link: "https://www.amazon.de/dp/B01M66RQXV",
                   comment: "Light bulbs controlled via Home Assistant"
-                },
-                {
-                  title: "Google Home Mini/Nest Mini",
-                  link: "https://store.google.com/de/product/google_nest_mini",
                 }
               ]
             },
