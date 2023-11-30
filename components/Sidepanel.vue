@@ -23,9 +23,12 @@ export default {
         "Software Developer",
         "Fullstack Developer",
         ".NET Developer",
+        "Software Engineer",
         "PHP Developer",
+        "Vue.js Developer",
         "Backend Developer",
-        "Webdeveloper"
+        "Web Developer",
+        "App Developer"
       ]
     };
   }
