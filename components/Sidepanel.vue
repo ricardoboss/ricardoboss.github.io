@@ -1,6 +1,6 @@
 <template>
 	<aside class="sticky-top align-self-start">
-    <img src="/img/ricardo-boss-2021.square.256.min.jpg" alt="Ricardo Boss 2020" style="border-width: 2px !important;" class="border rounded-circle border-primary shadow-lg w-75 mb-4">
+    <img src="/img/ricardo-boss-2023.square.min.png" alt="Ricardo Boss 2020" style="border-width: 2px !important;" class="border rounded-circle border-primary shadow-lg w-75 mb-4">
 
     <span class="h3 font-weight-light">Ricardo Boss</span>
 
