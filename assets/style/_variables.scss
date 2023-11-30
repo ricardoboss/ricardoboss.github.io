@@ -82,9 +82,8 @@ $bg-lang-colors: (
   "cpp": $lang-cpp,
 );
 
-
 $font-size-base: 0.85rem;
-$body-bg: $gray-200;
+$body-bg: darken($gray-100, 5%);
 
 $card-bg: $gray-100;
 
