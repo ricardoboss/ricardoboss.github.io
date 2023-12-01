@@ -1,5 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "ricardoboss.github.io",
+  "description": "Ricardo Boss' Homepage",
+  "author": "Ricardo Boss <contact@ricardoboss.de>",
   "private": true,
   "type": "module",
   "scripts": {
