@@ -1,0 +1,11 @@
+@import "colors";
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: $body-bg;
+	color: $body-fg;
+}
