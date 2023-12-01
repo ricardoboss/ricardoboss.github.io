@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import CardDeck from '~/components/CardDeck.vue'
+import type CardData from '~/models/CardData'
+import GmcLogo from '~/assets/img/gmc-logo-banner.120.min.png'
 
 const projects = [
   {
@@ -138,7 +140,7 @@ const projects = [
     pills: ['PHP'],
   },
   {
-    image: '/img/gmc-logo-banner.120.min.png',
+    image: GmcLogo,
     title: 'GameModeControl',
     description:
       'A plugin for Minecraft Servers which adds commands and permissions for changing the gamemode of players.',
@@ -224,7 +226,7 @@ const projects = [
     ],
     pills: ['PHP'],
   },
-]
+] as CardData[]
 </script>
 
 <template>
@@ -234,8 +236,8 @@ const projects = [
     <p>
       Open source projects I maintain/started. These projects where created and
       updated exclusively or mostly in my free time. Also take a look at
-      <router-link to="/portfolio">my Portfolio</router-link> to see which
-      projects I used in my everyday jobs.
+      <router-link to="/portfolio">my Portfolio</router-link>
+      to see which projects I used in my everyday jobs.
     </p>
 
     <hr />
