@@ -9,7 +9,7 @@ import AppFooter from '~/components/AppFooter.vue'
     <app-sidepanel id="sidepanel" />
     <app-navbar id="navbar" />
     <div id="content">
-      <slot />
+      <NuxtPage />
     </div>
     <app-footer id="footer" />
   </div>
