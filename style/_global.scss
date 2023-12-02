@@ -25,3 +25,16 @@ a {
 	text-decoration-style: dotted;
 	text-underline-offset: 0.21em;
 }
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background: $body-bg;
+}
+
+::-webkit-scrollbar-thumb {
+	background: lighten($body-bg, 10%);
+	border-radius: 5px;
+}
