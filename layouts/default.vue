@@ -8,7 +8,9 @@ import AppFooter from '~/components/AppFooter.vue'
   <div id="default-layout">
     <app-sidepanel id="sidepanel" />
     <app-navbar id="navbar" />
-    <slot id="content" />
+    <div id="content">
+      <slot />
+    </div>
     <app-footer id="footer" />
   </div>
 </template>
@@ -28,6 +30,12 @@ import AppFooter from '~/components/AppFooter.vue'
 
 #navbar {
   grid-area: navbar;
+}
+
+#content {
+  grid-area: content;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 #footer {
