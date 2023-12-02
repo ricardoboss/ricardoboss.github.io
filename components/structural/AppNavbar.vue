@@ -17,18 +17,23 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 5dvh;
   margin-top: 0.5rem;
   margin-right: 0.5rem;
 
   & > * {
+    margin-left: -0.5rem;
+
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 
     &.router-link-active {
-      background: $accent;
+      background: $accent !important;
       color: $body-bg;
+    }
+
+    &:hover {
+      background: transparentize($accent, 0.75);
     }
   }
 }

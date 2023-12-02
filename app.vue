@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppSidepanel from '~/components/AppSidepanel.vue'
-import AppNavbar from '~/components/AppNavbar.vue'
-import AppFooter from '~/components/AppFooter.vue'
+import AppSidepanel from '~/components/structural/AppSidepanel.vue'
+import AppNavbar from '~/components/structural/AppNavbar.vue'
+import AppFooter from '~/components/structural/AppFooter.vue'
 </script>
 
 <template>
