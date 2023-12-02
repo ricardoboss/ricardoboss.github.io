@@ -33,7 +33,7 @@ nav {
     }
 
     &:hover {
-      background: transparentize($accent, 0.75);
+      background: transparentize($accent, 0.85);
     }
   }
 }
