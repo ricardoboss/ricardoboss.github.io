@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type CardData from '~/models/CardData'
 import CardLink from '~/components/CardLink.vue'
+import Pill from '~/components/Pill.vue'
 
 interface Props {
   card: CardData
@@ -18,9 +19,7 @@ defineProps<Props>()
       <card-link v-for="(link, i) in card.links" :key="i" :link="link" />
     </div>
     <div class="pills">
-      <span v-for="(pill, i) in card.pills" :key="i" class="pill">
-        {{ pill }}
-      </span>
+      <pill v-for="(pill, i) in card.pills" :key="i" :pill="pill" />
     </div>
   </div>
 </template>
@@ -99,6 +98,13 @@ $card-link-hover: lighten($card-bg, 3%);
         background: $card-link-hover;
       }
     }
+  }
+
+  .pills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
   }
 
   & > * {
