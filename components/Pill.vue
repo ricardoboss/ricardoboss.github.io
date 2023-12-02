@@ -24,6 +24,8 @@ const backgroundClass = computed(() =>
 </template>
 
 <style scoped lang="scss">
+@use 'sass:math';
+
 .pill {
   display: inline-block;
   padding: 0.2rem 0.55rem;
@@ -73,12 +75,12 @@ const backgroundClass = computed(() =>
 
     @each $name, $value in $colors {
       $adjusted: 0;
-      $value: $value / 255;
+      $value: math.div($value, 255);
 
       @if $value < 0.03928 {
-        $value: $value / 12.92;
+        $value: math.div($value, 12.92);
       } @else {
-        $value: ($value + 0.055) / 1.055;
+        $value: math.div(($value + 0.055), 1.055);
         $value: pow($value, 2.4);
       }
 
