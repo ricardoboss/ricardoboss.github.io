@@ -19,7 +19,7 @@ import AppFooter from '~/components/AppFooter.vue'
   grid-template:
     'sidepanel navbar ' auto
     'sidepanel content' minmax(100dvh, 1fr)
-    'sidepanel footer' auto / auto 1fr;
+    'sidepanel footer' auto / 2fr 7fr;
 }
 
 #sidepanel {
