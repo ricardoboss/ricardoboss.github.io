@@ -180,7 +180,7 @@ const projects = [
         href: 'https://github.com/ricardoboss/dotnet-remote-setup',
       },
     ],
-    pills: ['Powershell'],
+    pills: ['PowerShell'],
   },
   {
     title: 'php-installer',

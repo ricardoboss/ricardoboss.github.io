@@ -12,9 +12,8 @@ const backgroundClass = computed(() =>
   props.pill
     .replace('#', 's')
     .replace('++', 'pp')
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map((x) => x.toLowerCase())
-    .join('-'),
+    .replace('.', '')
+    .toLowerCase(),
 )
 </script>
 
@@ -38,7 +37,7 @@ const backgroundClass = computed(() =>
     'php': #4f5d95,
     'cs': #178600,
     'net': #6d409d,
-    'asp-net': #1267ab,
+    'aspnet': #1267ab,
     'blazor': #592c8c,
     'js': #f0db4f,
     'vue': #3fb984,
@@ -96,7 +95,7 @@ const backgroundClass = computed(() =>
   }
 
   @function color-contrast($clr) {
-    @if luminance($clr) < 0.5 {
+    @if luminance($clr) < 0.2 {
       @return white;
     }
 
