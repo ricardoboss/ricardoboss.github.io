@@ -245,5 +245,3 @@ const projects = [
     <card-deck :cards="projects" />
   </main>
 </template>
-
-<style scoped lang="scss"></style>
