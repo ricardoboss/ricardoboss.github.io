@@ -17,8 +17,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  padding: 1rem 1rem 0 0;
 
   & > * {
     margin-left: -0.5rem;
@@ -26,6 +25,8 @@ nav {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+
+    transition: background 0.1s ease-out;
 
     &.router-link-active {
       background: $accent !important;
