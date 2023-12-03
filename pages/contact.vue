@@ -9,6 +9,7 @@ import DiscordSvg from '~/assets/vector/discord.svg'
 import GithubSvg from '~/assets/vector/github.svg'
 import TwitterSvg from '~/assets/vector/twitter.svg'
 import MastodonSvg from '~/assets/vector/mastodon.svg'
+import PageHeader from '~/components/structural/PageHeader.vue'
 
 const contactCards = [
   {
@@ -93,6 +94,8 @@ const contactCards = [
 
 <template>
   <main>
+    <page-header title="Contact" />
+
     <card-deck :cards="contactCards" max-img-height="128px" />
   </main>
 </template>
