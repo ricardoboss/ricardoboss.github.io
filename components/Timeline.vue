@@ -32,30 +32,30 @@ function toText(to: string) {
     <li
       v-for="(milestone, i) in items"
       :key="i"
-      class="timeline-item"
+      class="item"
       :class="{
         current: i === 0 && !noCurrent,
         minor: milestone.minor,
       }"
     >
-      <div class="timeline-line">
-        <div class="timeline-dot-highlight"></div>
-        <div class="timeline-dot"></div>
+      <div class="line">
+        <div class="dot-highlight" v-if="i === 0 && !noCurrent"></div>
+        <div class="dot"></div>
       </div>
-      <div class="timeline-content">
+      <div class="content">
         <component
           v-if="typeof milestone.title !== 'undefined'"
           :is="typeof milestone.link !== 'undefined' ? 'a' : 'span'"
           :href="milestone.link"
           :target="milestone.hasOwnProperty('link') ? '_blank' : undefined"
-          class="timeline-title"
+          class="title"
         >
           {{ milestone.title }}
         </component>
-        <span class="timeline-timespan">{{ timespan(milestone) }}</span>
+        <span class="timespan">{{ timespan(milestone) }}</span>
         <p
           v-if="typeof milestone.description !== 'undefined'"
-          class="timeline-description"
+          class="description"
         >
           {{ milestone.description }}
         </p>
@@ -63,7 +63,7 @@ function toText(to: string) {
           v-if="
             typeof milestone.pills !== 'undefined' && milestone.pills.length > 0
           "
-          class="timeline-badges"
+          class="badges"
         >
           <pill v-for="pill in milestone.pills" :key="pill" :pill="pill" />
         </div>
@@ -75,100 +75,106 @@ function toText(to: string) {
 <style scoped lang="scss">
 @import '@/style/global';
 
-$timeline-item-min-height: 2rem;
-$timeline-item-margin-bottom: 3rem;
-$timeline-item-line-margin-bottom: 0.5rem;
+$item-min-height: 2rem;
+$item-margin-bottom: 3rem;
+$item-line-margin-bottom: 0.5rem;
 
-$timeline-line-width: 4.5px;
-$timeline-line-spacer: 2em;
-$timeline-line-color: lighten($body-bg, 5%);
+$line-width: 4.5px;
+$line-spacer: 2em;
+$line-color: lighten($body-bg, 5%);
 
-$timeline-bullet-width: 1.25rem;
-$timeline-bullet-current-color: $accent;
+$bullet-width: 1.25rem;
+$bullet-color: lighten($body-bg, 10%);
+$bullet-current-color: $accent;
 
 .timeline {
   list-style: none;
   padding-left: 0;
-}
 
-.timeline-item {
-  display: flex;
-  flex-direction: row;
-  min-height: $timeline-item-min-height;
+  .item {
+    display: flex;
+    flex-direction: row;
+    min-height: $item-min-height;
 
-  &.current .timeline-dot,
-  &.current .timeline-dot-highlight {
-    background: $timeline-bullet-current-color;
+    &.current {
+      .dot,
+      .dot-highlight {
+        background: $bullet-current-color;
+      }
+
+      .dot {
+        animation: dot-pulse 1s infinite alternate ease-in;
+      }
+
+      .dot-highlight {
+        animation: dot-highlight 2s 0.75s infinite ease-out;
+      }
+    }
+
+    .dot {
+      background: $bullet-color;
+    }
+
+    &:last-of-type .line {
+      background: transparent;
+    }
+
+    &.minor .line .dot,
+    &.minor .line .dot-highlight {
+      display: none;
+    }
   }
 
-  &.current .timeline-dot {
-    animation: dot-pulse 1s 0.5s infinite alternate ease-in;
+  .line {
+    width: $line-width;
+
+    background: $line-color;
+    margin: 0 $line-spacer;
+
+    position: relative;
+    top: (1 - $bullet-width) / 2;
+
+    .dot,
+    .dot-highlight {
+      display: block;
+      width: $bullet-width;
+      height: $bullet-width;
+
+      border-radius: 50%;
+
+      position: absolute;
+      left: calc(#{$line-width / 2} - #{$bullet-width / 2});
+    }
   }
 
-  &.current .timeline-dot-highlight {
-    animation: dot-highlight 2s infinite ease-out;
+  .content {
+    flex-grow: 1;
+    margin-bottom: $item-margin-bottom;
   }
 
-  &:last-of-type .timeline-line {
-    background: transparent;
-  }
-
-  &.minor .timeline-line .timeline-dot,
-  &.minor .timeline-line .timeline-dot-highlight {
-    display: none;
-  }
-}
-
-.timeline-line {
-  width: $timeline-line-width;
-
-  background: $timeline-line-color;
-  margin: 0 $timeline-line-spacer;
-
-  position: relative;
-  top: (1 - $timeline-bullet-width) / 2;
-
-  .timeline-dot,
-  .timeline-dot-highlight {
+  .title,
+  .description,
+  .timespan,
+  .badges {
+    margin-bottom: $item-line-margin-bottom;
     display: block;
-    width: $timeline-bullet-width;
-    height: $timeline-bullet-width;
-
-    border-radius: 50%;
-    background: $timeline-line-color;
-
-    position: absolute;
-    left: calc(#{$timeline-line-width / 2} - #{$timeline-bullet-width / 2});
   }
-}
 
-.timeline-content {
-  flex-grow: 1;
-  margin-bottom: $timeline-item-margin-bottom;
-}
+  .title {
+    text-decoration: none;
+    color: inherit;
+  }
 
-.timeline-title,
-.timeline-description,
-.timeline-timespan,
-.timeline-badges {
-  margin-bottom: $timeline-item-line-margin-bottom;
-  display: block;
-}
+  .badges {
+    margin-left: -0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
 
-.timeline-title {
-  text-decoration: none;
-  color: inherit;
-}
-
-.timeline-badges {
-  margin-left: -0.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-}
-
-.timeline-timespan {
-  opacity: 0.5;
+  .timespan {
+    opacity: 0.5;
+  }
 }
 
 @keyframes dot-highlight {
