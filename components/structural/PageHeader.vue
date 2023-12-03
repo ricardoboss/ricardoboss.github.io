@@ -10,8 +10,8 @@ defineProps<Props>()
   <section>
     <h1>{{ title }}</h1>
 
-    <p v-if="$slots.lead">
-      <slot name="lead" />
+    <p v-if="$slots.default">
+      <slot />
     </p>
 
     <hr />

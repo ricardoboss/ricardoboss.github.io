@@ -233,12 +233,10 @@ const projects = [
 <template>
   <main>
     <page-header title="Projects">
-      <template #lead>
-        Open source projects I maintain/started. These projects where created
-        and updated exclusively or mostly in my free time. Also take a look at
-        <router-link to="/portfolio">my Portfolio</router-link>
-        to see which projects I used in my everyday jobs.
-      </template>
+      Open source projects I maintain/started. These projects where created and
+      updated exclusively or mostly in my free time. Also take a look at
+      <router-link to="/portfolio">my Portfolio</router-link>
+      to see which projects I used in my everyday jobs.
     </page-header>
 
     <card-deck :cards="projects" />
