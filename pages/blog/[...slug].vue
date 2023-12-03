@@ -2,17 +2,24 @@
 
 <template>
   <main>
-    <ContentDoc v-slot="{ doc }">
-      <NuxtLink to="/blog">&laquo; Back to overview</NuxtLink>
+    <ContentDoc>
+      <template #default="{ doc }">
+        <NuxtLink to="/blog">&laquo; Back to overview</NuxtLink>
 
-      <article>
-        <h1>{{ doc.title }}</h1>
-        <div class="date">
-          Created at
-          {{ new Date(doc.createdAt).toLocaleDateString() }}
-        </div>
-        <ContentRenderer :value="doc" />
-      </article>
+        <article>
+          <h1>{{ doc.title }}</h1>
+          <div class="date">
+            Created at
+            {{ new Date(doc.createdAt).toLocaleDateString() }}
+          </div>
+          <ContentRenderer :value="doc" />
+        </article>
+      </template>
+
+      <template #not-found>
+        <h1>Not found</h1>
+        <p>Sorry, but the requested blog post could not be found.</p>
+      </template>
     </ContentDoc>
 
     <NuxtLink to="/blog">&laquo; Back to overview</NuxtLink>
