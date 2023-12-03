@@ -73,6 +73,7 @@ function toText(to: string) {
 </template>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import '@/style/global';
 
 $item-min-height: 2rem;
@@ -132,7 +133,7 @@ $bullet-current-color: $accent;
     margin: 0 $line-spacer;
 
     position: relative;
-    top: (1 - $bullet-width) / 2;
+    top: math.div((1 - $bullet-width), 2);
 
     .dot,
     .dot-highlight {
@@ -143,7 +144,7 @@ $bullet-current-color: $accent;
       border-radius: 50%;
 
       position: absolute;
-      left: calc(#{$line-width / 2} - #{$bullet-width / 2});
+      left: calc(#{math.div($line-width, 2)} - #{math.div($bullet-width, 2)});
     }
   }
 
@@ -163,13 +164,17 @@ $bullet-current-color: $accent;
   .title {
     text-decoration: none;
     color: inherit;
+
+    font-size: 1.25em;
+
+    margin-top: -0.15em;
   }
 
   .badges {
-    margin-left: -0.25rem;
+    margin-left: -0.25em;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 0.25em;
   }
 
   .timespan {
