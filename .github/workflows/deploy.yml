@@ -33,5 +33,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: master
-          publish_dir: .output/public
+          publish_dir: ./dist
           cname: ricardoboss.de
