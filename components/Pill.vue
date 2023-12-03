@@ -59,6 +59,7 @@ const backgroundClass = computed(() =>
     'postgres': #2f5b8b,
     'mssql': #e02923,
     'cpp': #0179c3,
+    'step': #2c9fcb,
   );
 
   /// Returns the luminance of `$color` as a float (between 0 and 1)

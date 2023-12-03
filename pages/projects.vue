@@ -6,6 +6,16 @@ import PageHeader from '~/components/structural/PageHeader.vue'
 
 const projects = [
   {
+    title: 'STEP',
+    description:
+      'A programming language for beginners. Strongly typed, interpreted and provides great error messages! Inspired by the likes of Javascript, Python, C# and Dart.',
+    links: [
+      { title: 'Homepage', href: 'https://step-lang.dev' },
+      { title: 'Source', href: 'https://github.com/ricardoboss/STEP' },
+    ],
+    pills: ['C#', '.NET', 'STEP'],
+  },
+  {
     title: 'PubNet',
     description:
       'Self-hosted alternative to pub.dev (Dart & Flutter package host)',
