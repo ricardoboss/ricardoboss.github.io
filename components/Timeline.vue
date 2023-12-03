@@ -81,7 +81,7 @@ $timeline-item-line-margin-bottom: 0.5rem;
 
 $timeline-line-width: 4.5px;
 $timeline-line-spacer: 2em;
-$timeline-line-color: lighten($body-bg, 10%);
+$timeline-line-color: lighten($body-bg, 5%);
 
 $timeline-bullet-width: 1.25rem;
 $timeline-bullet-current-color: $accent;
