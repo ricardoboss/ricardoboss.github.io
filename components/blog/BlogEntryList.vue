@@ -11,6 +11,8 @@ const query: QueryBuilderParams = {
   only: ['title', 'description', 'createdAt', '_path', '_id'],
 }
 
+// maybe use https://github.com/fumeapp/dayjs
+
 function humanMonth(m: number) {
   switch (m) {
     case 0:
