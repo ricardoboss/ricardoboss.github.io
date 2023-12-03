@@ -12,6 +12,9 @@ export const Wpf = 'WPF'
 export const Dart = 'Dart'
 export const Flutter = 'Flutter'
 export const Xamarin = 'Xamarin'
+export const PostgreSql = 'PostgreSQL'
+export const Delphi = 'Delphi'
+export const Sqlite = 'SQLite'
 
 export type PillType =
   | typeof Csharp
@@ -28,3 +31,6 @@ export type PillType =
   | typeof Php
   | typeof Java
   | typeof PowerShell
+  | typeof PostgreSql
+  | typeof Delphi
+  | typeof Sqlite
