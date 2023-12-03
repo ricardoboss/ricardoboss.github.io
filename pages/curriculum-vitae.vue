@@ -133,3 +133,10 @@ const educationTimeline = [
     <timeline no-current :items="educationTimeline" />
   </section>
 </template>
+
+<style scoped lang="scss">
+h2 {
+  font-size: 2em;
+  font-weight: 300;
+}
+</style>
