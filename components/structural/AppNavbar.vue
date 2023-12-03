@@ -6,6 +6,7 @@
     <router-link to="/curriculum-vitae">Curriculum Vitae</router-link>
     <router-link to="/projects">Projects</router-link>
     <router-link to="/portfolio">Portfolio</router-link>
+    <router-link to="/uses">Uses</router-link>
     <router-link to="/contact">Contact</router-link>
   </nav>
 </template>
