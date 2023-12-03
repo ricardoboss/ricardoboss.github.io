@@ -16,8 +16,10 @@
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
+
   padding: 1rem 1rem 0 0;
 
   & > * {

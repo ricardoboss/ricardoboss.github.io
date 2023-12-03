@@ -34,21 +34,24 @@ const slogans = [
 @import '@/style/global';
 
 aside {
-  display: flex;
-  flex-direction: column;
   padding: 1em;
 }
 
 #sticky-wrapper {
   position: sticky;
   top: 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
 }
 
 #picture {
-  width: 100%;
-  height: auto;
-
-  margin: 0 auto;
+  width: 40dvh; // take up at most half of the height on mobile
+  max-width: 90%; // otherwise, take up most of the width
+  min-width: 100px; // limit shrinking
+  height: auto; // ...and adjust the height accordingly
 
   border: solid 2px $accent;
   border-radius: 50%;
@@ -58,16 +61,10 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
-
-  margin-top: 2em;
+  gap: 0.25em;
 
   :nth-child(2) {
     font-size: 2em;
-  }
-
-  :nth-child(3) {
-    margin-top: 1em;
   }
 
   :nth-child(4) {
