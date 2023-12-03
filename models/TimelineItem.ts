@@ -1,4 +1,4 @@
-import type { PillType } from '~/models/PillType'
+import type { PillType } from "~/models/PillType"
 
 export default interface TimelineItem {
   title: string

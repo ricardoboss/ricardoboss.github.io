@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type CardData from '~/models/CardData'
-import Card from '~/components/Card.vue'
+import type CardData from "~/models/CardData"
+import Card from "~/components/Card.vue"
 
 export interface Props {
   cards: CardData[]

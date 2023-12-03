@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type CardData from '~/models/CardData'
-import CardLink from '~/components/CardLink.vue'
-import Pill from '~/components/Pill.vue'
+import type CardData from "~/models/CardData"
+import CardLink from "~/components/CardLink.vue"
+import Pill from "~/components/Pill.vue"
 
 interface Props {
   card: CardData

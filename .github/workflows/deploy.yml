@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-node@v4
         name: Setup Node.js
         with:
-          node-version: '18'
-          cache: 'yarn'
+          node-version: "18"
+          cache: "yarn"
 
       - run: yarn install --frozen-lockfile
         name: Install dependencies

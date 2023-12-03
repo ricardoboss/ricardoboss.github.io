@@ -2,7 +2,7 @@
 title: Progress update for age-of-aincrad.com
 createdAt: 2020-12-06T18:00:00+02
 description: >-
-    This is a progress update on my work for the new homepage for age-of-aincrad.com.
+  This is a progress update on my work for the new homepage for age-of-aincrad.com.
 ---
 
 As the year progresses further, so do I with the new homepage for age-of-aincrad.com.
@@ -55,6 +55,7 @@ I ran into a problem where the script wouldn't be executable, because it was mis
 _EDIT_: I wanted to make the script publicly available, so [here is a gist of it](https://gist.github.com/ricardoboss/de05920c5296e851490743d03d1158c8).
 
 This could be fixed by changing my git config to respect file modes:
+
 ```bash
 $ git config --global core.filemode true
 ```

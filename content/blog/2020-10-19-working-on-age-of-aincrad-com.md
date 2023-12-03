@@ -2,7 +2,7 @@
 title: Currently working on age-of-aincrad.com
 createdAt: 2020-10-19T12:00:00+02
 description: >-
-    I am currently working on the new homepage for age-of-aincrad.com (an MMOARPG inspired by Sword Art Online). This is the current state.
+  I am currently working on the new homepage for age-of-aincrad.com (an MMOARPG inspired by Sword Art Online). This is the current state.
 ---
 
 [Age of Aincrad](https://age-of-aincrad.com/) is an MMOARPG currently in development.

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Pill from '~/components/Pill.vue'
-import type TimelineItem from '~/models/TimelineItem'
+import Pill from "~/components/Pill.vue"
+import type TimelineItem from "~/models/TimelineItem"
 
 interface Props {
   items: TimelineItem[]
@@ -10,7 +10,7 @@ interface Props {
 defineProps<Props>()
 
 function timespan(item: TimelineItem) {
-  if (typeof item.to === 'undefined') return `since ${fromText(item.from)}`
+  if (typeof item.to === "undefined") return `since ${fromText(item.from)}`
   if (item.from === item.to) return fromText(item.from)
 
   return `${fromText(item.from)} - ${toText(item.to)}`
@@ -73,8 +73,8 @@ function toText(to: string) {
 </template>
 
 <style scoped lang="scss">
-@use 'sass:math';
-@import '@/style/global';
+@use "sass:math";
+@import "@/style/global";
 
 $item-min-height: 2rem;
 $item-margin-bottom: 3rem;

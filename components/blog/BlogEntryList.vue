@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BlogEntryListItem from '~/components/blog/BlogEntryListItem.vue'
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import BlogEntryListItem from "~/components/blog/BlogEntryListItem.vue"
+import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types"
 
 const query: QueryBuilderParams = {
   sort: [
@@ -8,7 +8,7 @@ const query: QueryBuilderParams = {
       createdAt: -1,
     },
   ],
-  only: ['title', 'description', 'createdAt', '_path', '_id'],
+  only: ["title", "description", "createdAt", "_path", "_id"],
 }
 
 // maybe use https://github.com/fumeapp/dayjs
@@ -16,29 +16,29 @@ const query: QueryBuilderParams = {
 function humanMonth(m: number) {
   switch (m) {
     case 0:
-      return 'January'
+      return "January"
     case 1:
-      return 'February'
+      return "February"
     case 2:
-      return 'March'
+      return "March"
     case 3:
-      return 'April'
+      return "April"
     case 4:
-      return 'May'
+      return "May"
     case 5:
-      return 'June'
+      return "June"
     case 6:
-      return 'July'
+      return "July"
     case 7:
-      return 'August'
+      return "August"
     case 8:
-      return 'September'
+      return "September"
     case 9:
-      return 'October'
+      return "October"
     case 10:
-      return 'November'
+      return "November"
     case 11:
-      return 'December'
+      return "December"
   }
 }
 

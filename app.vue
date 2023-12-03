@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppSidepanel from '~/components/structural/AppSidepanel.vue'
-import AppNavbar from '~/components/structural/AppNavbar.vue'
-import AppFooter from '~/components/structural/AppFooter.vue'
+import AppSidepanel from "~/components/structural/AppSidepanel.vue"
+import AppNavbar from "~/components/structural/AppNavbar.vue"
+import AppFooter from "~/components/structural/AppFooter.vue"
 </script>
 
 <template>
@@ -22,15 +22,15 @@ import AppFooter from '~/components/structural/AppFooter.vue'
   max-width: 100%;
 
   grid-template:
-    'navbar' auto
-    'content' minmax(100dvh, 1fr)
-    'footer' auto / 1fr;
+    "navbar" auto
+    "content" minmax(100dvh, 1fr)
+    "footer" auto / 1fr;
 
   @media (min-width: 800px) {
     grid-template:
-      'sidepanel navbar ' auto
-      'sidepanel content' minmax(100dvh, 1fr)
-      'sidepanel footer' auto / 300px 1fr;
+      "sidepanel navbar " auto
+      "sidepanel content" minmax(100dvh, 1fr)
+      "sidepanel footer" auto / 300px 1fr;
 
     #sidepanel {
       display: block;

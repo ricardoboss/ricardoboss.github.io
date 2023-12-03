@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import Picture from '~/assets/img/ricardo-boss-2023.square.min.png'
-import TitleRoller from '~/components/TitleRoller.vue'
+import Picture from "~/assets/img/ricardo-boss-2023.square.min.png"
+import TitleRoller from "~/components/TitleRoller.vue"
 
 const slogans = [
-  'Software Developer',
-  'Fullstack Developer',
-  '.NET Developer',
-  'Software Engineer',
-  'PHP Developer',
-  'Vue.js Developer',
-  'Backend Developer',
-  'Web Developer',
-  'Mobile App Developer',
+  "Software Developer",
+  "Fullstack Developer",
+  ".NET Developer",
+  "Software Engineer",
+  "PHP Developer",
+  "Vue.js Developer",
+  "Backend Developer",
+  "Web Developer",
+  "Mobile App Developer",
 ]
 </script>
 
@@ -31,7 +31,7 @@ const slogans = [
 </template>
 
 <style scoped lang="scss">
-@import '@/style/global';
+@import "@/style/global";
 
 aside {
   padding: 1em;

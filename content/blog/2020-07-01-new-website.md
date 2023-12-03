@@ -2,8 +2,8 @@
 title: New Website!
 createdAt: 2020-07-01T02:15:00.000Z
 description: >-
-    I finally developed a new personal website.
-    In this post, I documented the road to my new website using Nuxt.js and GitHub Pages.
+  I finally developed a new personal website.
+  In this post, I documented the road to my new website using Nuxt.js and GitHub Pages.
 ---
 
 ## Planning
@@ -56,9 +56,9 @@ I found a great tutorial on how to achieve this on [Kevin Regenreks](https://twi
 I created the project and started to work on the layout and the design.
 I wasn't sure where to go with the design, and the templates I looked at earlier only helped a little.
 Eventually, I settled on a 3-parted design, where I would have a sidebar on the left covering the full height, a navbar at the top, and the content in the "lower right", covering the most space.
- 
+
 As for vue components, I wrote some simple one like a timeline (for my résumé), or a project board (grid) for my "projects" page.
- 
+
 The rest was pretty straight forward with the Nuxt.js documentation at hand.
 
 ## GitHub Pages

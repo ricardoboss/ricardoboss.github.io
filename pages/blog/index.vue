@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PageHeader from '~/components/structural/PageHeader.vue'
-import BlogEntryList from '~/components/blog/BlogEntryList.vue'
+import PageHeader from "~/components/structural/PageHeader.vue"
+import BlogEntryList from "~/components/blog/BlogEntryList.vue"
 </script>
 
 <template>

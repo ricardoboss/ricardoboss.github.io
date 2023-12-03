@@ -1,244 +1,244 @@
 <script setup lang="ts">
-import CardDeck from '~/components/CardDeck.vue'
-import type CardData from '~/models/CardData'
-import GmcLogo from '~/assets/img/gmc-logo-banner.120.min.png'
-import PageHeader from '~/components/structural/PageHeader.vue'
+import CardDeck from "~/components/CardDeck.vue"
+import type CardData from "~/models/CardData"
+import GmcLogo from "~/assets/img/gmc-logo-banner.120.min.png"
+import PageHeader from "~/components/structural/PageHeader.vue"
 
 const projects = [
   {
     image:
-      'https://raw.githubusercontent.com/ricardoboss/STEP/main/StepLang.Homepage/images/repository-open-graph-logo.png',
-    imagePadding: '0',
-    title: 'STEP',
+      "https://raw.githubusercontent.com/ricardoboss/STEP/main/StepLang.Homepage/images/repository-open-graph-logo.png",
+    imagePadding: "0",
+    title: "STEP",
     description:
-      'A programming language for beginners. Strongly typed, interpreted and provides great error messages! Inspired by the likes of Javascript, Python, C# and Dart.',
+      "A programming language for beginners. Strongly typed, interpreted and provides great error messages! Inspired by the likes of Javascript, Python, C# and Dart.",
     links: [
-      { title: 'Homepage', href: 'https://step-lang.dev' },
-      { title: 'Source', href: 'https://github.com/ricardoboss/STEP' },
+      { title: "Homepage", href: "https://step-lang.dev" },
+      { title: "Source", href: "https://github.com/ricardoboss/STEP" },
     ],
-    pills: ['C#', '.NET', 'STEP'],
+    pills: ["C#", ".NET", "STEP"],
   },
   {
-    title: 'PubNet',
+    title: "PubNet",
     description:
-      'Self-hosted alternative to pub.dev (Dart & Flutter package host)',
-    links: [{ title: 'Source', href: 'https://github.com/ricardoboss/PubNet' }],
-    pills: ['C#', '.NET', 'ASP.NET', 'Blazor'],
+      "Self-hosted alternative to pub.dev (Dart & Flutter package host)",
+    links: [{ title: "Source", href: "https://github.com/ricardoboss/PubNet" }],
+    pills: ["C#", ".NET", "ASP.NET", "Blazor"],
   },
   {
-    title: 'dart_nmea',
-    description: 'A Dart decoder for the NMEA0183 protocol.',
+    title: "dart_nmea",
+    description: "A Dart decoder for the NMEA0183 protocol.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/dart_nmea' },
+      { title: "Source", href: "https://github.com/ricardoboss/dart_nmea" },
     ],
-    pills: ['Dart'],
+    pills: ["Dart"],
   },
   {
-    title: 'states-game',
-    description: 'A game where you can guess the 50 states of the USA.',
+    title: "states-game",
+    description: "A game where you can guess the 50 states of the USA.",
     links: [
-      { title: 'Play now!', href: 'https://states-game.ricardoboss.de' },
-      { title: 'Source', href: 'https://github.com/ricardoboss/states-game' },
+      { title: "Play now!", href: "https://states-game.ricardoboss.de" },
+      { title: "Source", href: "https://github.com/ricardoboss/states-game" },
     ],
-    pills: ['TS', 'Vue'],
+    pills: ["TS", "Vue"],
   },
   {
-    title: 'HostedWPF',
+    title: "HostedWPF",
     description:
-      'Base classes for windows, pages and controls using MVVM and dependency injection.',
+      "Base classes for windows, pages and controls using MVVM and dependency injection.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/HostedWPF' },
-      { title: 'nuget', href: 'https://www.nuget.org/packages/HostedWPF/' },
+      { title: "Source", href: "https://github.com/ricardoboss/HostedWPF" },
+      { title: "nuget", href: "https://www.nuget.org/packages/HostedWPF/" },
     ],
-    pills: ['C#', '.NET', 'WPF'],
+    pills: ["C#", ".NET", "WPF"],
   },
   {
-    title: 'yapsi',
-    description: 'Yet another pub-sub implementation.',
+    title: "yapsi",
+    description: "Yet another pub-sub implementation.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/yapsi' },
-      { title: 'nuget', href: 'https://www.nuget.org/packages/yapsi/' },
+      { title: "Source", href: "https://github.com/ricardoboss/yapsi" },
+      { title: "nuget", href: "https://www.nuget.org/packages/yapsi/" },
     ],
-    pills: ['C#', '.NET'],
+    pills: ["C#", ".NET"],
   },
   {
-    title: 'extended-nmea',
-    description: 'A TypeScript decoder for the NMEA0183 protocol.',
+    title: "extended-nmea",
+    description: "A TypeScript decoder for the NMEA0183 protocol.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/extended-nmea' },
+      { title: "Source", href: "https://github.com/ricardoboss/extended-nmea" },
     ],
-    pills: ['TS', 'Vue'],
+    pills: ["TS", "Vue"],
   },
   {
-    title: 'vessel-state',
+    title: "vessel-state",
     description:
-      'A Vuex store plugin for maintaining an application-wide vessel state.',
+      "A Vuex store plugin for maintaining an application-wide vessel state.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/vessel-state' },
+      { title: "Source", href: "https://github.com/ricardoboss/vessel-state" },
     ],
-    pills: ['TS', 'Vue'],
+    pills: ["TS", "Vue"],
   },
   {
     image:
-      'https://raw.githubusercontent.com/elephox-dev/.github/main/profile/logo.svg',
-    title: 'Elephox',
-    description: 'Yet another PHP framework.',
+      "https://raw.githubusercontent.com/elephox-dev/.github/main/profile/logo.svg",
+    title: "Elephox",
+    description: "Yet another PHP framework.",
     links: [
-      { title: 'Project Homepage', href: 'https://elephox.dev' },
-      { title: 'Source', href: 'https://github.com/elephox-dev/framework' },
+      { title: "Project Homepage", href: "https://elephox.dev" },
+      { title: "Source", href: "https://github.com/elephox-dev/framework" },
     ],
-    pills: ['PHP'],
+    pills: ["PHP"],
   },
   {
     title: "It's rocket science",
     description:
-      'A little browser game in which you control a rocket, orbiting a single planet.',
+      "A little browser game in which you control a rocket, orbiting a single planet.",
     links: [
       {
-        title: 'Project Homepage',
-        href: 'https://rocket-science.ricardoboss.de',
+        title: "Project Homepage",
+        href: "https://rocket-science.ricardoboss.de",
       },
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/rocket-science',
+        title: "Source",
+        href: "https://github.com/ricardoboss/rocket-science",
       },
     ],
-    pills: ['JS', 'Vue'],
+    pills: ["JS", "Vue"],
   },
   {
-    title: 'php-console-logger',
+    title: "php-console-logger",
     description:
-      'Simple PHP package for logging to a console with color and formatting.',
+      "Simple PHP package for logging to a console with color and formatting.",
     links: [
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/php-console-logger',
+        title: "Source",
+        href: "https://github.com/ricardoboss/php-console-logger",
       },
     ],
-    pills: ['PHP'],
+    pills: ["PHP"],
   },
   {
-    title: 'ricardoboss.de',
-    description: 'This website.',
+    title: "ricardoboss.de",
+    description: "This website.",
     links: [
-      { title: 'Project Homepage', href: 'https://ricardoboss.de' },
+      { title: "Project Homepage", href: "https://ricardoboss.de" },
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/ricardoboss.github.io/tree/source',
+        title: "Source",
+        href: "https://github.com/ricardoboss/ricardoboss.github.io/tree/source",
       },
     ],
-    pills: ['JS', 'Vue'],
+    pills: ["JS", "Vue"],
   },
   {
-    title: 'Analyzer Studio',
+    title: "Analyzer Studio",
     description:
-      'Tool to help you compare objects via properties defined by you.',
+      "Tool to help you compare objects via properties defined by you.",
     links: [
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/AnalyzerStudio',
+        title: "Source",
+        href: "https://github.com/ricardoboss/AnalyzerStudio",
       },
     ],
-    pills: ['C#', '.NET', 'WPF'],
+    pills: ["C#", ".NET", "WPF"],
   },
   {
-    title: 'laravel-roles-migrations',
+    title: "laravel-roles-migrations",
     description:
       'A tool which adds migrations for <a href="https://github.com/jeremykenedy/laravel-roles" target="_blank">jeremykenedy/laravel-roles</a>.',
     links: [
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/laravel-roles-migrations',
+        title: "Source",
+        href: "https://github.com/ricardoboss/laravel-roles-migrations",
       },
     ],
-    pills: ['PHP'],
+    pills: ["PHP"],
   },
   {
     image: GmcLogo,
-    title: 'GameModeControl',
+    title: "GameModeControl",
     description:
-      'A plugin for Minecraft Servers which adds commands and permissions for changing the gamemode of players.',
+      "A plugin for Minecraft Servers which adds commands and permissions for changing the gamemode of players.",
     links: [
       {
-        title: 'Project Homepage',
-        href: 'https://dev.bukkit.org/projects/gamemode-control',
+        title: "Project Homepage",
+        href: "https://dev.bukkit.org/projects/gamemode-control",
       },
-      { title: 'Statistics', href: 'https://bstats.org/plugin/bukkit/GMC' },
+      { title: "Statistics", href: "https://bstats.org/plugin/bukkit/GMC" },
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/GameModeControl',
+        title: "Source",
+        href: "https://github.com/ricardoboss/GameModeControl",
       },
     ],
-    pills: ['Java'],
+    pills: ["Java"],
   },
   {
-    title: 'WEpS',
+    title: "WEpS",
     description:
-      'WorldEdit plus Signs. Adds a WE-style command for editing signs to Minecraft Servers.',
+      "WorldEdit plus Signs. Adds a WE-style command for editing signs to Minecraft Servers.",
     links: [
       {
-        title: 'Project Homepage',
-        href: 'https://dev.bukkit.org/projects/world-edit-plus-signs',
+        title: "Project Homepage",
+        href: "https://dev.bukkit.org/projects/world-edit-plus-signs",
       },
-      { title: 'Source', href: 'https://github.com/ricardoboss/WEpS' },
+      { title: "Source", href: "https://github.com/ricardoboss/WEpS" },
     ],
-    pills: ['Java'],
+    pills: ["Java"],
   },
   {
-    title: 'dotnet-remote-setup',
+    title: "dotnet-remote-setup",
     description:
-      'A script to help you set up .NET Core debugging on a remote device (like a Raspberry PI).',
+      "A script to help you set up .NET Core debugging on a remote device (like a Raspberry PI).",
     links: [
       {
-        title: 'Source',
-        href: 'https://github.com/ricardoboss/dotnet-remote-setup',
+        title: "Source",
+        href: "https://github.com/ricardoboss/dotnet-remote-setup",
       },
     ],
-    pills: ['PowerShell'],
+    pills: ["PowerShell"],
   },
   {
-    title: 'php-installer',
-    description: 'GUI which downloads and installs PHP versions for Windows.',
+    title: "php-installer",
+    description: "GUI which downloads and installs PHP versions for Windows.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/php-installer' },
+      { title: "Source", href: "https://github.com/ricardoboss/php-installer" },
     ],
-    pills: ['C#', '.NET', 'WPF'],
+    pills: ["C#", ".NET", "WPF"],
   },
   {
-    title: 'BSCLI',
+    title: "BSCLI",
     description:
       'Command line tool which downloads and installs Beat Saber songs from <a href="https://beatsaver.com/" target="_blank">BeatSaver</a>.',
-    links: [{ title: 'Source', href: 'https://github.com/ricardoboss/BSCLI' }],
-    pills: ['C#', '.NET'],
+    links: [{ title: "Source", href: "https://github.com/ricardoboss/BSCLI" }],
+    pills: ["C#", ".NET"],
   },
   {
-    title: 'WebConsole',
+    title: "WebConsole",
     description:
-      'Remote console interface for Minecraft servers. Plugin is written in Java, client in PHP.',
+      "Remote console interface for Minecraft servers. Plugin is written in Java, client in PHP.",
     links: [
       {
-        title: 'Project Homepage',
-        href: 'https://dev.bukkit.org/projects/webconsole',
+        title: "Project Homepage",
+        href: "https://dev.bukkit.org/projects/webconsole",
       },
       {
-        title: 'Client Source',
-        href: 'https://github.com/ricardoboss/WebConsole-Client',
+        title: "Client Source",
+        href: "https://github.com/ricardoboss/WebConsole-Client",
       },
       {
-        title: 'Plugin Source',
-        href: 'https://github.com/ricardoboss/WebConsole-Server',
+        title: "Plugin Source",
+        href: "https://github.com/ricardoboss/WebConsole-Server",
       },
     ],
-    pills: ['PHP', 'Java'],
+    pills: ["PHP", "Java"],
   },
   {
-    title: 'LoginLib',
+    title: "LoginLib",
     description:
-      'A php library that provides the background mechanics of a registration and login for your website.',
+      "A php library that provides the background mechanics of a registration and login for your website.",
     links: [
-      { title: 'Source', href: 'https://github.com/ricardoboss/LoginLib' },
+      { title: "Source", href: "https://github.com/ricardoboss/LoginLib" },
     ],
-    pills: ['PHP'],
+    pills: ["PHP"],
   },
 ] as CardData[]
 </script>

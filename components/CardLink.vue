@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type CardLinkData from '~/models/CardLinkData'
+import type CardLinkData from "~/models/CardLinkData"
 
 interface Props {
   link: CardLinkData

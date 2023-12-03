@@ -2,8 +2,8 @@
 title: Developing extended-nmea
 createdAt: 2021-05-19T15:00:00+02:00
 description: >-
-    These are some insights into the development of a node package called extended-nmea, which decodes a stream of text
-    from a protocol called NMEA0183 into objects. Written in TypeScript.
+  These are some insights into the development of a node package called extended-nmea, which decodes a stream of text
+  from a protocol called NMEA0183 into objects. Written in TypeScript.
 ---
 
 ## extended-nmea
@@ -42,7 +42,7 @@ A talker sentence always begins with "$" followed by the talker ID and then the 
 characters and the sentence ID always three characters in length. Following this "header" is a list of fields, separated
 by commas. The number of fields varies by sentence ID. Some sentences need more than 80 characters, so they dedicate the
 first two fields to a "page" and "total pages" type of information (can be seen in GSV for example).
-After this list, a "*" character followed by a checksum is appended. The newline ends the sentence.
+After this list, a "\*" character followed by a checksum is appended. The newline ends the sentence.
 
 ```
 $AABBB,CCC,123,...*XX<CR><LF>
@@ -51,22 +51,23 @@ $AABBB,CCC,123,...*XX<CR><LF>
 In this example, `AA` is the talker ID, `BBB` is the sentence ID, `CCC,123,...` are the data fields and `XX` is the
 checksum.
 
-The checksum is a simple XOR-checksum for every character between "$" and "*", excluding both. This is a code snippet
+The checksum is a simple XOR-checksum for every character between "$" and "\*", excluding both. This is a code snippet
 from the library, which implements this checksum calculation in Typescript ([permalink][4]):
 
 ```typescript
 function xorChecksum(data: string): Uppercase<string> {
-  if (typeof data !== 'string')
-    throw new TypeError(`Cannot use arguments of type '${typeof data}' as input.`);
+  if (typeof data !== "string")
+    throw new TypeError(
+      `Cannot use arguments of type '${typeof data}' as input.`,
+    )
 
-  let sum = 0;
-  for (let i = 0; i < data.length; i++)
-    sum ^= data.charCodeAt(i);
+  let sum = 0
+  for (let i = 0; i < data.length; i++) sum ^= data.charCodeAt(i)
 
-  const hex = sum.toString(16);
+  const hex = sum.toString(16)
 
   // crude hack to pad with zeros
-  return ('00' + hex).slice(-2).toUpperCase();
+  return ("00" + hex).slice(-2).toUpperCase()
 }
 ```
 
@@ -131,24 +132,26 @@ a string given to it has and passes it to a more-detailed decoder method:
 ```typescript
 class Decoder {
   public static decode(data: string): INmeaSentence {
-    if (typeof data !== 'string')
-    	throw new Error(`Unable to decode sentence: invalid data type: ${typeof data}. Only strings are supported.`);
+    if (typeof data !== "string")
+      throw new Error(
+        `Unable to decode sentence: invalid data type: ${typeof data}. Only strings are supported.`,
+      )
 
     // check proprietary sentences first to prevent false positives
-    if (data.length > 1 && data[1] === 'P') {
-      return this.decodeProprietary(data);
+    if (data.length > 1 && data[1] === "P") {
+      return this.decodeProprietary(data)
     }
 
-    if (data.length > 5 && data[5] === 'Q') {
-      return this.decodeQuery(data);
+    if (data.length > 5 && data[5] === "Q") {
+      return this.decodeQuery(data)
     }
 
-    return this.decodeTalker(data);
+    return this.decodeTalker(data)
   }
 }
 ```
 
-Each method has it's own way of parsing the given sentence. A query sentence for example will just invoke the 
+Each method has it's own way of parsing the given sentence. A query sentence for example will just invoke the
 `QuerySentence` constructor and all interpretation of the data is done in the getters. Proprietary and talker sentences
 on the other hand need to be dynamic and receive a little more evaluation.
 
@@ -159,18 +162,20 @@ full type safety:
 
 ```typescript
 class Decoder {
-  public static decodeProprietary<T extends IProprietarySentence>(data: string): T {
-		const manufacturerId = data.substr(2, data.indexOf(',') - 2);
-		if (!Decoder.ProprietaryCodecs.has(manufacturerId))
-			throw new Error(`Unable to decode sentence: unknown manufacturer id for proprietary sentence: ${manufacturerId}`);
+  public static decodeProprietary<T extends IProprietarySentence>(
+    data: string,
+  ): T {
+    const manufacturerId = data.substr(2, data.indexOf(",") - 2)
+    if (!Decoder.ProprietaryCodecs.has(manufacturerId))
+      throw new Error(
+        `Unable to decode sentence: unknown manufacturer id for proprietary sentence: ${manufacturerId}`,
+      )
 
-		const sentenceConstructor = Decoder.ProprietaryCodecs.get(manufacturerId);
-		return new sentenceConstructor(data, manufacturerId) as T;
-	}
+    const sentenceConstructor = Decoder.ProprietaryCodecs.get(manufacturerId)
+    return new sentenceConstructor(data, manufacturerId) as T
+  }
 }
 ```
-
-
 
 [1]: https://npmjs.com/package/extended-nmea
 [2]: https://www.nmea.org/

@@ -12,7 +12,7 @@
 </template>
 
 <style scoped lang="scss">
-@import '@/style/global';
+@import "@/style/global";
 
 nav {
   display: flex;

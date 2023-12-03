@@ -1,5 +1,5 @@
-import type CardLinkData from '~/models/CardLinkData'
-import type { PillType } from '~/models/PillType'
+import type CardLinkData from "~/models/CardLinkData"
+import type { PillType } from "~/models/PillType"
 
 export default interface CardData {
   image?: string
