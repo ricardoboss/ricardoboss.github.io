@@ -96,6 +96,10 @@ const contactCards = [
   <main>
     <page-header title="Contact" />
 
-    <card-deck :cards="contactCards" max-img-height="128px" />
+    <card-deck
+      :cards="contactCards"
+      image-max-height="64px"
+      card-width="15em"
+    />
   </main>
 </template>

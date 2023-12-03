@@ -8,6 +8,7 @@ const projects = [
   {
     image:
       'https://raw.githubusercontent.com/ricardoboss/STEP/main/StepLang.Homepage/images/repository-open-graph-logo.png',
+    imagePadding: '0',
     title: 'STEP',
     description:
       'A programming language for beginners. Strongly typed, interpreted and provides great error messages! Inspired by the likes of Javascript, Python, C# and Dart.',

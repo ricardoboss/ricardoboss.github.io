@@ -5,7 +5,7 @@ import Pill from '~/components/Pill.vue'
 
 interface Props {
   card: CardData
-  maxImgHeight?: string
+  imageMaxHeight?: string
 }
 
 defineProps<Props>()
@@ -18,9 +18,9 @@ defineProps<Props>()
       class="image"
       :alt="card.title"
       :src="card.image"
-      :style="
-        typeof maxImgHeight !== 'undefined' ? `height: ${maxImgHeight}` : ''
-      "
+      :style="`--image-max-height: ${
+        card.imageMaxHeight ?? imageMaxHeight ?? 'auto'
+      }; --image-padding: ${card.imagePadding ?? '1em'};`"
     />
     <div class="title">{{ card.title }}</div>
     <div class="description" v-html="card.description" />
@@ -70,12 +70,10 @@ $card-link-hover: lighten($card-bg, 3%);
   overflow: clip;
 
   .image {
-    img {
-      padding: 1rem !important;
-
-      width: 100%;
-      height: auto;
-    }
+    width: auto;
+    height: auto;
+    max-height: var(--image-max-height);
+    padding: var(--image-padding) !important;
   }
 
   .title {
