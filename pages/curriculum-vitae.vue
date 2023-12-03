@@ -90,7 +90,6 @@ const workTimeline = [
     description: 'Trainee',
     from: '2018-03',
     to: '2018-03',
-    link: 'https://www.busse-computer.de/',
   },
 ] as TimelineItem[]
 
