@@ -41,8 +41,13 @@ hr {
   margin: 1.5em 0;
 }
 
+pre {
+  overflow-x: auto;
+}
+
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.5em;
+  height: 0.5em;
 }
 
 ::-webkit-scrollbar-track {

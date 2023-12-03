@@ -18,6 +18,8 @@ import AppFooter from '~/components/structural/AppFooter.vue'
 <style lang="scss" scoped>
 #default-layout {
   display: grid;
+  width: 100%;
+  max-width: 100%;
 
   grid-template:
     'navbar' auto
@@ -33,7 +35,19 @@ import AppFooter from '~/components/structural/AppFooter.vue'
     #sidepanel {
       display: block;
     }
+
+    max-width: 1000px;
   }
+
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
+
+  @media (min-width: 1600px) {
+    max-width: 1600px;
+  }
+
+  margin: 0 auto;
 }
 
 #sidepanel {
@@ -50,6 +64,7 @@ import AppFooter from '~/components/structural/AppFooter.vue'
   grid-area: content;
   padding-right: 1em;
   padding-left: 1em;
+  min-width: 0;
 }
 
 #footer {
