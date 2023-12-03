@@ -101,8 +101,12 @@ $timeline-bullet-current-color: $accent;
     background: $timeline-bullet-current-color;
   }
 
+  &.current .timeline-dot {
+    animation: dot-pulse 1s 0.5s infinite alternate ease-in;
+  }
+
   &.current .timeline-dot-highlight {
-    animation: dot-highlight 2s infinite;
+    animation: dot-highlight 2s infinite ease-out;
   }
 
   &:last-of-type .timeline-line {
@@ -168,14 +172,31 @@ $timeline-bullet-current-color: $accent;
 }
 
 @keyframes dot-highlight {
-  from {
+  0% {
     opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  90% {
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-pulse {
+  0% {
     transform: scale(1);
   }
 
-  to {
-    opacity: 0;
-    transform: scale(2);
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
   }
 }
 </style>
