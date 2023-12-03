@@ -15,10 +15,10 @@ defineProps<Props>()
     <img v-if="card.image" class="image" :alt="card.title" :src="card.image" />
     <div class="title">{{ card.title }}</div>
     <div class="description">{{ card.description }}</div>
-    <div class="links">
+    <div class="links" v-if="card.links">
       <card-link v-for="(link, i) in card.links" :key="i" :link="link" />
     </div>
-    <div class="pills">
+    <div class="pills" v-if="card.pills">
       <pill v-for="(pill, i) in card.pills" :key="i" :pill="pill" />
     </div>
   </div>

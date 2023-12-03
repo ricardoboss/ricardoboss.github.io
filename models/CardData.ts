@@ -5,6 +5,6 @@ export default interface CardData {
   image?: string
   title: string
   description: string
-  links: CardLinkData[]
-  pills: PillType[]
+  links?: CardLinkData[]
+  pills?: PillType[]
 }

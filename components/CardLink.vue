@@ -9,7 +9,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <a :href="link.href" :rel="link.rel">
+  <a :href="link.href" :rel="link.rel" :target="link.target">
     {{ link.title }}
   </a>
 </template>
