@@ -14,7 +14,7 @@ defineProps<Props>()
   <div class="card">
     <img v-if="card.image" class="image" :alt="card.title" :src="card.image" />
     <div class="title">{{ card.title }}</div>
-    <div class="description">{{ card.description }}</div>
+    <div class="description" v-html="card.description" />
     <div class="links" v-if="card.links">
       <card-link v-for="(link, i) in card.links" :key="i" :link="link" />
     </div>
