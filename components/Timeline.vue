@@ -162,12 +162,21 @@ $bullet-current-color: $accent;
   }
 
   .title {
-    text-decoration: none;
-    color: inherit;
-
     font-size: 1.25em;
 
     margin-top: -0.15em;
+
+    transition: all 0.1s ease-in-out;
+
+    &[href] {
+      @include link-style;
+
+      color: inherit;
+    }
+
+    &[href]:hover {
+      color: $accent;
+    }
   }
 
   .badges {
