@@ -16,14 +16,25 @@ body {
 	letter-spacing: 0.02em;
 }
 
-a {
+@mixin link-style {
 	color: $accent;
 	font-weight: 400;
 
+	text-decoration: underline;
 	text-decoration-color: currentColor;
 	text-decoration-thickness: 0.01em;
 	text-decoration-style: dotted;
 	text-underline-offset: 0.21em;
+}
+
+a {
+	@include link-style;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #404040;
+	margin: 1.5em 0;
 }
 
 ::-webkit-scrollbar {

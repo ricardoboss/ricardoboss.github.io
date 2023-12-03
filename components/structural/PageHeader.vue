@@ -32,11 +32,5 @@ section {
     font-size: 1.05em;
     line-height: 1.5;
   }
-
-  hr {
-    border: 0;
-    border-top: 1px solid #404040;
-    margin: 1.5em 0;
-  }
 }
 </style>
