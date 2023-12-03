@@ -5,6 +5,7 @@ import Pill from '~/components/Pill.vue'
 
 interface Props {
   card: CardData
+  maxImgHeight?: string
 }
 
 defineProps<Props>()
@@ -12,7 +13,15 @@ defineProps<Props>()
 
 <template>
   <div class="card">
-    <img v-if="card.image" class="image" :alt="card.title" :src="card.image" />
+    <img
+      v-if="card.image"
+      class="image"
+      :alt="card.title"
+      :src="card.image"
+      :style="
+        typeof maxImgHeight !== 'undefined' ? `height: ${maxImgHeight}` : ''
+      "
+    />
     <div class="title">{{ card.title }}</div>
     <div class="description" v-html="card.description" />
     <div class="links" v-if="card.links">

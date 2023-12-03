@@ -4,6 +4,7 @@ import Card from '~/components/Card.vue'
 
 export interface Props {
   cards: CardData[]
+  maxImgHeight?: string
 }
 
 defineProps<Props>()
@@ -11,7 +12,12 @@ defineProps<Props>()
 
 <template>
   <div class="card-deck">
-    <card v-for="(card, i) in cards" :key="i" :card="card">
+    <card
+      v-for="(card, i) in cards"
+      :key="i"
+      :card="card"
+      :max-img-height="maxImgHeight"
+    >
       {{ card.title }}
     </card>
   </div>
