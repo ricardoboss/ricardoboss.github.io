@@ -17,13 +17,15 @@ const slogans = [
 
 <template>
   <aside>
-    <img alt="Ricardo Boss 20231" :src="Picture" id="picture" />
+    <div id="sticky-wrapper">
+      <img alt="Ricardo Boss 20231" :src="Picture" id="picture" />
 
-    <div id="info">
-      <span>Hi, I'm</span>
-      <span>Ricardo Boss</span>
-      <span>a</span>
-      <title-roller :titles="slogans" :interval="10000" />
+      <div id="info">
+        <span>Hi, I'm</span>
+        <span>Ricardo Boss</span>
+        <span>a</span>
+        <title-roller :titles="slogans" :interval="10000" />
+      </div>
     </div>
   </aside>
 </template>
@@ -34,7 +36,12 @@ const slogans = [
 aside {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1em;
+}
+
+#sticky-wrapper {
+  position: sticky;
+  top: 1em;
 }
 
 #picture {

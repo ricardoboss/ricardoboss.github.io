@@ -34,8 +34,8 @@ import AppFooter from '~/components/structural/AppFooter.vue'
 
 #content {
   grid-area: content;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 #footer {
