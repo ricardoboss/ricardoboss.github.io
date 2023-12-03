@@ -29,6 +29,8 @@ nav {
 
     transition: background 0.1s ease-out;
 
+    white-space: nowrap;
+
     &.router-link-active {
       background: $accent !important;
       color: $body-bg;

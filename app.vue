@@ -18,14 +18,28 @@ import AppFooter from '~/components/structural/AppFooter.vue'
 <style lang="scss" scoped>
 #default-layout {
   display: grid;
+
   grid-template:
-    'sidepanel navbar ' auto
-    'sidepanel content' minmax(100dvh, 1fr)
-    'sidepanel footer' auto / 2fr 7fr;
+    'navbar' auto
+    'content' minmax(100dvh, 1fr)
+    'footer' auto / 1fr;
+
+  @media (min-width: 800px) {
+    grid-template:
+      'sidepanel navbar ' auto
+      'sidepanel content' minmax(100dvh, 1fr)
+      'sidepanel footer' auto / 300px 1fr;
+
+    #sidepanel {
+      display: block;
+    }
+  }
 }
 
 #sidepanel {
   grid-area: sidepanel;
+
+  display: none;
 }
 
 #navbar {
