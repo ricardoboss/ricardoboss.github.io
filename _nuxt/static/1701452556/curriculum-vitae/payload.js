@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/curriculum-vitae", {data:[{}],fetch:{},mutations:void 0});
