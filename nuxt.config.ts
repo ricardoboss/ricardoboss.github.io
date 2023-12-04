@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   css: ["@/style/_global.scss"],
   modules: ["@nuxtjs/eslint-module", "@nuxt/content"],
   content: {
-    ignores: ["drafts/**/*"],
+    ignores: ["drafts/*"],
     highlight: {
       theme: "github-dark",
       preload: [
