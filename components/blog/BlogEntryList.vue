@@ -13,8 +13,14 @@ const query: QueryBuilderParams = {
 
 // maybe use https://github.com/fumeapp/dayjs
 
-function humanMonth(m: number) {
-  switch (m) {
+function entryYear(entry: { createdAt: string }) {
+  return new Date(entry.createdAt).getFullYear().toFixed(0)
+}
+
+function entryMonth(entry: { createdAt: string }) {
+  const month = new Date(entry.createdAt).getMonth()
+
+  switch (month) {
     case 0:
       return "January"
     case 1:
@@ -41,39 +47,23 @@ function humanMonth(m: number) {
       return "December"
   }
 }
-
-function entryYear(entry: { createdAt: string }) {
-  return new Date(entry.createdAt).getFullYear()
-}
-
-function entryMonth(entry: { createdAt: string }) {
-  return new Date(entry.createdAt).getMonth()
-}
-
-// kinda dirty, but it works
-let year = 0
-let month = 0
 </script>
 
 <template>
   <div id="blog-entry-list">
     <ContentList path="/blog" :query="query">
       <template #default="{ list }">
-        <template v-for="entry in list" :key="entry._id">
-          <template v-if="year !== entryYear(entry)">
-            <h2 class="year-header">{{ (year = entryYear(entry)) }}</h2>
+        <sectioned-list
+          :data="list"
+          :main-selector="entryYear"
+          :sub-selector="entryMonth"
+        >
+          <template #item="item">
+            <blog-entry-list-item :entry="item" class="blog-entry-list-item" />
           </template>
-
-          <template v-if="month !== entryMonth(entry)">
-            <h3 class="month-header">
-              {{ humanMonth((month = entryMonth(entry))) }}
-            </h3>
-          </template>
-
-          <blog-entry-list-item :entry="entry" class="blog-entry-list-item" />
-        </template>
+          <template #empty> No blog entries found. </template>
+        </sectioned-list>
       </template>
-      <template #not-found>No blog entries found.</template>
     </ContentList>
   </div>
 </template>

@@ -73,7 +73,7 @@ const humanDate = computed(() => {
   transition: all 0.2s;
 
   display: block;
-  padding: 1.5em;
+  padding: 1em;
 
   border-radius: 0.5em;
 

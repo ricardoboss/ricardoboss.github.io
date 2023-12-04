@@ -1,23 +1,28 @@
 <script setup lang="ts">
 import PageHeader from "~/components/structural/PageHeader.vue"
 
-interface Section {
+interface Category {
   title: string
-  lists: List[]
+  lists: CategoryLists[]
 }
 
-interface List {
+interface CategoryLists {
   title: string
-  items: Item[]
+  items: CategoryListItem[]
 }
 
-interface Item {
+interface CategoryListItem {
   title: string
   link: string
   comment?: string
 }
 
-const sections = [
+interface Section extends CategoryListItem {
+  category: string
+  subcategory: string
+}
+
+const categories = [
   {
     title: "Software",
     lists: [
@@ -231,7 +236,25 @@ const sections = [
       },
     ],
   },
-] as Section[]
+] as Category[]
+
+const sections = computed(() => {
+  const sections: Section[] = []
+
+  categories.forEach((category) => {
+    category.lists.forEach((list) => {
+      list.items.forEach((item) => {
+        sections.push({
+          ...item,
+          category: category.title,
+          subcategory: list.title,
+        })
+      })
+    })
+  })
+
+  return sections
+})
 </script>
 
 <template>
@@ -241,125 +264,53 @@ const sections = [
       builds at <a href="https://uses.tech/" target="_blank">uses.tech</a>!
     </page-header>
 
-    <div v-for="(section, i) in sections" :key="i" class="section">
-      <h2>{{ section.title }}</h2>
-
-      <div v-for="(list, ii) in section.lists" :key="ii" class="list">
-        <h3>{{ list.title }}</h3>
-
-        <ul class="item-wrapper">
-          <li v-for="(entry, iii) in list.items" :key="iii" class="item">
-            <a :href="entry.link" target="_blank">
-              <span class="title">{{ entry.title }}</span>
-              <span class="link">{{ entry.link }}</span>
-              <p v-if="entry.comment" class="comment">{{ entry.comment }}</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <sectioned-list
+      :data="sections"
+      :main-selector="(s) => s.category"
+      :sub-selector="(s) => s.subcategory"
+    >
+      <template #item="{ title, link, comment }">
+        <a :href="link" target="_blank" class="uses-item">
+          <span class="title">{{ title }}</span>
+          <span class="link">{{ link }}</span>
+          <p v-if="comment" class="comment">{{ comment }}</p>
+        </a>
+      </template>
+    </sectioned-list>
   </main>
 </template>
 
 <style lang="scss" scoped>
 @import "@/style/global";
 
-.section {
-  margin-bottom: 2em;
+.uses-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
 
-  &:last-child {
-    margin-bottom: 0;
+  padding: 0.5em;
+  border-radius: 0.5em;
+
+  color: currentColor;
+  text-decoration: none;
+
+  .title {
+    @include link-style;
+
+    font-size: 1.2em;
   }
 
-  h2 {
-    font-weight: 300;
-    font-size: 2em;
-
-    margin-bottom: 0;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 2;
-
-    background: $body-bg;
-
-    border-bottom: 1px solid $accent;
+  .link {
+    font-size: 0.8em;
+    opacity: 0.5;
   }
 
-  .list {
-    margin-bottom: 1em;
-    margin-left: 1em;
+  .comment {
+    margin: 0;
+  }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-weight: 300;
-      font-size: 1.5em;
-
-      margin-top: 0;
-      margin-bottom: 0.75em;
-      padding-bottom: 0.5em;
-      padding-top: 1.5em;
-
-      position: sticky;
-      top: 1.5em;
-
-      z-index: 1;
-
-      background: $body-bg;
-
-      text-decoration: underline;
-      text-decoration-color: $accent;
-      text-underline-offset: 0.3em;
-      text-decoration-thickness: 0.01em;
-    }
-
-    .item-wrapper {
-      margin: 0 0 0 1.5em;
-      padding: 0;
-
-      .item {
-        margin-bottom: 1.5em;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        a {
-          display: flex;
-          flex-direction: column;
-          gap: 0.75em;
-
-          padding: 0.5em;
-          border-radius: 0.5em;
-
-          color: currentColor;
-          text-decoration: none;
-
-          .title {
-            @include link-style;
-
-            font-size: 1.2em;
-          }
-
-          .link {
-            font-size: 0.8em;
-            opacity: 0.5;
-          }
-
-          .comment {
-            margin: 0;
-          }
-
-          &:hover {
-            background: #404040;
-          }
-        }
-      }
-    }
+  &:hover {
+    background: #404040;
   }
 }
 </style>
