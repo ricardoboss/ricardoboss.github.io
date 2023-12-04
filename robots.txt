@@ -1,11 +1,11 @@
 # Group for all bots
 User-Agent: *
 
-# Don't index framework folder
-Disallow: /_nuxt/
+# Don't index api
+Disallow: /api/
 
 # Don't index vector images
-Disallow: /vector/
+Disallow: /_nuxt/*.svg$
 
 # Don't index meta-files
 Disallow: /.nojekyll$
