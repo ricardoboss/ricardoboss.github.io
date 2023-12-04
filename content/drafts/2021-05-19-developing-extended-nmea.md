@@ -18,7 +18,7 @@ trackers, temperature sensors and many other things, but mainly sensors.
 enhancing the technology and safety of marine electronics through installer training and interface standards".
 One of these standards is NMEA0183. If you want to purchase the latest version of their standard definition, you can
 buy one on their site. If you aren't working with it professionally, I would not recommend buying it, since there are
-enough reverse-engineered documentations online available (I even added two to the extended-nmea repository to ease
+enough reverse-engineered documentations available online (I even added two to the extended-nmea repository to ease
 development).
 
 ### The Protocol
@@ -155,7 +155,7 @@ Each method has it's own way of parsing the given sentence. A query sentence for
 `QuerySentence` constructor and all interpretation of the data is done in the getters. Proprietary and talker sentences
 on the other hand need to be dynamic and receive a little more evaluation.
 
-To instatiate a proprietary sentence, we first need to check if it has been registered in the decoder. The
+To instantiate a proprietary sentence, we first need to check if it has been registered in the decoder. The
 `ProprietaryCodecs` array contains the constructors registered by the user and are keyed by their identifier
 (manufacturer id + sentence id). If the user expects a certain type, they can pass it as a generic parameter and enjoy
 full type safety:
