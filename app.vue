@@ -15,7 +15,7 @@ import AppFooter from "~/components/structural/AppFooter.vue"
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #default-layout {
   display: grid;
   width: 100%;
@@ -69,5 +69,16 @@ import AppFooter from "~/components/structural/AppFooter.vue"
 
 #footer {
   grid-area: footer;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.15s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(0.5em);
 }
 </style>

@@ -9,4 +9,7 @@ export default defineNuxtConfig({
       preload: ["javascript", "typescript", "bash"],
     },
   },
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
 })
