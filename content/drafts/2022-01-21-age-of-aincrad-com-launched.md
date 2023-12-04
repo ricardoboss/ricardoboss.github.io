@@ -2,7 +2,7 @@
 title: Developing extended-nmea
 createdAt: 2022-01-21T22:00:00+02:00
 description: >-
-    The new website of Age of Aincrad finally launched.
+  The new website of Age of Aincrad finally launched.
 ---
 
 ## Party-Time!
@@ -28,7 +28,6 @@ Here are some key takeaways I learned on the way.
 
 Some time into any project, you'll want to preview your work.
 Be it to a coworker, a manager or someone else.
-
 
 [age-of-aincrad.com]: https://age-of-aincrad.com/
 [Vuetify]: https://vuetifyjs.com/en/

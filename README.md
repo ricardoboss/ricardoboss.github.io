@@ -2,25 +2,36 @@
 
 > Ricardo Boss' Homepage
 
-## Interested in how it works?
+Built using [Nuxt](https://nuxt.com/).
 
-I documented how I built this project in this blog post: [ricardoboss.de/blog/2020-07-01-new-website](https://ricardoboss.de/blog/2020-07-01-new-website)
+## Development Setup
 
-## Build Setup
+Install dependencies:
 
-``` bash
-# install dependencies
-$ yarn
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project (for deployment)
-$ yarn generate
+```bash
+yarn
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+### Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+yarn dev
+```
+
+### Production
+
+Build the application for production:
+
+```bash
+yarn build
+```
+
+Locally preview production build:
+
+```bash
+yarn preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

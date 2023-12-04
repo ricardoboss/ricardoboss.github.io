@@ -1,66 +1,222 @@
+<script setup lang="ts">
+import Pill from "~/components/Pill.vue"
+import type TimelineItem from "~/models/TimelineItem"
+
+interface Props {
+  items: TimelineItem[]
+  noCurrent?: boolean
+}
+
+defineProps<Props>()
+
+function timespan(item: TimelineItem) {
+  if (typeof item.to === "undefined") return `since ${fromText(item.from)}`
+  if (item.from === item.to) return fromText(item.from)
+
+  return `${fromText(item.from)} - ${toText(item.to)}`
+}
+
+function fromText(from: string) {
+  // return this.$moment(from).format('MMMM YYYY')
+  return from
+}
+
+function toText(to: string) {
+  // return this.$moment(to).format('MMMM YYYY')
+  return to
+}
+</script>
+
 <template>
   <ol class="timeline">
-    <li v-for="(milestone, i) in milestones" :key="i"
-        class="timeline-item"
-        :class="{current: i === 0 && !noCurrent, minor: milestone.hasOwnProperty('minor') && milestone.minor}">
-      <div class="timeline-line">
-        <div class="timeline-dot-highlight"></div>
-        <div class="timeline-dot"></div>
+    <li
+      v-for="(milestone, i) in items"
+      :key="i"
+      class="item"
+      :class="{
+        current: i === 0 && !noCurrent,
+        minor: milestone.minor,
+      }"
+    >
+      <div class="line">
+        <div class="dot-highlight" v-if="i === 0 && !noCurrent"></div>
+        <div class="dot"></div>
       </div>
-      <div class="timeline-content">
-        <component v-if="milestone.hasOwnProperty('title')"
-                   :is="milestone.hasOwnProperty('link') ? 'a' : 'span'"
-                   :href="milestone.link"
-                   :target="milestone.hasOwnProperty('link') ? '_blank' : undefined"
-                   class="timeline-title">{{ milestone.title }}</component>
-        <span class="timeline-timespan">{{ timespan(milestone) }}</span>
-        <p v-if="milestone.hasOwnProperty('description')" class="timeline-description">{{ milestone.description }}</p>
-        <div v-if="milestone.hasOwnProperty('languages')" class="timeline-badges">
-          <lang-badge v-for="language in milestone.languages"
-                      :key="language"
-                      :language="language"
-          />
+      <div class="content">
+        <component
+          v-if="typeof milestone.title !== 'undefined'"
+          :is="typeof milestone.link !== 'undefined' ? 'a' : 'span'"
+          :href="milestone.link"
+          :target="milestone.hasOwnProperty('link') ? '_blank' : undefined"
+          class="title"
+        >
+          {{ milestone.title }}
+        </component>
+        <span class="timespan">{{ timespan(milestone) }}</span>
+        <p
+          v-if="typeof milestone.description !== 'undefined'"
+          class="description"
+        >
+          {{ milestone.description }}
+        </p>
+        <div
+          v-if="
+            typeof milestone.pills !== 'undefined' && milestone.pills.length > 0
+          "
+          class="badges"
+        >
+          <pill v-for="pill in milestone.pills" :key="pill" :pill="pill" />
         </div>
       </div>
     </li>
   </ol>
 </template>
 
-<script>
-import LangBadge from "./LangBadge";
-export default {
-  name: "Timeline",
-  components: {LangBadge},
+<style scoped lang="scss">
+@use "sass:math";
+@import "@/style/global";
 
-  props: {
-    milestones: {
-      type: Array,
-      required: true
-    },
-    noCurrent: {
-      type: Boolean,
-      default: false
+$item-min-height: 2rem;
+$item-margin-bottom: 3rem;
+$item-line-margin-bottom: 0.5rem;
+
+$line-width: 4.5px;
+$line-spacer: 2em;
+$line-color: lighten($body-bg, 5%);
+
+$bullet-width: 1.25rem;
+$bullet-color: lighten($body-bg, 10%);
+$bullet-current-color: $accent;
+
+.timeline {
+  list-style: none;
+  padding-left: 0;
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    min-height: $item-min-height;
+
+    &.current {
+      .dot,
+      .dot-highlight {
+        background: $bullet-current-color;
+      }
+
+      .dot {
+        animation: dot-pulse 1s infinite alternate ease-in;
+      }
+
+      .dot-highlight {
+        animation: dot-highlight 2s 0.75s infinite ease-out;
+      }
     }
-  },
 
-  methods: {
-    timespan(milestone) {
-      if (!milestone.hasOwnProperty('to'))
-        return `since ${this.fromText(milestone.from)}`;
-
-      if (milestone.from === milestone.to)
-        return this.fromText(milestone.from);
-
-      return `${this.fromText(milestone.from)} - ${this.toText(milestone.to)}`;
-    },
-
-    fromText(from) {
-      return this.$moment(from).format("MMMM YYYY");
-    },
-
-    toText(to) {
-      return this.$moment(to).format("MMMM YYYY");
+    .dot {
+      background: $bullet-color;
     }
-  },
+
+    &:last-of-type .line {
+      background: transparent;
+    }
+
+    &.minor .line .dot,
+    &.minor .line .dot-highlight {
+      display: none;
+    }
+  }
+
+  .line {
+    width: $line-width;
+
+    background: $line-color;
+    margin: 0 $line-spacer;
+
+    position: relative;
+    top: math.div((1 - $bullet-width), 2);
+
+    .dot,
+    .dot-highlight {
+      display: block;
+      width: $bullet-width;
+      height: $bullet-width;
+
+      border-radius: 50%;
+
+      position: absolute;
+      left: calc(#{math.div($line-width, 2)} - #{math.div($bullet-width, 2)});
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    margin-bottom: $item-margin-bottom;
+  }
+
+  .title,
+  .description,
+  .timespan,
+  .badges {
+    margin-bottom: $item-line-margin-bottom;
+    display: block;
+  }
+
+  .title {
+    font-size: 1.25em;
+
+    margin-top: -0.15em;
+
+    transition: all 0.1s ease-in-out;
+
+    &[href] {
+      @include link-style;
+
+      color: inherit;
+    }
+
+    &[href]:hover {
+      color: $accent;
+    }
+  }
+
+  .badges {
+    margin-left: -0.25em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+  }
+
+  .timespan {
+    opacity: 0.5;
+  }
 }
-</script>
+
+@keyframes dot-highlight {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  90% {
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+</style>

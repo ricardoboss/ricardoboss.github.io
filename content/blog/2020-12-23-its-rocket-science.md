@@ -1,8 +1,8 @@
 ---
 title: It's rocket science
 createdAt: 2020-12-23T10:00:00+02
-description: >- 
-    It's simply rocket science, can't be that hard, _right_?
+description: >-
+  It's simply rocket science, can't be that hard, _right_?
 ---
 
 A while ago, I discovered this fun little browser game called [Orbity](https://orbity.io/).
@@ -17,7 +17,7 @@ Anyway, the point is: I wanted to create my own copy of this game to explore the
 
 To start things off, I created a new Vue.js project.
 
-_Wait, isn't Vue.js absolutely overkill for this small project?_ 
+_Wait, isn't Vue.js absolutely overkill for this small project?_
 
 Yes, dear reader, using Vue.js (at least in this instance) may be a bit overkill.
 But I got to simple reasons why I used it anyway:
@@ -35,14 +35,14 @@ After project initialization, I began creating a basic "Game" component, which j
 
 ```vue
 <template>
-    <v-stage id="main_stage" ref="main_stage" :config="configKonva">
-      <v-layer>
-        <v-circle :config="planetConfig"></v-circle>
-      </v-layer>
-      <v-layer>
-        <v-arrow :config="rocketConfig"></v-arrow>
-      </v-layer>
-    </v-stage>
+  <v-stage id="main_stage" ref="main_stage" :config="configKonva">
+    <v-layer>
+      <v-circle :config="planetConfig"></v-circle>
+    </v-layer>
+    <v-layer>
+      <v-arrow :config="rocketConfig"></v-arrow>
+    </v-layer>
+  </v-stage>
 </template>
 ```
 
@@ -56,14 +56,14 @@ To display some simple shapes, I used the `config` attribute of Konvas elements:
 
 ```vue
 <script>
-const degToRad = Math.PI / 180;
-const bigG = 6.6742;
+const degToRad = Math.PI / 180
+const bigG = 6.6742
 
-const planetRadius = 75;
-const planetMass = 10;
-const rocketRadius = 5;
-const rocketMass = 0.1;
-const launchSpeed = 6;
+const planetRadius = 75
+const planetMass = 10
+const rocketRadius = 5
+const rocketMass = 0.1
+const launchSpeed = 6
 
 export default {
   computed: {
@@ -71,37 +71,37 @@ export default {
       return {
         width: window.innerWidth,
         height: window.innerHeight,
-      };
+      }
     },
-    
+
     planetConfig() {
       return {
         x: this.configKonva.width / 2,
         y: this.configKonva.height / 2,
-        fill: 'blue',
+        fill: "blue",
         radius: planetRadius,
-      };
+      }
     },
-    
+
     rocketConfig() {
       return {
         points: [0, 0],
         x: this.rocketPosition.x,
         y: this.rocketPosition.y,
-        fill: 'green',
+        fill: "green",
         rotation: this.rocketPosition.phi,
-        pointerWidth: 4 * rocketRadius / 5,
+        pointerWidth: (4 * rocketRadius) / 5,
         pointerLength: rocketRadius,
       }
     },
-  }
+  },
 }
 </script>
 ```
 
 Breaking everything down:
 
-- the `const` definitions at the top of the script will also be referenced in later code snippets 
+- the `const` definitions at the top of the script will also be referenced in later code snippets
 - `configKonva` just tells the canvas which width and height it should have.
   In this case, it should fill the whole window.
 - `planetConfig` tells our circle where it should appear (in the middle of the canvas) and some other stylistic things.
@@ -114,15 +114,14 @@ Next, I introduced a "game tick", which is invoked every 20ms (could also be les
 <script>
 export default {
   destroyed() {
-    clearInterval(this.gameTickInterval);
+    clearInterval(this.gameTickInterval)
   },
-  
+
   mounted() {
     this.gameTickInterval = setInterval(() => this.gameTick(), 20)
   },
-  
-  data()
-  {
+
+  data() {
     return {
       gameTickInterval: -1,
     }
@@ -131,8 +130,8 @@ export default {
   methods: {
     gameTick() {
       // executed once every 10ms
-    }
-  }
+    },
+  },
 }
 </script>
 ```
@@ -142,11 +141,9 @@ The first thing I wanted to replicate was the rocket sitting on the planets surf
 To achieve this, I added a variable to my components data called `rocketLanded` with a default value of `true`:
 
 ```vue
-
 <script>
 export default {
-  data()
-  {
+  data() {
     return {
       rocketLanded: true,
     }
@@ -162,20 +159,26 @@ Then, in the `gameTick`, I can check if the rocket is landed on the planet and u
 export default {
   methods: {
     gameTick() {
-      this.planetRotation = (this.planetRotation + 0.1) % 360;
+      this.planetRotation = (this.planetRotation + 0.1) % 360
 
       if (this.rocketLanded) {
-        this.rocketPosition.x = this.planetConfig.x + Math.cos(this.planetRotation * degToRad) * (planetRadius + rocketRadius / 2);
-        this.rocketPosition.y = this.planetConfig.y + Math.sin(this.planetRotation * degToRad) * (planetRadius + rocketRadius / 2);
-        this.rocketPosition.phi = this.planetRotation;
+        this.rocketPosition.x =
+          this.planetConfig.x +
+          Math.cos(this.planetRotation * degToRad) *
+            (planetRadius + rocketRadius / 2)
+        this.rocketPosition.y =
+          this.planetConfig.y +
+          Math.sin(this.planetRotation * degToRad) *
+            (planetRadius + rocketRadius / 2)
+        this.rocketPosition.phi = this.planetRotation
       } else {
-        this.rocketPosition.x += this.rocketVelocity.x;
-        this.rocketPosition.y += this.rocketVelocity.y;
+        this.rocketPosition.x += this.rocketVelocity.x
+        this.rocketPosition.y += this.rocketVelocity.y
 
-        this.rocketPosition.phi += this.rocketVelocity.phi;
+        this.rocketPosition.phi += this.rocketVelocity.phi
       }
-    }
-  }
+    },
+  },
 }
 </script>
 ```
@@ -207,64 +210,61 @@ A quick test confirms that the rocket now sits on the planet and rotates with it
 The next step was to implement some kind of user input, so the rocket can lift off the surface and be controllable.
 
 To achieve this, I attached event handlers for `window.onkeydown` and `window.onkeyup`:
+
 ```vue
 <script>
 export default {
   created() {
-    window.addEventListener("resize", this.resizeCanvas);
-    window.addEventListener("keydown", this.keydown);
-    window.addEventListener("keyup", this.keyup);
+    window.addEventListener("resize", this.resizeCanvas)
+    window.addEventListener("keydown", this.keydown)
+    window.addEventListener("keyup", this.keyup)
   },
-  
+
   destroyed() {
-    window.removeEventListener("resize", this.resizeCanvas);
-    window.removeEventListener("keydown", this.keydown);
-    window.removeEventListener("keyup", this.keyup);
-    
-    clearInterval(this.gameTickInterval);
+    window.removeEventListener("resize", this.resizeCanvas)
+    window.removeEventListener("keydown", this.keydown)
+    window.removeEventListener("keyup", this.keyup)
+
+    clearInterval(this.gameTickInterval)
   },
-  
+
   methods: {
     keydown(e) {
       switch (e.keyCode) {
         case 87: // w
           if (this.rocketLanded) {
-            this.rocketLanded = false;
-            this.rocketVelocity.x = this.planetToRocket.x * launchSpeed;
-            this.rocketVelocity.y = this.planetToRocket.y * launchSpeed;
-            this.rocketPosition.phi = this.planetRotation + 90;
+            this.rocketLanded = false
+            this.rocketVelocity.x = this.planetToRocket.x * launchSpeed
+            this.rocketVelocity.y = this.planetToRocket.y * launchSpeed
+            this.rocketPosition.phi = this.planetRotation + 90
           } else {
-            this.boost = true;
+            this.boost = true
           }
-          break;
+          break
         case 65: // a
-          if (!this.rocketLanded)
-            this.rotate = -1;
-          break;
+          if (!this.rocketLanded) this.rotate = -1
+          break
         case 68: // d
-          if (!this.rocketLanded)
-            this.rotate = 1;
-          break;
+          if (!this.rocketLanded) this.rotate = 1
+          break
         case 83: // s
-          if (!this.rocketLanded)
-            this.rotate = 0;
-          break;
+          if (!this.rocketLanded) this.rotate = 0
+          break
       }
     },
-    
+
     keyup(e) {
       switch (e.keyCode) {
         case 87: // w
-          this.boost = false;
-          break;
+          this.boost = false
+          break
         case 65: // a
         case 68: // d
         case 83: // s
-          if (!this.rocketLanded)
-            this.rotate = null;
-          break;
+          if (!this.rocketLanded) this.rotate = null
+          break
       }
-    }
+    },
   },
 }
 </script>
@@ -285,6 +285,6 @@ Maybe I'll extend this post in the future.
 
 ---
 
-And now: go play it yourself and make sure to send me a screenshot of your flight-path ([@_ricardoboss](https://twitter.com/_ricardoboss)):
+And now: go play it yourself and make sure to send me a screenshot of your flight-path ([@\_ricardoboss](https://twitter.com/_ricardoboss)):
 
 [rocket-science.ricardoboss.de](https://rocket-science.ricardoboss.de/)
