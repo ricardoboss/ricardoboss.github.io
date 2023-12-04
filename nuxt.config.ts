@@ -4,9 +4,20 @@ export default defineNuxtConfig({
   css: ["@/style/_global.scss"],
   modules: ["@nuxtjs/eslint-module", "@nuxt/content"],
   content: {
+    ignores: ["drafts/**/*"],
     highlight: {
       theme: "github-dark",
-      preload: ["javascript", "typescript", "bash"],
+      preload: [
+        "vue",
+        "javascript",
+        "typescript",
+        "bash",
+        "markdown",
+        "c#",
+        "yml",
+        "json",
+        "xml",
+      ],
     },
   },
   app: {
