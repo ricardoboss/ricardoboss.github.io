@@ -5,12 +5,12 @@
         <NuxtLink to="/blog">&laquo; Back to overview</NuxtLink>
 
         <article>
-          <h1>{{ doc.title }}</h1>
-          <div class="date">
+          <h1 id="title">{{ doc.title }}</h1>
+          <div id="date">
             Created at
             {{ new Date(doc.createdAt).toLocaleDateString() }}
           </div>
-          <ContentRenderer :value="doc" />
+          <ContentRenderer :value="doc" id="article-content" />
         </article>
       </template>
 
@@ -25,7 +25,7 @@
 </template>
 
 <style scoped lang="scss">
-h1 {
+#title {
   font-size: 3em;
   font-weight: 300;
 
@@ -33,8 +33,15 @@ h1 {
   margin-bottom: 0.25em;
 }
 
-.date {
+#date {
   font-size: 0.8em;
   opacity: 0.5;
+}
+
+#article-content {
+  font-size: 1.15em;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.75;
 }
 </style>

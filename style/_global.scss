@@ -18,7 +18,7 @@ body {
     Ubuntu,
     sans-serif;
   font-size: 0.9rem;
-  line-height: 1.3;
+  line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -50,6 +50,11 @@ hr {
 
 pre {
   overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  padding: 1em;
+  border-radius: 1em;
+  background: darken($body-bg, 5%);
 }
 
 ::-webkit-scrollbar {
