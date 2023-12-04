@@ -10,6 +10,17 @@ import GithubSvg from "~/assets/vector/github.svg"
 import TwitterSvg from "~/assets/vector/twitter.svg"
 import MastodonSvg from "~/assets/vector/mastodon.svg"
 import PageHeader from "~/components/structural/PageHeader.vue"
+import { useHead, useSeoMeta } from "#app/composables"
+
+const description = "Ways to contact me"
+
+useHead({
+  title: "Contact",
+})
+
+useSeoMeta({
+  description,
+})
 
 const contactCards = [
   {

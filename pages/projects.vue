@@ -3,6 +3,18 @@ import CardDeck from "~/components/CardDeck.vue"
 import type CardData from "~/models/CardData"
 import GmcLogo from "~/assets/img/gmc-logo-banner.120.min.png"
 import PageHeader from "~/components/structural/PageHeader.vue"
+import { useHead, useSeoMeta } from "#app/composables"
+
+const description =
+  "Open source projects I maintain/started. These projects where created and updated exclusively or mostly in my free time."
+
+useHead({
+  title: "Projects",
+})
+
+useSeoMeta({
+  description,
+})
 
 const projects = [
   {
@@ -246,8 +258,7 @@ const projects = [
 <template>
   <main>
     <page-header title="Projects">
-      Open source projects I maintain/started. These projects where created and
-      updated exclusively or mostly in my free time. Also take a look at
+      {{ description }} Also take a look at
       <router-link to="/portfolio">my Portfolio</router-link>
       to see which projects I used in my everyday jobs.
     </page-header>

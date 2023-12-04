@@ -2,6 +2,17 @@
 import Timeline from "../components/Timeline.vue"
 import PageHeader from "~/components/structural/PageHeader.vue"
 import type TimelineItem from "~/models/TimelineItem"
+import { useHead, useSeoMeta } from "#app/composables"
+
+const description = "My curriculum vitae. This is my work and education history"
+
+useHead({
+  title: "Curriculum Vitae",
+})
+
+useSeoMeta({
+  description,
+})
 
 const workTimeline = [
   {

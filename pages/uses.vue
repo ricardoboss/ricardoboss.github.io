@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import PageHeader from "~/components/structural/PageHeader.vue"
+import { useHead, useSeoMeta } from "#app/composables"
+import { computed } from "vue"
+
+const description = "This is the tech I use almost every day."
+
+useHead({
+  title: "Uses",
+})
+
+useSeoMeta({
+  description,
+})
 
 interface Category {
   title: string
@@ -260,8 +272,8 @@ const sections = computed(() => {
 <template>
   <main>
     <page-header title="Uses">
-      This is the tech I use almost every day. Discover other tech enthusiasts
-      builds at <a href="https://uses.tech/" target="_blank">uses.tech</a>!
+      {{ description }} Discover other tech enthusiasts builds at
+      <a href="https://uses.tech/" target="_blank">uses.tech</a>!
     </page-header>
 
     <sectioned-list

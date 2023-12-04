@@ -2,6 +2,18 @@
 import PageHeader from "~/components/structural/PageHeader.vue"
 import CardDeck from "~/components/CardDeck.vue"
 import type CardData from "~/models/CardData"
+import { useHead, useSeoMeta } from "#app/composables"
+
+const description =
+  "These are projects which I have worked on (or at least partially) in my job or in my free time."
+
+useHead({
+  title: "Portfolio",
+})
+
+useSeoMeta({
+  description,
+})
 
 const portfolio = [
   {
@@ -92,9 +104,8 @@ const portfolio = [
 <template>
   <main>
     <page-header title="Portfolio">
-      These are projects which I have worked on (or at least partially) in my
-      job or in my free time. For most of the projects, I cannot share the
-      source code. Instead, I can show which tech stack was used and link to the
+      {{ description }} For most of the projects, I cannot share the source
+      code. Instead, I can show which tech stack was used and link to the
       result. Also take a look at
       <router-link to="/projects">my personal open source projects</router-link>
       .

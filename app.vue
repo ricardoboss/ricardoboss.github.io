@@ -2,6 +2,15 @@
 import AppSidepanel from "~/components/structural/AppSidepanel.vue"
 import AppNavbar from "~/components/structural/AppNavbar.vue"
 import AppFooter from "~/components/structural/AppFooter.vue"
+import { useHead } from "#app/composables"
+
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk
+      ? `${titleChunk} | Ricardo Boss`
+      : "Ricardo Boss' Homepage"
+  },
+})
 </script>
 
 <template>
