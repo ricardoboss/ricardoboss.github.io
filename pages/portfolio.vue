@@ -17,6 +17,34 @@ useSeoMeta({
 
 const portfolio = [
   {
+    title: "TRENZ Pilot Unit Manager App",
+    description:
+      "Mobile application to interact with a TRENZ Pilot Unit. Features cross-platform TCP socket and Serial communication.",
+    links: [
+      {
+        title: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=de.trenz.PilotPlugRemote",
+        target: "_blank",
+      },
+      {
+        title: "App Store (iOS/iPadOS/macOS)",
+        href: "https://apps.apple.com/us/app/pilot-plug-manager/id1437240460",
+        target: "_blank",
+      },
+      {
+        title: "Microsoft Store",
+        href: "https://apps.microsoft.com/store/detail/9PP8DLSF17GH?launch=true&mode=mini",
+        target: "_blank",
+      },
+      {
+        title: "Wiki",
+        href: "https://docs.trenz-pilotunit.com/wiki/Welcome",
+        target: "_blank",
+      },
+    ],
+    pills: ["Flutter", "Dart", "Android", "iOS", "macOS", "Windows"],
+  },
+  {
     title: "TRENZ Docs",
     description:
       "A way to host Azure DevOps wikis (or any Markdown-based wiki, really) publicly. Includes authentication support.",
@@ -68,25 +96,7 @@ const portfolio = [
     pills: ["TS", "Vue"],
   },
   {
-    title: "TRENZ Pilot Plug Manager App",
-    description:
-      "Mobile application to interact with a TRENZ Pilot Plug. Features cross-platform TCP socket communication. Analytics using Microsoft App Center.",
-    links: [
-      {
-        title: "Play Store",
-        href: "https://play.google.com/store/apps/details?id=de.trenz.PilotPlugRemote",
-        target: "_blank",
-      },
-      {
-        title: "App Store",
-        href: "https://apps.apple.com/us/app/pilot-plug-manager/id1437240460",
-        target: "_blank",
-      },
-    ],
-    pills: ["C#", ".NET", "Xamarin", "Android", "iOS"],
-  },
-  {
-    title: "TRENZ Pilot Plug Manager",
+    title: "(legacy) TRENZ Pilot Plug Manager",
     description:
       "Desktop application to interact with a TRENZ Pilot Plug. Features serial port and socket communication. Analytics using Microsoft App Center.",
     links: [
