@@ -2,7 +2,7 @@
 
 <template>
   <footer>
-    <p>&copy; 2023 Ricardo Boss. All rights reserved.</p>
+    <p>&copy; 2024 Ricardo Boss. All rights reserved.</p>
   </footer>
 </template>
 
