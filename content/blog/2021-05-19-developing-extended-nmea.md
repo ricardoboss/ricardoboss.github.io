@@ -125,9 +125,9 @@ I began by creating class definitions for NMEA sentences in general and the thre
 proprietary). Then, I created the `Decoder` class, which would later possess the functionality to match a string to a
 registered sentence type and return a decoded version of it. I also wanted to keep the ability to add other sentences
 later on. The original library ([`node-nmea`][3]) used a map with string keys, where the sentence ID is the key, and the
-value is an object with a decoder function. I thought this was a good idea, so I re-used this idea. The `Decoder` class
-keeps a map for every sentence type to quickly filter it. [This method][7] of the decoder class checks which sentence type
-a string given to it has and passes it to a more-detailed decoder method:
+value is an object with a decoder function. I thought this was a good idea, so I re-used (stole) this idea. The
+`Decoder` class keeps a map for every sentence type to quickly filter it. [This method][7] of the decoder class checks 
+which sentence type a string given to it has and passes it to a more-detailed decoder method:
 
 ```typescript
 class Decoder {
@@ -177,10 +177,63 @@ class Decoder {
 }
 ```
 
+The `decodeTalker` method uses the provided data to determine the talker ID and sentence ID. It then checks if the
+talker ID and sentence ID are registered in the decoder. If they are, it instantiates the corresponding constructor
+and returns it. Here too, the user can pass a generic parameter to the method to get full type safety:
+
+```typescript
+class Decoder {
+  public static decodeTalker<T extends ITalkerSentence>(data: string): T {
+    if (data.length < 6)
+      throw new Error(`Unable to decode sentence: invalid format. Expected at least 6 characters, got: ${data} (${data.length} characters)`);
+
+    const talkerIdLength = 2;
+    const sentenceId = data.substr(talkerIdLength + 1, data.indexOf(',') - talkerIdLength - 1);
+    if (!Decoder.TalkerCodecs.has(sentenceId))
+      throw new Error(`Unable to decode sentence: unknown sentence id: ${sentenceId}`);
+
+    const sentenceConstructor = Decoder.TalkerCodecs.get(sentenceId);
+    return new sentenceConstructor(data, talkerIdLength) as T;
+  }
+}
+```
+
+## Tests
+
+For unit testing, I decided to use [mocha][8] and [chai][9] as I like their API. I won't go into the details of how to
+write tests, but I will show you how to write a test for the `Decoder` class:
+
+```typescript
+describe('Decoder', function () {
+	it('decodes talker sentences', function() {
+		const decoded = Decoder.decodeTalker("$--ROT,-0.5,A*0E\r\n");
+
+		expect(decoded.valid).to.equal(true);
+		expect(decoded.talkerId).to.equal("--");
+		expect(decoded.sentenceId).to.equal("ROT");
+	});
+});
+```
+
+This just checks that the decoder can correctly parse a talker sentence and that the returned object has the correct
+properties.
+
+If you want to see more tests or tests for specific sentences, you can check out the [`test`][10] in the repository.
+
+## Conclusion
+
+I hope this post has given you a better understanding of how the NMEA0183 protocol works and how to implement it in
+TypeScript. I hope you find this library useful and that it helps you in your own projects. If you have any questions,
+feel free to [reach out to me][11].
+
 [1]: https://npmjs.com/package/extended-nmea
 [2]: https://www.nmea.org/
 [3]: https://github.com/jamesp/node-nmea
-[4]: https://github.com/ricardoboss/extended-nmea/blob/eed9a9e3a24068c17b486aa0a7b1d9837bfae367/src/helpers.ts#L10
+[4]: https://github.com/ricardoboss/extended-nmea/blob/70915a762d1b71678c272a73027480712f33fda0/src/helpers.ts#L10
 [5]: https://github.com/ricardoboss/vessel-state
 [6]: https://github.com/jamesp/node-nmea/pull/24
-[7]: https://github.com/ricardoboss/extended-nmea/blob/eed9a9e3a24068c17b486aa0a7b1d9837bfae367/src/decoder.ts#L43
+[7]: https://github.com/ricardoboss/extended-nmea/blob/70915a762d1b71678c272a73027480712f33fda0/src/decoder.ts#L45
+[8]: https://mochajs.org/
+[9]: https://www.chaijs.com/
+[10]: https://github.com/ricardoboss/extended-nmea/tree/70915a762d1b71678c272a73027480712f33fda0/test
+[11]: https://ricardoboss.de/contact
