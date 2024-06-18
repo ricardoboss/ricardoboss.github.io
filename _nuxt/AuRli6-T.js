@@ -1,1 +1,0 @@
-import{f as o,g as p,o as c,c as t,t as n,n as r,_ as i}from"./D2cMEJSA.js";const _=o({__name:"Pill",props:{pill:{}},setup(s){const e=s,a=p(()=>e.pill.replace("#","s").replace("++","pp").replace(".","").toLowerCase());return(l,m)=>(c(),t("span",{class:r(["pill",a.value])},n(l.pill),3))}}),d=i(_,[["__scopeId","data-v-9c00c438"]]);export{d as P};
