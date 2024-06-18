@@ -42,7 +42,7 @@
   font-size: 1.2em;
   font-weight: 300;
   letter-spacing: 0.03em;
-  line-height: 1.75;
+  line-height: 1.85;
   max-width: 80ch;
   margin: 0 auto;
 }
