@@ -18,6 +18,14 @@ useSeoMeta({
 
 const projects = [
   {
+    title: "dart_kiota",
+    description: "The unofficial Microsoft Kiota abstractions for Dart.",
+    links: [
+      { title: "Source", href: "https://github.com/ricardoboss/dart_kiota" }
+    ],
+    pills: ["Dart"]
+  },
+  {
     title: "Prolangle",
     description: "A game about programming languages.",
     links: [
