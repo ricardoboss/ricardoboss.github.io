@@ -71,7 +71,7 @@ Afterwards the service happily ran my script with no problems.
 
 Next I had to decide on which events would trigger a deployment.
 I went for the `check_suite` event, which is triggered every time a workflow starts or completes.
-Additional filters for branches and the `success` state of the `check_suite` where added, and the configuration was complete.
+Additional filters for branches and the `success` state of the `check_suite` were added, and the configuration was complete.
 
 ## Conclusion and further development
 
