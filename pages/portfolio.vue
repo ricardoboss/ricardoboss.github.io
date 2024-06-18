@@ -8,14 +8,31 @@ const description =
   "These are projects which I have worked on (or at least partially) in my job or in my free time."
 
 useHead({
-  title: "Portfolio",
+  title: "Portfolio"
 })
 
 useSeoMeta({
-  description,
+  description
 })
 
 const portfolio = [
+  {
+    title: "Ladder Reporting App",
+    description: "An app for the German maritime pilots to report non-conformant pilot ladder arrangements (nc-pta). The app communicates with an API to create reports that can be submitted to the German authorities.",
+    links: [
+      {
+        title: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=de.trenz.lra",
+        target: "_blank"
+      },
+      {
+        title: "App Store (iOS/iPadOS)",
+        href: "https://apps.apple.com/us/app/ladder-reporting/id1634788761",
+        target: "_blank"
+      }
+    ],
+    pills: ["Flutter", "Dart", "Android", "iOS", ".NET", "C#"]
+  },
   {
     title: "TRENZ Pilot Unit Manager App",
     description:
@@ -24,25 +41,25 @@ const portfolio = [
       {
         title: "Play Store",
         href: "https://play.google.com/store/apps/details?id=de.trenz.PilotPlugRemote",
-        target: "_blank",
+        target: "_blank"
       },
       {
         title: "App Store (iOS/iPadOS/macOS)",
         href: "https://apps.apple.com/us/app/pilot-plug-manager/id1437240460",
-        target: "_blank",
+        target: "_blank"
       },
       {
         title: "Microsoft Store",
         href: "https://apps.microsoft.com/store/detail/9PP8DLSF17GH?launch=true&mode=mini",
-        target: "_blank",
+        target: "_blank"
       },
       {
         title: "Wiki",
         href: "https://docs.trenz-pilotunit.com/wiki/Welcome",
-        target: "_blank",
-      },
+        target: "_blank"
+      }
     ],
-    pills: ["Flutter", "Dart", "Android", "iOS", "macOS", "Windows"],
+    pills: ["Flutter", "Dart", "Android", "iOS", "macOS", "Windows"]
   },
   {
     title: "TRENZ Docs",
@@ -52,48 +69,48 @@ const portfolio = [
       {
         title: "API Source",
         href: "https://github.com/trenz-gmbh/trenz-docs-api",
-        target: "_blank",
+        target: "_blank"
       },
       {
         title: "Frontend Source",
         href: "https://github.com/trenz-gmbh/trenz-docs",
-        target: "_blank",
+        target: "_blank"
       },
       {
         title: "Example",
         href: "https://docs.ela.easylogic.de",
-        target: "_blank",
-      },
+        target: "_blank"
+      }
     ],
-    pills: ["Vue", "TS", ".NET", "C#"],
+    pills: ["Vue", "TS", ".NET", "C#"]
   },
   {
     title: "SVB",
     description:
       "Your specialist online shop for technical boat equipment, sailing accessories and water sports equipment.",
     links: [{ title: "Visit", href: "https://svb24.com/", target: "_blank" }],
-    pills: ["PHP", "Symfony"],
+    pills: ["PHP", "Symfony"]
   },
   {
     title: "sendmeback Account",
     description:
       "Customer backend for managing purchased sendmeback products. Features an ASP.NET backend with JWT authentication.",
-    pills: ["TS", "Vue"],
+    pills: ["TS", "Vue"]
   },
   {
     title: "sendmeback App",
     description:
       "App for viewing registered products and pairing a smartphone with a product. Enable localization and sending notifications to the smartphone.",
-    pills: ["Dart", "Flutter", "Android", "iOS"],
+    pills: ["Dart", "Flutter", "Android", "iOS"]
   },
   {
     title: "Age of Aincrad (website)",
     description:
       "A website for a game (currently in development). Features include login via Discord, Strapi as a backend and a Vuetify frontend.",
     links: [
-      { title: "Visit", href: "https://age-of-aincrad.com/", target: "_blank" },
+      { title: "Visit", href: "https://age-of-aincrad.com/", target: "_blank" }
     ],
-    pills: ["TS", "Vue"],
+    pills: ["TS", "Vue"]
   },
   {
     title: "(legacy) TRENZ Pilot Plug Manager",
@@ -103,11 +120,11 @@ const portfolio = [
       {
         title: "Visit",
         href: "https://manager.trenz-pilotplug.com/",
-        target: "_blank",
-      },
+        target: "_blank"
+      }
     ],
-    pills: ["C#", ".NET", "WPF"],
-  },
+    pills: ["C#", ".NET", "WPF", "Windows"]
+  }
 ] as CardData[]
 </script>
 
