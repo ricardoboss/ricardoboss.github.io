@@ -1,5 +1,5 @@
 ---
-title: Developing extended-nmea
+title: age-of-aincrad.com Launched!
 createdAt: 2022-01-21T22:00:00+02:00
 description: >-
   The new website of Age of Aincrad finally launched.
