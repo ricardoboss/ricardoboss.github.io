@@ -25,6 +25,7 @@ const backgroundClass = computed(() =>
 
 <style scoped lang="scss">
 @use "sass:math";
+@use "sass:color";
 
 /// Returns the luminance of `$color` as a float (between 0 and 1)
 /// 1 is pure white, 0 is pure black
@@ -33,9 +34,9 @@ const backgroundClass = computed(() =>
 /// @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef Reference
 @function luminance($color) {
   $colors: (
-    "red": red($color),
-    "green": green($color),
-    "blue": blue($color),
+    "red": color.channel($color, "red", $space: rgb),
+    "green": color.channel($color, "green", $space: rgb),
+    "blue": color.channel($color, "blue", $space: rgb),
   );
 
   @each $name, $value in $colors {
@@ -112,7 +113,11 @@ $pill-types: (
   @each $name, $color in $pill-types {
     &.#{$name} {
       // darken the color a bit so it fits better with the gray background
-      $actualBackground: darken(desaturate($color, 10%), 10%);
+      $actualBackground: color.adjust(
+        $color,
+        $lightness: -10%,
+        $saturation: -10%
+      );
 
       background-color: $actualBackground;
       color: color-contrast($actualBackground);

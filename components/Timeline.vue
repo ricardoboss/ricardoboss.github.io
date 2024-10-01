@@ -74,6 +74,8 @@ function toText(to: string) {
 
 <style scoped lang="scss">
 @use "sass:math";
+@use "sass:color";
+
 @import "@/style/global";
 
 $item-min-height: 2rem;
@@ -82,10 +84,10 @@ $item-line-margin-bottom: 0.5rem;
 
 $line-width: 4.5px;
 $line-spacer: 2em;
-$line-color: lighten($body-bg, 5%);
+$line-color: color.adjust($body-bg, $lightness: 5%);
 
 $bullet-width: 1.25rem;
-$bullet-color: lighten($body-bg, 10%);
+$bullet-color: color.adjust($body-bg, $lightness: 10%);
 $bullet-current-color: $accent;
 
 .timeline {

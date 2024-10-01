@@ -34,10 +34,12 @@ defineProps<Props>()
 </template>
 
 <style scoped lang="scss">
+@use "sass:color";
+
 $item-padding: 0.75rem;
 $card-bg: #333333;
-$card-border: 1px solid lighten($card-bg, 5%);
-$card-link-hover: lighten($card-bg, 3%);
+$card-border: 1px solid color.adjust($card-bg, $lightness: 5%);
+$card-link-hover: color.adjust($card-bg, $lightness: 3%);
 
 @mixin card-section {
   padding-left: $item-padding;

@@ -12,6 +12,7 @@
 </template>
 
 <style scoped lang="scss">
+@use "sass:color";
 @import "@/style/global";
 
 nav {
@@ -39,7 +40,7 @@ nav {
     }
 
     &:hover {
-      background: transparentize($accent, 0.85);
+      background: color.adjust($accent, $alpha: -0.85);
     }
   }
 }

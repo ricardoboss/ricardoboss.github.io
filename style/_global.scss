@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $accent: #32aa66;
 $body-bg: #222222;
 
@@ -54,7 +56,7 @@ pre {
   line-height: 1.5;
   padding: 1em;
   border-radius: 1em;
-  background: darken($body-bg, 5%);
+  background: color.adjust($body-bg, $lightness: -5%);
 }
 
 ::-webkit-scrollbar {
@@ -67,6 +69,6 @@ pre {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lighten($body-bg, 10%);
+  background: color.adjust($body-bg, $lightness: 10%);
   border-radius: 5px;
 }

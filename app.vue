@@ -35,6 +35,8 @@ useHead({
     "content" minmax(100dvh, 1fr)
     "footer" auto / 1fr;
 
+  margin: 0 auto;
+
   @media (min-width: 800px) {
     grid-template:
       "sidepanel navbar " auto
@@ -55,8 +57,6 @@ useHead({
   @media (min-width: 1600px) {
     max-width: 1600px;
   }
-
-  margin: 0 auto;
 }
 
 #sidepanel {

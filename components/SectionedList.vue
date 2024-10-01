@@ -29,6 +29,8 @@ let sub = ""
 </template>
 
 <style scoped lang="scss">
+@use "sass:color";
+
 @import "@/style/global";
 
 .sectioned-list {
@@ -47,7 +49,7 @@ let sub = ""
 
     background: $body-bg;
 
-    border-bottom: 1px solid lighten($body-bg, 15%);
+    border-bottom: 1px solid color.adjust($body-bg, $lightness: 15%);
   }
 
   .sub-header {
@@ -66,7 +68,7 @@ let sub = ""
     background: $body-bg;
 
     text-decoration: underline;
-    text-decoration-color: lighten($body-bg, 10%);
+    text-decoration-color: color.adjust($body-bg, $lightness: 10%);
     text-underline-offset: 0.3em;
     text-decoration-thickness: 0.01em;
   }
