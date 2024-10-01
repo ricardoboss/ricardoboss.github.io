@@ -47,12 +47,6 @@ const categories = [
             comment: "The better dotnet IDE",
           },
           {
-            title: "JetBrains PhpStorm",
-            link: "https://jetbrains.com/phpstorm/",
-            comment:
-              "Using PhpStorm is like supercharging your PHP development process",
-          },
-          {
             title: "Android Studio",
             link: "https://developer.android.com/studio",
             comment: "JetBrains IDEs are just the best",
@@ -92,10 +86,10 @@ const categories = [
             link: "https://1password.com/",
           },
           {
-            title: "Microsoft Edge",
-            link: "https://www.microsoft.com/edge",
+            title: "Arc",
+            link: "https://arc.net/",
             comment:
-              "Basically Google Chrome, but with better integration into Windows.",
+              "Basically Google Chrome, but with vertical tabs and fancy UI.",
           },
           {
             title: "Google Drive for Desktop",
@@ -134,8 +128,8 @@ const categories = [
         title: "Games & Fun",
         items: [
           {
-            title: "GOG Galaxy",
-            link: "https://www.gog.com/galaxy",
+            title: "Steam",
+            link: "https://store.steampowered.com/about/",
           },
           {
             title: "Spotify",
@@ -159,7 +153,12 @@ const categories = [
           {
             title: "Raspberry Pi 4 Model B (4GB RAM)",
             link: "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/",
-            comment: "Serves Home Assistant and Octoprint",
+            comment: "Running Umbrel OS raspberry Pi 4 Model B",
+          },
+          {
+            title: "Umbrel",
+            link: "https://getumbrel.com",
+            comment: "Container Orchestration via nice web UI",
           },
           {
             title: "Fritz!Box 7530 AX",
