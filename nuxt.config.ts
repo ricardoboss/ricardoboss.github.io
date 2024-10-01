@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["@/style/_global.scss"],
   modules: ["@nuxtjs/eslint-module", "@nuxt/content"],
+
   content: {
     ignores: ["drafts/*"],
     highlight: {
@@ -20,6 +21,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -31,9 +33,12 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   nitro: {
     prerender: {
       routes: ["/sitemap.xml"],
     },
   },
+
+  compatibilityDate: "2024-10-01",
 })
