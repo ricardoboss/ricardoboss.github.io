@@ -53,7 +53,8 @@ const projects = [
     description:
       "A programming language for beginners. Strongly typed, interpreted and provides great error messages! Inspired by the likes of Javascript, Python, C# and Dart.",
     links: [
-      { title: "Source", href: "https://github.com/ricardoboss/STEP" }
+      { title: "Source", href: "https://github.com/ricardoboss/STEP" },
+      { title: "Documentation", href: "https://ricardoboss.de/STEP" }
     ],
     pills: ["C#", ".NET", "STEP"]
   },
