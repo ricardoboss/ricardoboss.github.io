@@ -1,1 +1,0 @@
-import{e as o,f as p,o as c,c as t,t as n,n as r,_ as i}from"./BvKdCBBv.js";const _=o({__name:"Pill",props:{pill:{}},setup(e){const s=e,a=p(()=>s.pill.replace("#","s").replace("++","pp").replace(".","").toLowerCase());return(l,m)=>(c(),t("span",{class:r(["pill",a.value])},n(l.pill),3))}}),d=i(_,[["__scopeId","data-v-8b64aec0"]]);export{d as P};
