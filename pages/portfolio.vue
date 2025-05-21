@@ -17,6 +17,23 @@ useSeoMeta({
 
 const portfolio = [
   {
+    title: "Pilot-Guard",
+    description: "An app for all maritime pilots to report non-conformant pilot ladder arrangements (nc-pta).",
+    links: [
+      {
+        title: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=de.trenz.pilotguard",
+        target: "_blank"
+      },
+      {
+        title: "App Store (iOS/iPadOS)",
+        href: "https://apps.apple.com/us/app/pilot-guard/id6462422656",
+        target: "_blank"
+      }
+    ],
+    pills: ["Flutter", "Dart", "Android", "iOS", ".NET", "C#"]
+  },
+  {
     title: "Ladder Reporting App",
     description: "An app for the German maritime pilots to report non-conformant pilot ladder arrangements (nc-pta). The app communicates with an API to create reports that can be submitted to the German authorities.",
     links: [
@@ -116,13 +133,6 @@ const portfolio = [
     title: "(legacy) TRENZ Pilot Plug Manager",
     description:
       "Desktop application to interact with a TRENZ Pilot Plug. Features serial port and socket communication. Analytics using Microsoft App Center.",
-    links: [
-      {
-        title: "Visit",
-        href: "https://manager.trenz-pilotplug.com/",
-        target: "_blank"
-      }
-    ],
     pills: ["C#", ".NET", "WPF", "Windows"]
   }
 ] as CardData[]
