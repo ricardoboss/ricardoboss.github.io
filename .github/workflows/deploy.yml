@@ -15,6 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         name: Checkout sources
+
+      - run: corepack enable
+        name: Enable corepack
+
       - uses: actions/setup-node@v6
         name: Setup Node.js
         with:
