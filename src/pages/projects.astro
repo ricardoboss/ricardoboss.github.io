@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import ProjectExplorer from "../components/ProjectExplorer.astro"
+import SectionHeader from "../components/SectionHeader.astro"
+import { projects } from "../data/projects"
+---
+
+<BaseLayout title="Projects | Ricardo Boss" description="Projects by Ricardo Boss">
+  <main>
+    <SectionHeader title="Projects" />
+    <ProjectExplorer projects={projects} />
+  </main>
+</BaseLayout>

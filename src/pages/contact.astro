@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import ContactCard from "../components/ContactCard.astro"
+import SectionHeader from "../components/SectionHeader.astro"
+import { contacts } from "../data/contacts"
+---
+
+<BaseLayout title="Contact | Ricardo Boss" description="Contact Ricardo Boss">
+  <main>
+    <SectionHeader title="Contact" />
+    {contacts.length > 0 ? (
+      <div class="card-grid">
+        {contacts.map((contact) => <ContactCard contact={contact} />)}
+      </div>
+    ) : (
+      <p class="empty-state">No contact methods yet.</p>
+    )}
+  </main>
+</BaseLayout>

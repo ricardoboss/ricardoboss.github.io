@@ -1,0 +1,53 @@
+---
+import type { CvEntry } from "../types"
+import Pill from "./Pill.astro"
+import { externalLinkRel, externalLinkTarget } from "../utils/links"
+
+interface Props {
+  entries: CvEntry[]
+}
+
+const { entries } = Astro.props
+---
+
+<ol class="timeline">
+  {entries.map((entry, index) => {
+    const technologies = [
+      ...(entry.languages ?? []),
+      ...(entry.frameworks ?? []),
+      ...(entry.platforms ?? []),
+    ]
+
+    return (
+      <li class:list={["timeline-item", { current: index === 0, minor: entry.minor }]}>
+        <div class="timeline-line" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="timeline-content">
+          {entry.title && (
+            <h3>
+              {entry.link ? (
+                <a
+                  href={entry.link}
+                  rel={externalLinkRel(entry.link)}
+                  target={externalLinkTarget(entry.link)}
+                >
+                  {entry.title}
+                </a>
+              ) : entry.title}
+            </h3>
+          )}
+          <p class="muted">{entry.from}{entry.to ? ` - ${entry.to}` : " - present"}</p>
+          <p>{entry.role}</p>
+          {technologies.length > 0 && (
+            <div class="pills">
+              {technologies.map((technology) => (
+                <Pill label={technology} interactive cvEntry />
+              ))}
+            </div>
+          )}
+        </div>
+      </li>
+    )
+  })}
+</ol>

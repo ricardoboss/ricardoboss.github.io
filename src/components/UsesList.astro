@@ -1,0 +1,60 @@
+---
+import type { UsesItem } from "../types"
+import { externalLinkRel, externalLinkTarget } from "../utils/links"
+
+interface Props {
+  items: UsesItem[]
+}
+
+const { items } = Astro.props
+
+const groups = items.reduce(
+  (result, item) => {
+    let category = result.find((group) => group.title === item.category)
+    if (!category) {
+      category = { title: item.category, subcategories: [] }
+      result.push(category)
+    }
+
+    let subcategory = category.subcategories.find(
+      (group) => group.title === item.subcategory,
+    )
+    if (!subcategory) {
+      subcategory = { title: item.subcategory, items: [] }
+      category.subcategories.push(subcategory)
+    }
+
+    subcategory.items.push(item)
+    return result
+  },
+  [] as {
+    title: string
+    subcategories: { title: string; items: UsesItem[] }[]
+  }[],
+)
+---
+
+<div class="sectioned-list">
+  {groups.map((category) => (
+    <section class="uses-category">
+      <h2>{category.title}</h2>
+      {category.subcategories.map((subcategory) => (
+        <section class="uses-subcategory">
+          <h3>{subcategory.title}</h3>
+          {subcategory.items.map((item) => (
+            <a
+              class="uses-item"
+              href={item.link}
+              rel={externalLinkRel(item.link)}
+              target={externalLinkTarget(item.link)}
+            >
+              <span class="uses-title">{item.title}</span>
+              <span class="uses-link">{item.link}</span>
+              {item.comment && <p>{item.comment}</p>}
+            </a>
+          ))}
+        </section>
+      ))}
+    </section>
+  ))}
+</div>

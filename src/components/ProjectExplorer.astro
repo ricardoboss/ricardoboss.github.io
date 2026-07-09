@@ -1,0 +1,80 @@
+---
+import type { Project } from "../types"
+import Pill from "./Pill.astro"
+import ProjectCard from "./ProjectCard.astro"
+
+interface Props {
+  projects: Project[]
+}
+
+const { projects } = Astro.props
+const kinds = [...new Set(projects.map((project) => project.kind))].sort()
+const languages = [...new Set(projects.flatMap((project) => project.languages))].sort()
+const frameworks = [...new Set(projects.flatMap((project) => project.frameworks))].sort()
+const platforms = [...new Set(projects.flatMap((project) => project.platforms))].sort()
+
+const filterGroups = [
+  { key: "kind", title: "Project Type", items: kinds },
+  { key: "languages", title: "Programming Language", items: languages },
+  { key: "frameworks", title: "Framework", items: frameworks },
+  { key: "platforms", title: "Platform", items: platforms },
+]
+---
+
+<section class="project-explorer" data-project-explorer>
+  <form class="filters" data-project-filters>
+    <div class="project-toolbar">
+      <label class="project-search">
+        <span class="visually-hidden">Search projects</span>
+        <input type="search" name="query" placeholder="Project, language, framework" />
+      </label>
+      <div class="source-segmented" aria-label="Filter source availability">
+        <button type="button" data-project-source-option="" aria-pressed="true" title="Any source">
+          Any
+        </button>
+        <button type="button" data-project-source-option="open" aria-pressed="false" title="Open source">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M8 12a4 4 0 0 0 4 4h2v-2h-2a2 2 0 0 1 0-4h2V8h-2a4 4 0 0 0-4 4Zm3 1h2v-2h-2v2Zm-7-1a8 8 0 0 1 8-8h2V2h-2a10 10 0 0 0 0 20h2v-2h-2a8 8 0 0 1-8-8Zm8-8h2v2h-2V4Zm0 14h2v2h-2v-2Zm4-14h-1v2h1a6 6 0 0 1 0 12h-1v2h1a8 8 0 0 0 0-16Z" />
+          </svg>
+        </button>
+        <button type="button" data-project-source-option="closed" aria-pressed="false" title="Closed source">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 0 0-1 3.73V19h2v-1.27A2 2 0 0 0 12 14Z" />
+          </svg>
+        </button>
+      </div>
+      <button class="filter-clear" type="button" data-project-clear title="Clear filters" aria-label="Clear filters">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 6h2v9h-2V9Zm4 0h2v9h-2V9ZM7 9h2v9h8V9h2v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9Z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="project-filter-groups">
+      {filterGroups.map((group) => (
+        group.items.length > 0 && (
+          <section class="project-filter-group">
+            <h2>{group.title}</h2>
+            <div class="pills project-filter-pills">
+              {group.items.map((item) => (
+                <Pill label={item} interactive projectFilter={group.key} />
+              ))}
+            </div>
+          </section>
+        )
+      ))}
+    </div>
+  </form>
+
+  <p class="muted" data-project-count>{projects.length} projects</p>
+
+  <div class="card-grid">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+
+  {projects.length === 0 && (
+    <p class="empty-state">Project data will be migrated in the next step.</p>
+  )}
+</section>
+
+<script src="../scripts/project-filter.ts"></script>

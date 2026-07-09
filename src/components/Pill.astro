@@ -1,0 +1,31 @@
+---
+import { pillClass } from "../utils/pills"
+
+interface Props {
+  label: string
+  interactive?: boolean
+  cvEntry?: boolean
+  projectFilter?: string
+}
+
+const { label, interactive = false, cvEntry = false, projectFilter } = Astro.props
+const classes = ["pill", pillClass(label)]
+---
+
+{
+  interactive ? (
+    <button
+      class:list={classes}
+      type="button"
+      data-cv-pill-toggle={projectFilter ? undefined : label}
+      data-cv-entry-pill={cvEntry ? label : undefined}
+      data-project-filter={projectFilter}
+      data-project-filter-value={projectFilter ? label : undefined}
+      aria-pressed="false"
+    >
+      {label}
+    </button>
+  ) : (
+    <span class:list={classes}>{label}</span>
+  )
+}

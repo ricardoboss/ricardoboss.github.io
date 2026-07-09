@@ -1,0 +1,18 @@
+---
+import RedirectPage from "../../components/RedirectPage.astro"
+
+export function getStaticPaths() {
+  return [
+    "2020-07-01-new-website",
+    "2020-07-05-developer-focused-pc-builds",
+    "2020-09-27-long-time-no-content",
+    "2020-10-19-working-on-age-of-aincrad-com",
+    "2020-12-06-progress-update-for-age-of-aincrad-com",
+    "2020-12-23-its-rocket-science",
+    "2021-05-19-developing-extended-nmea",
+    "2022-01-21-age-of-aincrad-com-launched",
+  ].map((slug) => ({ params: { slug } }))
+}
+---
+
+<RedirectPage to="/projects/" title="Projects | Ricardo Boss" />

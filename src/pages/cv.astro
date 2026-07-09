@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Pill from "../components/Pill.astro"
+import SectionHeader from "../components/SectionHeader.astro"
+import Timeline from "../components/Timeline.astro"
+import { cvEntries } from "../data/cv"
+
+const languages = [...new Set(cvEntries.flatMap((entry) => entry.languages ?? []))].sort()
+const frameworks = [...new Set(cvEntries.flatMap((entry) => entry.frameworks ?? []))].sort()
+const platforms = [...new Set(cvEntries.flatMap((entry) => entry.platforms ?? []))].sort()
+
+const technologyGroups = [
+  { title: "Programming Language", technologies: languages },
+  { title: "Framework", technologies: frameworks },
+  { title: "Platform", technologies: platforms },
+]
+---
+
+<BaseLayout title="CV | Ricardo Boss" description="Curriculum vitae of Ricardo Boss">
+  <main>
+    <SectionHeader title="Curriculum Vitae" />
+    {cvEntries.length > 0 ? (
+      <section class="cv-filter" data-cv-filter>
+        <p class="cv-filter-title">Click to highlight</p>
+        <div class="cv-filter-groups" aria-label="Filter technologies">
+          {technologyGroups.map((group) => (
+            group.technologies.length > 0 && (
+              <section class="cv-filter-group">
+                <h2>{group.title}</h2>
+                <div class="pills cv-filter-pills">
+                  {group.technologies.map((technology) => (
+                    <Pill label={technology} interactive />
+                  ))}
+                </div>
+              </section>
+            )
+          ))}
+        </div>
+        <Timeline entries={cvEntries} />
+      </section>
+    ) : (
+      <p class="empty-state">No entries yet.</p>
+    )}
+  </main>
+</BaseLayout>
+
+<script src="../scripts/cv-filter.ts"></script>

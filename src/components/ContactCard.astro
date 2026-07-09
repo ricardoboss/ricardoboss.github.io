@@ -1,0 +1,32 @@
+---
+import type { ContactMethod } from "../types"
+import { externalLinkRel, externalLinkTarget } from "../utils/links"
+
+interface Props {
+  contact: ContactMethod
+}
+
+const { contact } = Astro.props
+---
+
+<article class="card contact-card">
+  {contact.icon && <img class="contact-icon" src={contact.icon} alt="" loading="lazy" />}
+  <div class="card-body">
+    <h3>{contact.title}</h3>
+    <p>{contact.detail}</p>
+  </div>
+
+  {contact.links.length > 0 && (
+    <div class="card-links">
+      {contact.links.map((link) => (
+        <a
+          href={link.href}
+          rel={externalLinkRel(link.href, link.rel)}
+          target={externalLinkTarget(link.href)}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  )}
+</article>

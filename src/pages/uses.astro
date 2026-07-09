@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import SectionHeader from "../components/SectionHeader.astro"
+import UsesList from "../components/UsesList.astro"
+import { uses } from "../data/uses"
+import { externalLinkRel, externalLinkTarget } from "../utils/links"
+---
+
+<BaseLayout title="Uses | Ricardo Boss" description="Tools and hardware used by Ricardo Boss">
+  <main>
+    <SectionHeader title="Uses">
+      <p>
+        This is the tech I use almost every day. Discover other tech enthusiasts
+        builds at <a
+          href="https://uses.tech/"
+          rel={externalLinkRel("https://uses.tech/")}
+          target={externalLinkTarget("https://uses.tech/")}
+        >uses.tech</a>.
+      </p>
+    </SectionHeader>
+    {uses.length > 0 ? <UsesList items={uses} /> : <p class="empty-state">No uses yet.</p>}
+  </main>
+</BaseLayout>
