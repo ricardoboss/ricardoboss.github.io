@@ -6,7 +6,7 @@ export const cvEntries = [
     role: "Senior Software Developer",
     from: "2026-07",
     languages: ["C#"],
-    frameworks: [".NET", "RabbitMQ"],
+    frameworks: [".NET", "RabbitMQ", "WPF"],
     link: "https://itwh.de/",
   },
   {
